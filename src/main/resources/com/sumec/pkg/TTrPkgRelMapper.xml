@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sumec.pkg.dao.ITrPkgRelDao">
+  <resultMap id="BaseResultMap" type="com.sumec.pkg.entity.TTrPkgRel">
+    <id column="REL_ID" jdbcType="VARCHAR" property="relId" />
+    <result column="PKG_ID" jdbcType="VARCHAR" property="pkgId" />
+    <result column="TOB_TYPE" jdbcType="VARCHAR" property="tobType" />
+    <result column="TOB_ID" jdbcType="VARCHAR" property="tobId" />
+    <result column="REL_DATE" jdbcType="TIMESTAMP" property="relDate" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    REL_ID, PKG_ID, TOB_TYPE, TOB_ID, REL_DATE
+  </sql>
+  <insert id="insertSelective" parameterType="com.sumec.pkg.entity.TTrPkgRel">
+    insert into T_TR_PKG_REL
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="relId != null">
+        REL_ID,
+      </if>
+      <if test="pkgId != null">
+        PKG_ID,
+      </if>
+      <if test="tobType != null">
+        TOB_TYPE,
+      </if>
+      <if test="tobId != null">
+        TOB_ID,
+      </if>
+      <if test="relDate != null">
+        REL_DATE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="relId != null">
+        #{relId,jdbcType=VARCHAR},
+      </if>
+      <if test="pkgId != null">
+        #{pkgId,jdbcType=VARCHAR},
+      </if>
+      <if test="tobType != null">
+        #{tobType,jdbcType=VARCHAR},
+      </if>
+      <if test="tobId != null">
+        #{tobId,jdbcType=VARCHAR},
+      </if>
+      <if test="relDate != null">
+        #{relDate,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sumec.pkg.entity.TTrPkgRel">
+    update T_TR_PKG_REL
+    <set>
+      <if test="pkgId != null">
+        PKG_ID = #{pkgId,jdbcType=VARCHAR},
+      </if>
+      <if test="tobType != null">
+        TOB_TYPE = #{tobType,jdbcType=VARCHAR},
+      </if>
+      <if test="tobId != null">
+        TOB_ID = #{tobId,jdbcType=VARCHAR},
+      </if>
+      <if test="relDate != null">
+        REL_DATE = #{relDate,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where REL_ID = #{relId,jdbcType=VARCHAR}
+  </update>
+</mapper>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sumec.project.dao.IProjCeecBudBasicDao">
+  <resultMap id="BaseResultMap" type="com.sumec.project.entity.TProjCeecBudBasic">
+    <result column="INT_ID" jdbcType="VARCHAR" property="intId" />
+    <result column="BBUD_TYPE" jdbcType="VARCHAR" property="bbudType" />
+    <result column="BBUD_CODE" jdbcType="VARCHAR" property="bbudCode" />
+    <result column="BBUD_NAME" jdbcType="VARCHAR" property="bbudName" />
+    <result column="BBUD_DEF_CURR" jdbcType="VARCHAR" property="bbudDefCurr" />
+    <result column="BBUD_REMARK" jdbcType="VARCHAR" property="bbudRemark" />
+    <result column="F_INT_ID" jdbcType="VARCHAR" property="fIntId" />
+    <result column="IS_BUD" jdbcType="VARCHAR" property="isBud" />
+    <result column="IS_USE" jdbcType="VARCHAR" property="isUse" />
+    <result column="BBUD_TYPE_CATA" jdbcType="VARCHAR" property="bbudTypeCata" />
+    <result column="ADD_MINUS_TAG" jdbcType="VARCHAR" property="addMinusTag" />
+    <result column="IS_SIGN" jdbcType="VARCHAR" property="isSign" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    int_id,bbud_type,bbud_code,bbud_name,bbud_def_curr,bbud_remark,f_int_id,is_bud,is_use,bbud_type_cata,add_minus_tag,is_sign
+  </sql>
+  <insert id="insertSelective" parameterType="com.sumec.project.entity.TProjCeecBudBasic">
+    insert into T_PROJ_CEEC_BUD_BASIC
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="intId != null">
+        INT_ID,
+      </if>
+      <if test="bbudType != null">
+        BBUD_TYPE,
+      </if>
+      <if test="bbudCode != null">
+        BBUD_CODE,
+      </if>
+      <if test="bbudName != null">
+        BBUD_NAME,
+      </if>
+      <if test="bbudDefCurr != null">
+        BBUD_DEF_CURR,
+      </if>
+      <if test="bbudRemark != null">
+        BBUD_REMARK,
+      </if>
+      <if test="fIntId != null">
+        F_INT_ID,
+      </if>
+      <if test="isBud != null">
+        IS_BUD,
+      </if>
+      <if test="isUse != null">
+        IS_USE,
+      </if>
+      <if test="bbudTypeCata != null">
+        BBUD_TYPE_CATA,
+      </if>
+      <if test="addMinusTag != null">
+        ADD_MINUS_TAG,
+      </if>
+      <if test="isSign != null">
+        IS_SIGN,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="intId != null">
+        #{intId,jdbcType=VARCHAR},
+      </if>
+      <if test="bbudType != null">
+        #{bbudType,jdbcType=VARCHAR},
+      </if>
+      <if test="bbudCode != null">
+        #{bbudCode,jdbcType=VARCHAR},
+      </if>
+      <if test="bbudName != null">
+        #{bbudName,jdbcType=VARCHAR},
+      </if>
+      <if test="bbudDefCurr != null">
+        #{bbudDefCurr,jdbcType=VARCHAR},
+      </if>
+      <if test="bbudRemark != null">
+        #{bbudRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="fIntId != null">
+        #{fIntId,jdbcType=VARCHAR},
+      </if>
+      <if test="isBud != null">
+        #{isBud,jdbcType=VARCHAR},
+      </if>
+      <if test="isUse != null">
+        #{isUse,jdbcType=VARCHAR},
+      </if>
+      <if test="bbudTypeCata != null">
+        #{bbudTypeCata,jdbcType=VARCHAR},
+      </if>
+      <if test="addMinusTag != null">
+        #{addMinusTag,jdbcType=VARCHAR},
+      </if>
+      <if test="isSign != null">
+        #{isSign,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

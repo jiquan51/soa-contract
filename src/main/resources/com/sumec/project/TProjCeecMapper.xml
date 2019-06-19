@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sumec.project.dao.IProjCeecDao">
+  <resultMap id="BaseResultMap" type="com.sumec.project.entity.TProjCeec">
+    <id column="PROJ_ID" jdbcType="DECIMAL" property="projId" />
+    <result column="PROJ_NO" jdbcType="VARCHAR" property="projNo" />
+    <result column="PROJ_NAME" jdbcType="VARCHAR" property="projName" />
+    <result column="PROJ_ADDRESS" jdbcType="VARCHAR" property="projAddress" />
+    <result column="K_ID" jdbcType="DECIMAL" property="kId" />
+    <result column="INLAND_OR_OVERSEAS" jdbcType="VARCHAR" property="inlandOrOverseas" />
+    <result column="PROJ_NATION_ID" jdbcType="DECIMAL" property="projNationId" />
+    <result column="OWNER_ID" jdbcType="DECIMAL" property="ownerId" />
+    <result column="OWNER_NAME" jdbcType="VARCHAR" property="ownerName" />
+    <result column="FUND_TYPE" jdbcType="VARCHAR" property="fundType" />
+    <result column="SIGN_C_NO" jdbcType="VARCHAR" property="signCNo" />
+    <result column="SIGN_DATE" jdbcType="TIMESTAMP" property="signDate" />
+    <result column="SIGN_ADDRESS" jdbcType="VARCHAR" property="signAddress" />
+    <result column="SIGNER_ID" jdbcType="DECIMAL" property="signerId" />
+    <result column="ACC_NO" jdbcType="VARCHAR" property="accNo" />
+    <result column="SIGN_AMT_INFO" jdbcType="VARCHAR" property="signAmtInfo" />
+    <result column="EFFECT_DATE" jdbcType="TIMESTAMP" property="effectDate" />
+    <result column="PROJ_ORG_ID" jdbcType="DECIMAL" property="projOrgId" />
+    <result column="PM_USER_ID" jdbcType="DECIMAL" property="pmUserId" />
+    <result column="Y_START_DATE" jdbcType="TIMESTAMP" property="yStartDate" />
+    <result column="Y_END_DATE" jdbcType="TIMESTAMP" property="yEndDate" />
+    <result column="PROJ_TL" jdbcType="DECIMAL" property="projTl" />
+    <result column="PROJ_TL_UNIT" jdbcType="VARCHAR" property="projTlUnit" />
+    <result column="REMARK" jdbcType="VARCHAR" property="remark" />
+    <result column="PROJ_STATUS" jdbcType="VARCHAR" property="projStatus" />
+    <result column="M_USER_ID" jdbcType="DECIMAL" property="mUserId" />
+    <result column="M_DATE" jdbcType="TIMESTAMP" property="mDate" />
+    <result column="MU_ORG_ID" jdbcType="DECIMAL" property="muOrgId" />
+    <result column="U_USER_ID" jdbcType="DECIMAL" property="uUserId" />
+    <result column="U_DATE" jdbcType="TIMESTAMP" property="uDate" />
+    <result column="CONFIRM" jdbcType="VARCHAR" property="confirm" />
+    <result column="RGE_TMPL_ID" jdbcType="DECIMAL" property="rgeTmplId" />
+    <result column="DET_TMPL_ID" jdbcType="DECIMAL" property="detTmplId" />
+    <result column="BUD_TMPL_ID" jdbcType="DECIMAL" property="budTmplId" />
+    <result column="CELL_ID" jdbcType="DECIMAL" property="cellId" />
+    <result column="SIGNER_NAME" jdbcType="VARCHAR" property="signerName" />
+    <result column="PROJ_CODE" jdbcType="VARCHAR" property="projCode" />
+    <result column="START_ID" jdbcType="DECIMAL" property="startId" />
+    <result column="T_ID" jdbcType="DECIMAL" property="tId" />
+    <result column="OWNER_C_NO" jdbcType="VARCHAR" property="ownerCNo" />
+    <result column="PROJ_BUSS_TYPE" jdbcType="VARCHAR" property="projBussType" />
+    <result column="IS_MIG" jdbcType="VARCHAR" property="isMig" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    PROJ_ID, PROJ_NO, PROJ_NAME, PROJ_ADDRESS, K_ID, INLAND_OR_OVERSEAS, PROJ_NATION_ID, 
+    OWNER_ID, OWNER_NAME, FUND_TYPE, SIGN_C_NO, SIGN_DATE, SIGN_ADDRESS, SIGNER_ID, ACC_NO, 
+    SIGN_AMT_INFO, EFFECT_DATE, PROJ_ORG_ID, PM_USER_ID, Y_START_DATE, Y_END_DATE, PROJ_TL, 
+    PROJ_TL_UNIT, REMARK, PROJ_STATUS, M_USER_ID, M_DATE, MU_ORG_ID, U_USER_ID, U_DATE, 
+    CONFIRM, RGE_TMPL_ID, DET_TMPL_ID, BUD_TMPL_ID, CELL_ID, SIGNER_NAME, PROJ_CODE, 
+    START_ID, T_ID, OWNER_C_NO, PROJ_BUSS_TYPE, IS_MIG
+  </sql>
+  <insert id="insertSelective" parameterType="com.sumec.project.entity.TProjCeec">
+    insert into T_PROJ_CEEC
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="projId != null">
+        PROJ_ID,
+      </if>
+      <if test="projNo != null">
+        PROJ_NO,
+      </if>
+      <if test="projName != null">
+        PROJ_NAME,
+      </if>
+      <if test="projAddress != null">
+        PROJ_ADDRESS,
+      </if>
+      <if test="kId != null">
+        K_ID,
+      </if>
+      <if test="inlandOrOverseas != null">
+        INLAND_OR_OVERSEAS,
+      </if>
+      <if test="projNationId != null">
+        PROJ_NATION_ID,
+      </if>
+      <if test="ownerId != null">
+        OWNER_ID,
+      </if>
+      <if test="ownerName != null">
+        OWNER_NAME,
+      </if>
+      <if test="fundType != null">
+        FUND_TYPE,
+      </if>
+      <if test="signCNo != null">
+        SIGN_C_NO,
+      </if>
+      <if test="signDate != null">
+        SIGN_DATE,
+      </if>
+      <if test="signAddress != null">
+        SIGN_ADDRESS,
+      </if>
+      <if test="signerId != null">
+        SIGNER_ID,
+      </if>
+      <if test="accNo != null">
+        ACC_NO,
+      </if>
+      <if test="signAmtInfo != null">
+        SIGN_AMT_INFO,
+      </if>
+      <if test="effectDate != null">
+        EFFECT_DATE,
+      </if>
+      <if test="projOrgId != null">
+        PROJ_ORG_ID,
+      </if>
+      <if test="pmUserId != null">
+        PM_USER_ID,
+      </if>
+      <if test="yStartDate != null">
+        Y_START_DATE,
+      </if>
+      <if test="yEndDate != null">
+        Y_END_DATE,
+      </if>
+      <if test="projTl != null">
+        PROJ_TL,
+      </if>
+      <if test="projTlUnit != null">
+        PROJ_TL_UNIT,
+      </if>
+      <if test="remark != null">
+        REMARK,
+      </if>
+      <if test="projStatus != null">
+        PROJ_STATUS,
+      </if>
+      <if test="mUserId != null">
+        M_USER_ID,
+      </if>
+      <if test="mDate != null">
+        M_DATE,
+      </if>
+      <if test="muOrgId != null">
+        MU_ORG_ID,
+      </if>
+      <if test="uUserId != null">
+        U_USER_ID,
+      </if>
+      <if test="uDate != null">
+        U_DATE,
+      </if>
+      <if test="confirm != null">
+        CONFIRM,
+      </if>
+      <if test="rgeTmplId != null">
+        RGE_TMPL_ID,
+      </if>
+      <if test="detTmplId != null">
+        DET_TMPL_ID,
+      </if>
+      <if test="budTmplId != null">
+        BUD_TMPL_ID,
+      </if>
+      <if test="cellId != null">
+        CELL_ID,
+      </if>
+      <if test="signerName != null">
+        SIGNER_NAME,
+      </if>
+      <if test="projCode != null">
+        PROJ_CODE,
+      </if>
+      <if test="startId != null">
+        START_ID,
+      </if>
+      <if test="tId != null">
+        T_ID,
+      </if>
+      <if test="ownerCNo != null">
+        OWNER_C_NO,
+      </if>
+      <if test="projBussType != null">
+        PROJ_BUSS_TYPE,
+      </if>
+      <if test="isMig != null">
+        IS_MIG,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="projId != null">
+        #{projId,jdbcType=DECIMAL},
+      </if>
+      <if test="projNo != null">
+        #{projNo,jdbcType=VARCHAR},
+      </if>
+      <if test="projName != null">
+        #{projName,jdbcType=VARCHAR},
+      </if>
+      <if test="projAddress != null">
+        #{projAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="kId != null">
+        #{kId,jdbcType=DECIMAL},
+      </if>
+      <if test="inlandOrOverseas != null">
+        #{inlandOrOverseas,jdbcType=VARCHAR},
+      </if>
+      <if test="projNationId != null">
+        #{projNationId,jdbcType=DECIMAL},
+      </if>
+      <if test="ownerId != null">
+        #{ownerId,jdbcType=DECIMAL},
+      </if>
+      <if test="ownerName != null">
+        #{ownerName,jdbcType=VARCHAR},
+      </if>
+      <if test="fundType != null">
+        #{fundType,jdbcType=VARCHAR},
+      </if>
+      <if test="signCNo != null">
+        #{signCNo,jdbcType=VARCHAR},
+      </if>
+      <if test="signDate != null">
+        #{signDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="signAddress != null">
+        #{signAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="signerId != null">
+        #{signerId,jdbcType=DECIMAL},
+      </if>
+      <if test="accNo != null">
+        #{accNo,jdbcType=VARCHAR},
+      </if>
+      <if test="signAmtInfo != null">
+        #{signAmtInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="effectDate != null">
+        #{effectDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="projOrgId != null">
+        #{projOrgId,jdbcType=DECIMAL},
+      </if>
+      <if test="pmUserId != null">
+        #{pmUserId,jdbcType=DECIMAL},
+      </if>
+      <if test="yStartDate != null">
+        #{yStartDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="yEndDate != null">
+        #{yEndDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="projTl != null">
+        #{projTl,jdbcType=DECIMAL},
+      </if>
+      <if test="projTlUnit != null">
+        #{projTlUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="projStatus != null">
+        #{projStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="mUserId != null">
+        #{mUserId,jdbcType=DECIMAL},
+      </if>
+      <if test="mDate != null">
+        #{mDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="muOrgId != null">
+        #{muOrgId,jdbcType=DECIMAL},
+      </if>
+      <if test="uUserId != null">
+        #{uUserId,jdbcType=DECIMAL},
+      </if>
+      <if test="uDate != null">
+        #{uDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="confirm != null">
+        #{confirm,jdbcType=VARCHAR},
+      </if>
+      <if test="rgeTmplId != null">
+        #{rgeTmplId,jdbcType=DECIMAL},
+      </if>
+      <if test="detTmplId != null">
+        #{detTmplId,jdbcType=DECIMAL},
+      </if>
+      <if test="budTmplId != null">
+        #{budTmplId,jdbcType=DECIMAL},
+      </if>
+      <if test="cellId != null">
+        #{cellId,jdbcType=DECIMAL},
+      </if>
+      <if test="signerName != null">
+        #{signerName,jdbcType=VARCHAR},
+      </if>
+      <if test="projCode != null">
+        #{projCode,jdbcType=VARCHAR},
+      </if>
+      <if test="startId != null">
+        #{startId,jdbcType=DECIMAL},
+      </if>
+      <if test="tId != null">
+        #{tId,jdbcType=DECIMAL},
+      </if>
+      <if test="ownerCNo != null">
+        #{ownerCNo,jdbcType=VARCHAR},
+      </if>
+      <if test="projBussType != null">
+        #{projBussType,jdbcType=VARCHAR},
+      </if>
+      <if test="isMig != null">
+        #{isMig,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sumec.project.entity.TProjCeec">
+    update T_PROJ_CEEC
+    <set>
+      <if test="projNo != null">
+        PROJ_NO = #{projNo,jdbcType=VARCHAR},
+      </if>
+      <if test="projName != null">
+        PROJ_NAME = #{projName,jdbcType=VARCHAR},
+      </if>
+      <if test="projAddress != null">
+        PROJ_ADDRESS = #{projAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="kId != null">
+        K_ID = #{kId,jdbcType=DECIMAL},
+      </if>
+      <if test="inlandOrOverseas != null">
+        INLAND_OR_OVERSEAS = #{inlandOrOverseas,jdbcType=VARCHAR},
+      </if>
+      <if test="projNationId != null">
+        PROJ_NATION_ID = #{projNationId,jdbcType=DECIMAL},
+      </if>
+      <if test="ownerId != null">
+        OWNER_ID = #{ownerId,jdbcType=DECIMAL},
+      </if>
+      <if test="ownerName != null">
+        OWNER_NAME = #{ownerName,jdbcType=VARCHAR},
+      </if>
+      <if test="fundType != null">
+        FUND_TYPE = #{fundType,jdbcType=VARCHAR},
+      </if>
+      <if test="signCNo != null">
+        SIGN_C_NO = #{signCNo,jdbcType=VARCHAR},
+      </if>
+      <if test="signDate != null">
+        SIGN_DATE = #{signDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="signAddress != null">
+        SIGN_ADDRESS = #{signAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="signerId != null">
+        SIGNER_ID = #{signerId,jdbcType=DECIMAL},
+      </if>
+      <if test="accNo != null">
+        ACC_NO = #{accNo,jdbcType=VARCHAR},
+      </if>
+      <if test="signAmtInfo != null">
+        SIGN_AMT_INFO = #{signAmtInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="effectDate != null">
+        EFFECT_DATE = #{effectDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="projOrgId != null">
+        PROJ_ORG_ID = #{projOrgId,jdbcType=DECIMAL},
+      </if>
+      <if test="pmUserId != null">
+        PM_USER_ID = #{pmUserId,jdbcType=DECIMAL},
+      </if>
+      <if test="yStartDate != null">
+        Y_START_DATE = #{yStartDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="yEndDate != null">
+        Y_END_DATE = #{yEndDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="projTl != null">
+        PROJ_TL = #{projTl,jdbcType=DECIMAL},
+      </if>
+      <if test="projTlUnit != null">
+        PROJ_TL_UNIT = #{projTlUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        REMARK = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="projStatus != null">
+        PROJ_STATUS = #{projStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="mUserId != null">
+        M_USER_ID = #{mUserId,jdbcType=DECIMAL},
+      </if>
+      <if test="mDate != null">
+        M_DATE = #{mDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="muOrgId != null">
+        MU_ORG_ID = #{muOrgId,jdbcType=DECIMAL},
+      </if>
+      <if test="uUserId != null">
+        U_USER_ID = #{uUserId,jdbcType=DECIMAL},
+      </if>
+      <if test="uDate != null">
+        U_DATE = #{uDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="confirm != null">
+        CONFIRM = #{confirm,jdbcType=VARCHAR},
+      </if>
+      <if test="rgeTmplId != null">
+        RGE_TMPL_ID = #{rgeTmplId,jdbcType=DECIMAL},
+      </if>
+      <if test="detTmplId != null">
+        DET_TMPL_ID = #{detTmplId,jdbcType=DECIMAL},
+      </if>
+      <if test="budTmplId != null">
+        BUD_TMPL_ID = #{budTmplId,jdbcType=DECIMAL},
+      </if>
+      <if test="cellId != null">
+        CELL_ID = #{cellId,jdbcType=DECIMAL},
+      </if>
+      <if test="signerName != null">
+        SIGNER_NAME = #{signerName,jdbcType=VARCHAR},
+      </if>
+      <if test="projCode != null">
+        PROJ_CODE = #{projCode,jdbcType=VARCHAR},
+      </if>
+      <if test="startId != null">
+        START_ID = #{startId,jdbcType=DECIMAL},
+      </if>
+      <if test="tId != null">
+        T_ID = #{tId,jdbcType=DECIMAL},
+      </if>
+      <if test="ownerCNo != null">
+        OWNER_C_NO = #{ownerCNo,jdbcType=VARCHAR},
+      </if>
+      <if test="projBussType != null">
+        PROJ_BUSS_TYPE = #{projBussType,jdbcType=VARCHAR},
+      </if>
+      <if test="isMig != null">
+        IS_MIG = #{isMig,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PROJ_ID = #{projId,jdbcType=DECIMAL}
+  </update>
+</mapper>

@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sumec.project.dao.ITrPurchaseReviewDao">
+  <resultMap id="BaseResultMap" type="com.sumec.project.entity.TTrPurchaseReview">
+    <id column="INT_ID" jdbcType="VARCHAR" property="intId" />
+    <result column="FM_SEQ_ID" jdbcType="VARCHAR" property="fmSeqId" />
+    <result column="USER_NAME" jdbcType="VARCHAR" property="userName" />
+    <result column="M_DATE" jdbcType="TIMESTAMP" property="mDate" />
+    <result column="OCU_NAME" jdbcType="VARCHAR" property="ocuName" />
+    <result column="OCU_ORG_NAME" jdbcType="VARCHAR" property="ocuOrgName" />
+    <result column="REF_TYPE" jdbcType="VARCHAR" property="refType" />
+    <result column="REF_ID" jdbcType="VARCHAR" property="refId" />
+    <result column="BC_NO" jdbcType="VARCHAR" property="bcNo" />
+    <result column="SIGN_DATE" jdbcType="TIMESTAMP" property="signDate" />
+    <result column="ACC_NAME" jdbcType="VARCHAR" property="accName" />
+    <result column="FCT_SHORT_NAME" jdbcType="VARCHAR" property="fctShortName" />
+    <result column="FCT_NAME" jdbcType="VARCHAR" property="fctName" />
+    <result column="DELI_DATE" jdbcType="TIMESTAMP" property="deliDate" />
+    <result column="AMT" jdbcType="DECIMAL" property="amt" />
+    <result column="CURR_TYPE" jdbcType="VARCHAR" property="currType" />
+    <result column="QUANT" jdbcType="DECIMAL" property="quant" />
+    <result column="PAY_TERM" jdbcType="VARCHAR" property="payTerm" />
+    <result column="PRO_ID" jdbcType="VARCHAR" property="proId" />
+    <result column="PRO_NO" jdbcType="VARCHAR" property="proNo" />
+    <result column="PRO_NAME" jdbcType="VARCHAR" property="proName" />
+    <result column="PRO_TYPE" jdbcType="VARCHAR" property="proType" />
+    <result column="PRO_CUST" jdbcType="VARCHAR" property="proCust" />
+    <result column="PRO_AMT" jdbcType="DECIMAL" property="proAmt" />
+    <result column="PRO_SIGN_AMT" jdbcType="DECIMAL" property="proSignAmt" />
+    <result column="PRO_INCOME" jdbcType="DECIMAL" property="proIncome" />
+    <result column="PRO_COST" jdbcType="DECIMAL" property="proCost" />
+    <result column="PRO_PROFIT" jdbcType="DECIMAL" property="proProfit" />
+    <result column="PRO_PROFIT_RATE" jdbcType="DECIMAL" property="proProfitRate" />
+    <result column="COMM_DESC" jdbcType="VARCHAR" property="commDesc" />
+    <result column="COMM_MAT" jdbcType="VARCHAR" property="commMat" />
+    <result column="DH_RATE" jdbcType="DECIMAL" property="dhRate" />
+    <result column="PAY_RATE" jdbcType="DECIMAL" property="payRate" />
+    <result column="INV_RATE" jdbcType="DECIMAL" property="invRate" />
+    <result column="TYPE_OF_CON" jdbcType="VARCHAR" property="typeOfCon" />
+    <result column="SC_NO" jdbcType="VARCHAR" property="scNo" />
+    <result column="SC_CURR_TYPE" jdbcType="VARCHAR" property="scCurrType" />
+    <result column="SC_AMT" jdbcType="DECIMAL" property="scAmt" />
+    <result column="SC_PAT_NAME" jdbcType="VARCHAR" property="scPatName" />
+    <result column="SC_PROFIT_AMT" jdbcType="DECIMAL" property="scProfitAmt" />
+    <result column="SC_EXCHANGECOST" jdbcType="DECIMAL" property="scExchangecost" />
+    <result column="INHAND_CON_NUM" jdbcType="DECIMAL" property="inhandConNum" />
+    <result column="INHAND_AMT" jdbcType="DECIMAL" property="inhandAmt" />
+    <result column="OVERDUE_QUANT" jdbcType="DECIMAL" property="overdueQuant" />
+    <result column="OVERDUE_AMT" jdbcType="DECIMAL" property="overdueAmt" />
+    <result column="IS_VALID" jdbcType="VARCHAR" property="isValid" />
+    <result column="BUD_NAME" jdbcType="VARCHAR" property="budName" />
+    <result column="CON_NAME" jdbcType="VARCHAR" property="conName" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    INT_ID, FM_SEQ_ID, USER_NAME, M_DATE, OCU_NAME, OCU_ORG_NAME, REF_TYPE, REF_ID, BC_NO, 
+    SIGN_DATE, ACC_NAME, FCT_SHORT_NAME, FCT_NAME, DELI_DATE, AMT, CURR_TYPE, QUANT, 
+    PAY_TERM, PRO_ID, PRO_NO, PRO_NAME, PRO_TYPE, PRO_CUST, PRO_AMT, PRO_SIGN_AMT, PRO_INCOME, 
+    PRO_COST, PRO_PROFIT, PRO_PROFIT_RATE, COMM_DESC, COMM_MAT, DH_RATE, PAY_RATE, INV_RATE, 
+    TYPE_OF_CON, SC_NO, SC_CURR_TYPE, SC_AMT, SC_PAT_NAME, SC_PROFIT_AMT, SC_EXCHANGECOST, 
+    INHAND_CON_NUM, INHAND_AMT, OVERDUE_QUANT, OVERDUE_AMT, IS_VALID, BUD_NAME, CON_NAME
+  </sql>
+  <insert id="insertSelective" parameterType="com.sumec.project.entity.TTrPurchaseReview">
+    insert into T_TR_PURCHASE_REVIEW
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="intId != null">
+        INT_ID,
+      </if>
+      <if test="fmSeqId != null">
+        FM_SEQ_ID,
+      </if>
+      <if test="userName != null">
+        USER_NAME,
+      </if>
+      <if test="mDate != null">
+        M_DATE,
+      </if>
+      <if test="ocuName != null">
+        OCU_NAME,
+      </if>
+      <if test="ocuOrgName != null">
+        OCU_ORG_NAME,
+      </if>
+      <if test="refType != null">
+        REF_TYPE,
+      </if>
+      <if test="refId != null">
+        REF_ID,
+      </if>
+      <if test="bcNo != null">
+        BC_NO,
+      </if>
+      <if test="signDate != null">
+        SIGN_DATE,
+      </if>
+      <if test="accName != null">
+        ACC_NAME,
+      </if>
+      <if test="fctShortName != null">
+        FCT_SHORT_NAME,
+      </if>
+      <if test="fctName != null">
+        FCT_NAME,
+      </if>
+      <if test="deliDate != null">
+        DELI_DATE,
+      </if>
+      <if test="amt != null">
+        AMT,
+      </if>
+      <if test="currType != null">
+        CURR_TYPE,
+      </if>
+      <if test="quant != null">
+        QUANT,
+      </if>
+      <if test="payTerm != null">
+        PAY_TERM,
+      </if>
+      <if test="proId != null">
+        PRO_ID,
+      </if>
+      <if test="proNo != null">
+        PRO_NO,
+      </if>
+      <if test="proName != null">
+        PRO_NAME,
+      </if>
+      <if test="proType != null">
+        PRO_TYPE,
+      </if>
+      <if test="proCust != null">
+        PRO_CUST,
+      </if>
+      <if test="proAmt != null">
+        PRO_AMT,
+      </if>
+      <if test="proSignAmt != null">
+        PRO_SIGN_AMT,
+      </if>
+      <if test="proIncome != null">
+        PRO_INCOME,
+      </if>
+      <if test="proCost != null">
+        PRO_COST,
+      </if>
+      <if test="proProfit != null">
+        PRO_PROFIT,
+      </if>
+      <if test="proProfitRate != null">
+        PRO_PROFIT_RATE,
+      </if>
+      <if test="commDesc != null">
+        COMM_DESC,
+      </if>
+      <if test="commMat != null">
+        COMM_MAT,
+      </if>
+      <if test="dhRate != null">
+        DH_RATE,
+      </if>
+      <if test="payRate != null">
+        PAY_RATE,
+      </if>
+      <if test="invRate != null">
+        INV_RATE,
+      </if>
+      <if test="typeOfCon != null">
+        TYPE_OF_CON,
+      </if>
+      <if test="scNo != null">
+        SC_NO,
+      </if>
+      <if test="scCurrType != null">
+        SC_CURR_TYPE,
+      </if>
+      <if test="scAmt != null">
+        SC_AMT,
+      </if>
+      <if test="scPatName != null">
+        SC_PAT_NAME,
+      </if>
+      <if test="scProfitAmt != null">
+        SC_PROFIT_AMT,
+      </if>
+      <if test="scExchangecost != null">
+        SC_EXCHANGECOST,
+      </if>
+      <if test="inhandConNum != null">
+        INHAND_CON_NUM,
+      </if>
+      <if test="inhandAmt != null">
+        INHAND_AMT,
+      </if>
+      <if test="overdueQuant != null">
+        OVERDUE_QUANT,
+      </if>
+      <if test="overdueAmt != null">
+        OVERDUE_AMT,
+      </if>
+      <if test="isValid != null">
+        IS_VALID,
+      </if>
+      <if test="budName != null">
+        BUD_NAME,
+      </if>
+      <if test="conName != null">
+        CON_NAME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="intId != null">
+        #{intId,jdbcType=VARCHAR},
+      </if>
+      <if test="fmSeqId != null">
+        #{fmSeqId,jdbcType=VARCHAR},
+      </if>
+      <if test="userName != null">
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="mDate != null">
+        #{mDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ocuName != null">
+        #{ocuName,jdbcType=VARCHAR},
+      </if>
+      <if test="ocuOrgName != null">
+        #{ocuOrgName,jdbcType=VARCHAR},
+      </if>
+      <if test="refType != null">
+        #{refType,jdbcType=VARCHAR},
+      </if>
+      <if test="refId != null">
+        #{refId,jdbcType=VARCHAR},
+      </if>
+      <if test="bcNo != null">
+        #{bcNo,jdbcType=VARCHAR},
+      </if>
+      <if test="signDate != null">
+        #{signDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="accName != null">
+        #{accName,jdbcType=VARCHAR},
+      </if>
+      <if test="fctShortName != null">
+        #{fctShortName,jdbcType=VARCHAR},
+      </if>
+      <if test="fctName != null">
+        #{fctName,jdbcType=VARCHAR},
+      </if>
+      <if test="deliDate != null">
+        #{deliDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="amt != null">
+        #{amt,jdbcType=DECIMAL},
+      </if>
+      <if test="currType != null">
+        #{currType,jdbcType=VARCHAR},
+      </if>
+      <if test="quant != null">
+        #{quant,jdbcType=DECIMAL},
+      </if>
+      <if test="payTerm != null">
+        #{payTerm,jdbcType=VARCHAR},
+      </if>
+      <if test="proId != null">
+        #{proId,jdbcType=VARCHAR},
+      </if>
+      <if test="proNo != null">
+        #{proNo,jdbcType=VARCHAR},
+      </if>
+      <if test="proName != null">
+        #{proName,jdbcType=VARCHAR},
+      </if>
+      <if test="proType != null">
+        #{proType,jdbcType=VARCHAR},
+      </if>
+      <if test="proCust != null">
+        #{proCust,jdbcType=VARCHAR},
+      </if>
+      <if test="proAmt != null">
+        #{proAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="proSignAmt != null">
+        #{proSignAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="proIncome != null">
+        #{proIncome,jdbcType=DECIMAL},
+      </if>
+      <if test="proCost != null">
+        #{proCost,jdbcType=DECIMAL},
+      </if>
+      <if test="proProfit != null">
+        #{proProfit,jdbcType=DECIMAL},
+      </if>
+      <if test="proProfitRate != null">
+        #{proProfitRate,jdbcType=DECIMAL},
+      </if>
+      <if test="commDesc != null">
+        #{commDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="commMat != null">
+        #{commMat,jdbcType=VARCHAR},
+      </if>
+      <if test="dhRate != null">
+        #{dhRate,jdbcType=DECIMAL},
+      </if>
+      <if test="payRate != null">
+        #{payRate,jdbcType=DECIMAL},
+      </if>
+      <if test="invRate != null">
+        #{invRate,jdbcType=DECIMAL},
+      </if>
+      <if test="typeOfCon != null">
+        #{typeOfCon,jdbcType=VARCHAR},
+      </if>
+      <if test="scNo != null">
+        #{scNo,jdbcType=VARCHAR},
+      </if>
+      <if test="scCurrType != null">
+        #{scCurrType,jdbcType=VARCHAR},
+      </if>
+      <if test="scAmt != null">
+        #{scAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="scPatName != null">
+        #{scPatName,jdbcType=VARCHAR},
+      </if>
+      <if test="scProfitAmt != null">
+        #{scProfitAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="scExchangecost != null">
+        #{scExchangecost,jdbcType=DECIMAL},
+      </if>
+      <if test="inhandConNum != null">
+        #{inhandConNum,jdbcType=DECIMAL},
+      </if>
+      <if test="inhandAmt != null">
+        #{inhandAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="overdueQuant != null">
+        #{overdueQuant,jdbcType=DECIMAL},
+      </if>
+      <if test="overdueAmt != null">
+        #{overdueAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="isValid != null">
+        #{isValid,jdbcType=VARCHAR},
+      </if>
+      <if test="budName != null">
+        #{budName,jdbcType=VARCHAR},
+      </if>
+      <if test="conName != null">
+        #{conName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sumec.project.entity.TTrPurchaseReview">
+    update T_TR_PURCHASE_REVIEW
+    <set>
+      <if test="fmSeqId != null">
+        FM_SEQ_ID = #{fmSeqId,jdbcType=VARCHAR},
+      </if>
+      <if test="userName != null">
+        USER_NAME = #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="mDate != null">
+        M_DATE = #{mDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ocuName != null">
+        OCU_NAME = #{ocuName,jdbcType=VARCHAR},
+      </if>
+      <if test="ocuOrgName != null">
+        OCU_ORG_NAME = #{ocuOrgName,jdbcType=VARCHAR},
+      </if>
+      <if test="refType != null">
+        REF_TYPE = #{refType,jdbcType=VARCHAR},
+      </if>
+      <if test="refId != null">
+        REF_ID = #{refId,jdbcType=VARCHAR},
+      </if>
+      <if test="bcNo != null">
+        BC_NO = #{bcNo,jdbcType=VARCHAR},
+      </if>
+      <if test="signDate != null">
+        SIGN_DATE = #{signDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="accName != null">
+        ACC_NAME = #{accName,jdbcType=VARCHAR},
+      </if>
+      <if test="fctShortName != null">
+        FCT_SHORT_NAME = #{fctShortName,jdbcType=VARCHAR},
+      </if>
+      <if test="fctName != null">
+        FCT_NAME = #{fctName,jdbcType=VARCHAR},
+      </if>
+      <if test="deliDate != null">
+        DELI_DATE = #{deliDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="amt != null">
+        AMT = #{amt,jdbcType=DECIMAL},
+      </if>
+      <if test="currType != null">
+        CURR_TYPE = #{currType,jdbcType=VARCHAR},
+      </if>
+      <if test="quant != null">
+        QUANT = #{quant,jdbcType=DECIMAL},
+      </if>
+      <if test="payTerm != null">
+        PAY_TERM = #{payTerm,jdbcType=VARCHAR},
+      </if>
+      <if test="proId != null">
+        PRO_ID = #{proId,jdbcType=VARCHAR},
+      </if>
+      <if test="proNo != null">
+        PRO_NO = #{proNo,jdbcType=VARCHAR},
+      </if>
+      <if test="proName != null">
+        PRO_NAME = #{proName,jdbcType=VARCHAR},
+      </if>
+      <if test="proType != null">
+        PRO_TYPE = #{proType,jdbcType=VARCHAR},
+      </if>
+      <if test="proCust != null">
+        PRO_CUST = #{proCust,jdbcType=VARCHAR},
+      </if>
+      <if test="proAmt != null">
+        PRO_AMT = #{proAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="proSignAmt != null">
+        PRO_SIGN_AMT = #{proSignAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="proIncome != null">
+        PRO_INCOME = #{proIncome,jdbcType=DECIMAL},
+      </if>
+      <if test="proCost != null">
+        PRO_COST = #{proCost,jdbcType=DECIMAL},
+      </if>
+      <if test="proProfit != null">
+        PRO_PROFIT = #{proProfit,jdbcType=DECIMAL},
+      </if>
+      <if test="proProfitRate != null">
+        PRO_PROFIT_RATE = #{proProfitRate,jdbcType=DECIMAL},
+      </if>
+      <if test="commDesc != null">
+        COMM_DESC = #{commDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="commMat != null">
+        COMM_MAT = #{commMat,jdbcType=VARCHAR},
+      </if>
+      <if test="dhRate != null">
+        DH_RATE = #{dhRate,jdbcType=DECIMAL},
+      </if>
+      <if test="payRate != null">
+        PAY_RATE = #{payRate,jdbcType=DECIMAL},
+      </if>
+      <if test="invRate != null">
+        INV_RATE = #{invRate,jdbcType=DECIMAL},
+      </if>
+      <if test="typeOfCon != null">
+        TYPE_OF_CON = #{typeOfCon,jdbcType=VARCHAR},
+      </if>
+      <if test="scNo != null">
+        SC_NO = #{scNo,jdbcType=VARCHAR},
+      </if>
+      <if test="scCurrType != null">
+        SC_CURR_TYPE = #{scCurrType,jdbcType=VARCHAR},
+      </if>
+      <if test="scAmt != null">
+        SC_AMT = #{scAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="scPatName != null">
+        SC_PAT_NAME = #{scPatName,jdbcType=VARCHAR},
+      </if>
+      <if test="scProfitAmt != null">
+        SC_PROFIT_AMT = #{scProfitAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="scExchangecost != null">
+        SC_EXCHANGECOST = #{scExchangecost,jdbcType=DECIMAL},
+      </if>
+      <if test="inhandConNum != null">
+        INHAND_CON_NUM = #{inhandConNum,jdbcType=DECIMAL},
+      </if>
+      <if test="inhandAmt != null">
+        INHAND_AMT = #{inhandAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="overdueQuant != null">
+        OVERDUE_QUANT = #{overdueQuant,jdbcType=DECIMAL},
+      </if>
+      <if test="overdueAmt != null">
+        OVERDUE_AMT = #{overdueAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="isValid != null">
+        IS_VALID = #{isValid,jdbcType=VARCHAR},
+      </if>
+      <if test="budName != null">
+        BUD_NAME = #{budName,jdbcType=VARCHAR},
+      </if>
+      <if test="conName != null">
+        CON_NAME = #{conName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where INT_ID = #{intId,jdbcType=VARCHAR}
+  </update>
+
+</mapper>

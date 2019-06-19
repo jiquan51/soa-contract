@@ -1,0 +1,32 @@
+spring:
+#数据源配置文件 注意，引入aiyuninfo-boot-data之后必须配置数据源
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:oracle:thin:@10.4.95.26:1521:sumecdev
+    username: michael
+    password: carton
+#    连接池配置
+    hikari:
+      data-source-properties:
+        cachePrepStmts: true
+        prepStmtCacheSize: 250
+        prepStmtCacheSqlLimit: 2048
+        useServerPrepStmts: true
+#custom: 
+#  datasource: 
+#    names: sumec_oa
+#    sumec_oa:  
+#      url: jdbc:oracle:thin:@108.118.5.1:1521:ora7
+#      username: sumec_oa
+#      password: hodesoft
+#      type: com.zaxxer.hikari.HikariDataSource 
+#  redis:  #配置redis
+#    host: 10.4.95.31
+#    port: 6379
+
+service-config: 
+  uaa:
+    client-id: sumec_its   #客户端ID
+    client-secret: sumec_its  #客户端密钥
+#    grant-type: client_credentials   #获取token方式，默认client_credentials
+#    token-url: http://uaa.aiyuninfo.com/oauth/token  #token授权地址，默认http://uaa.aiyuninfo.com/oauth/token

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sumec.project.dao.IProjCeecBudUseDao">
+  <resultMap id="BaseResultMap" type="com.sumec.project.entity.TProjCeecBudUse">
+    <id column="INT_ID" jdbcType="VARCHAR" property="intId" />
+    <result column="BASIC_USE_ID" jdbcType="VARCHAR" property="basicUseId" />
+    <result column="BASIC_BUD_ID" jdbcType="VARCHAR" property="basicBudId" />
+    <result column="TOB_TYPE" jdbcType="VARCHAR" property="tobType" />
+    <result column="TOB_ID" jdbcType="VARCHAR" property="tobId" />
+    <result column="USE_AMT" jdbcType="DECIMAL" property="useAmt" />
+    <result column="CURR_TYPE" jdbcType="VARCHAR" property="currType" />
+    <result column="CURR_RATE" jdbcType="DECIMAL" property="currRate" />
+    <result column="USE_AMT_RMB" jdbcType="DECIMAL" property="useAmtRmb" />
+    <result column="CREATE_DATE" jdbcType="TIMESTAMP" property="createDate" />
+    <result column="IS_BUD_CONTROL" jdbcType="VARCHAR" property="isBudControl" />
+    <result column="PROJ_ID" jdbcType="VARCHAR" property="projId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    INT_ID, BASIC_USE_ID, BASIC_BUD_ID, TOB_TYPE, TOB_ID, USE_AMT, CURR_TYPE, CURR_RATE, 
+    USE_AMT_RMB, CREATE_DATE, IS_BUD_CONTROL, PROJ_ID
+  </sql>
+  <insert id="insertSelective" parameterType="com.sumec.project.entity.TProjCeecBudUse">
+    insert into T_PROJ_CEEC_BUD_USE
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="intId != null">
+        INT_ID,
+      </if>
+      <if test="basicUseId != null">
+        BASIC_USE_ID,
+      </if>
+      <if test="basicBudId != null">
+        BASIC_BUD_ID,
+      </if>
+      <if test="tobType != null">
+        TOB_TYPE,
+      </if>
+      <if test="tobId != null">
+        TOB_ID,
+      </if>
+      <if test="useAmt != null">
+        USE_AMT,
+      </if>
+      <if test="currType != null">
+        CURR_TYPE,
+      </if>
+      <if test="currRate != null">
+        CURR_RATE,
+      </if>
+      <if test="useAmtRmb != null">
+        USE_AMT_RMB,
+      </if>
+      <if test="createDate != null">
+        CREATE_DATE,
+      </if>
+      <if test="isBudControl != null">
+        IS_BUD_CONTROL,
+      </if>
+      <if test="projId != null">
+        PROJ_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="intId != null">
+        #{intId,jdbcType=VARCHAR},
+      </if>
+      <if test="basicUseId != null">
+        #{basicUseId,jdbcType=VARCHAR},
+      </if>
+      <if test="basicBudId != null">
+        #{basicBudId,jdbcType=VARCHAR},
+      </if>
+      <if test="tobType != null">
+        #{tobType,jdbcType=VARCHAR},
+      </if>
+      <if test="tobId != null">
+        #{tobId,jdbcType=VARCHAR},
+      </if>
+      <if test="useAmt != null">
+        #{useAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="currType != null">
+        #{currType,jdbcType=VARCHAR},
+      </if>
+      <if test="currRate != null">
+        #{currRate,jdbcType=DECIMAL},
+      </if>
+      <if test="useAmtRmb != null">
+        #{useAmtRmb,jdbcType=DECIMAL},
+      </if>
+      <if test="createDate != null">
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isBudControl != null">
+        #{isBudControl,jdbcType=VARCHAR},
+      </if>
+      <if test="projId != null">
+        #{projId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sumec.project.entity.TProjCeecBudUse">
+    update T_PROJ_CEEC_BUD_USE
+    <set>
+      <if test="basicUseId != null">
+        BASIC_USE_ID = #{basicUseId,jdbcType=VARCHAR},
+      </if>
+      <if test="basicBudId != null">
+        BASIC_BUD_ID = #{basicBudId,jdbcType=VARCHAR},
+      </if>
+      <if test="tobType != null">
+        TOB_TYPE = #{tobType,jdbcType=VARCHAR},
+      </if>
+      <if test="tobId != null">
+        TOB_ID = #{tobId,jdbcType=VARCHAR},
+      </if>
+      <if test="useAmt != null">
+        USE_AMT = #{useAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="currType != null">
+        CURR_TYPE = #{currType,jdbcType=VARCHAR},
+      </if>
+      <if test="currRate != null">
+        CURR_RATE = #{currRate,jdbcType=DECIMAL},
+      </if>
+      <if test="useAmtRmb != null">
+        USE_AMT_RMB = #{useAmtRmb,jdbcType=DECIMAL},
+      </if>
+      <if test="createDate != null">
+        CREATE_DATE = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isBudControl != null">
+        IS_BUD_CONTROL = #{isBudControl,jdbcType=VARCHAR},
+      </if>
+      <if test="projId != null">
+        PROJ_ID = #{projId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where INT_ID = #{intId,jdbcType=VARCHAR}
+  </update>
+</mapper>

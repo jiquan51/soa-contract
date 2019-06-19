@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sumec.flow.dao.ISumecFlowDetailsDao">
+  <resultMap id="BaseResultMap" type="com.sumec.flow.entity.TSumecFlowDetails">
+    <id column="INT_ID" jdbcType="DECIMAL" property="intId" />
+    <result column="FM_ID" jdbcType="DECIMAL" property="fmId" />
+    <result column="REF_VALUE" jdbcType="VARCHAR" property="refValue" />
+    <result column="FA_ID" jdbcType="DECIMAL" property="faId" />
+    <result column="FS_ID" jdbcType="DECIMAL" property="fsId" />
+    <result column="USER_ID" jdbcType="DECIMAL" property="userId" />
+    <result column="DEAL_TIME" jdbcType="TIMESTAMP" property="dealTime" />
+    <result column="DEAL_FLAG" jdbcType="VARCHAR" property="dealFlag" />
+    <result column="DTL_STEP" jdbcType="DECIMAL" property="dtlStep" />
+    <result column="NOTION" jdbcType="VARCHAR" property="notion" />
+    <result column="SEQ" jdbcType="DECIMAL" property="seq" />
+    <result column="FLAG" jdbcType="VARCHAR" property="flag" />
+    <result column="IS_GD" jdbcType="VARCHAR" property="isGd" />
+    <result column="GD_INT_ID" jdbcType="DECIMAL" property="gdIntId" />
+    <result column="GRANT_USER_ID" jdbcType="DECIMAL" property="grantUserId" />
+    <result column="IS_READ" jdbcType="VARCHAR" property="isRead" />
+    <result column="DTL_DESC" jdbcType="VARCHAR" property="dtlDesc" />
+    <result column="IS_END" jdbcType="VARCHAR" property="isEnd" />
+    <result column="POST_TIME" jdbcType="TIMESTAMP" property="postTime" />
+    <result column="SP_USER_ID" jdbcType="DECIMAL" property="spUserId" />
+    <result column="BAKED" jdbcType="VARCHAR" property="baked" />
+    <result column="FM_SEQ_ID" jdbcType="DECIMAL" property="fmSeqId" />
+    <result column="DEAL_WAY" jdbcType="VARCHAR" property="dealWay" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    INT_ID, FM_ID, REF_VALUE, FA_ID, FS_ID, USER_ID, DEAL_TIME, DEAL_FLAG, DTL_STEP, 
+    NOTION, SEQ, FLAG, IS_GD, GD_INT_ID, GRANT_USER_ID, IS_READ, DTL_DESC, IS_END, POST_TIME, 
+    SP_USER_ID, BAKED, FM_SEQ_ID, DEAL_WAY
+  </sql>
+  
+  <select id="selectNextValidStep" resultMap="BaseResultMap" parameterType="com.sumec.flow.entity.TSumecFlowDetails" >
+    SELECT
+    <include refid="Base_Column_List"/>
+    FROM T_SUMEC_FLOW_DETAILS
+    WHERE FM_SEQ_ID = #{fmSeqId,jdbcType=BIGINT} AND DTL_STEP = #{dtlStep,jdbcType=INTEGER} AND FLAG = '1'
+  </select>
+  <select id="selectValidStep" resultMap="BaseResultMap" parameterType="com.sumec.flow.entity.TSumecFlowDetails" >
+    SELECT
+    <include refid="Base_Column_List"/>
+    FROM T_SUMEC_FLOW_DETAILS
+    WHERE FM_SEQ_ID = #{fmSeqId,jdbcType=BIGINT} AND DTL_STEP = #{dtlStep,jdbcType=INTEGER} AND FLAG = '1'
+  </select>
+  <insert id="insertSelective" parameterType="com.sumec.flow.entity.TSumecFlowDetails">
+    insert into T_SUMEC_FLOW_DETAILS
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="intId != null">
+        INT_ID,
+      </if>
+      <if test="fmId != null">
+        FM_ID,
+      </if>
+      <if test="refValue != null">
+        REF_VALUE,
+      </if>
+      <if test="faId != null">
+        FA_ID,
+      </if>
+      <if test="fsId != null">
+        FS_ID,
+      </if>
+      <if test="userId != null">
+        USER_ID,
+      </if>
+      <if test="dealTime != null">
+        DEAL_TIME,
+      </if>
+      <if test="dealFlag != null">
+        DEAL_FLAG,
+      </if>
+      <if test="dtlStep != null">
+        DTL_STEP,
+      </if>
+      <if test="notion != null">
+        NOTION,
+      </if>
+      <if test="seq != null">
+        SEQ,
+      </if>
+      <if test="flag != null">
+        FLAG,
+      </if>
+      <if test="isGd != null">
+        IS_GD,
+      </if>
+      <if test="gdIntId != null">
+        GD_INT_ID,
+      </if>
+      <if test="grantUserId != null">
+        GRANT_USER_ID,
+      </if>
+      <if test="isRead != null">
+        IS_READ,
+      </if>
+      <if test="dtlDesc != null">
+        DTL_DESC,
+      </if>
+      <if test="isEnd != null">
+        IS_END,
+      </if>
+      <if test="postTime != null">
+        POST_TIME,
+      </if>
+      <if test="spUserId != null">
+        SP_USER_ID,
+      </if>
+      <if test="baked != null">
+        BAKED,
+      </if>
+      <if test="fmSeqId != null">
+        FM_SEQ_ID,
+      </if>
+      <if test="dealWay != null">
+        DEAL_WAY,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="intId != null">
+        #{intId,jdbcType=DECIMAL},
+      </if>
+      <if test="fmId != null">
+        #{fmId,jdbcType=DECIMAL},
+      </if>
+      <if test="refValue != null">
+        #{refValue,jdbcType=VARCHAR},
+      </if>
+      <if test="faId != null">
+        #{faId,jdbcType=DECIMAL},
+      </if>
+      <if test="fsId != null">
+        #{fsId,jdbcType=DECIMAL},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=DECIMAL},
+      </if>
+      <if test="dealTime != null">
+        #{dealTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="dealFlag != null">
+        #{dealFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="dtlStep != null">
+        #{dtlStep,jdbcType=DECIMAL},
+      </if>
+      <if test="notion != null">
+        #{notion,jdbcType=VARCHAR},
+      </if>
+      <if test="seq != null">
+        #{seq,jdbcType=DECIMAL},
+      </if>
+      <if test="flag != null">
+        #{flag,jdbcType=VARCHAR},
+      </if>
+      <if test="isGd != null">
+        #{isGd,jdbcType=VARCHAR},
+      </if>
+      <if test="gdIntId != null">
+        #{gdIntId,jdbcType=DECIMAL},
+      </if>
+      <if test="grantUserId != null">
+        #{grantUserId,jdbcType=DECIMAL},
+      </if>
+      <if test="isRead != null">
+        #{isRead,jdbcType=VARCHAR},
+      </if>
+      <if test="dtlDesc != null">
+        #{dtlDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="isEnd != null">
+        #{isEnd,jdbcType=VARCHAR},
+      </if>
+      <if test="postTime != null">
+        #{postTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="spUserId != null">
+        #{spUserId,jdbcType=DECIMAL},
+      </if>
+      <if test="baked != null">
+        #{baked,jdbcType=VARCHAR},
+      </if>
+      <if test="fmSeqId != null">
+        #{fmSeqId,jdbcType=DECIMAL},
+      </if>
+      <if test="dealWay != null">
+        #{dealWay,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateBWorkFlowDetailsPass"  parameterType="com.sumec.flow.entity.TSumecFlowDetails" >
+    UPDATE T_SUMEC_FLOW_DETAILS
+    <set >
+      <if test="dealFlag != null" >
+        DEAL_FLAG = #{dealFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="dealWay != null">
+        DEAL_WAY = #{dealWay,jdbcType=VARCHAR},
+      </if>
+    </set>
+    WHERE FM_SEQ_ID = #{fmSeqId,jdbcType=BIGINT} AND FLAG = #{flag,jdbcType=VARCHAR} AND DTL_STEP = #{dtlStep,jdbcType=INTEGER}
+  </update>
+  <update id="updateBWorkFlowBack" parameterType="com.sumec.flow.entity.TSumecFlowDetails" >
+    UPDATE T_SUMEC_FLOW_DETAILS
+    <set >
+      <if test="flag != null" >
+        FLAG = #{flag,jdbcType=VARCHAR},
+      </if>
+      <if test="dealWay != null">
+        DEAL_WAY = #{dealWay,jdbcType=VARCHAR},
+      </if>
+    </set>
+    WHERE FM_SEQ_ID = #{fmSeqId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sumec.flow.entity.TSumecFlowDetails">
+    update T_SUMEC_FLOW_DETAILS
+    <set>
+      <if test="fmId != null">
+        FM_ID = #{fmId,jdbcType=DECIMAL},
+      </if>
+      <if test="refValue != null">
+        REF_VALUE = #{refValue,jdbcType=VARCHAR},
+      </if>
+      <if test="faId != null">
+        FA_ID = #{faId,jdbcType=DECIMAL},
+      </if>
+      <if test="fsId != null">
+        FS_ID = #{fsId,jdbcType=DECIMAL},
+      </if>
+      <if test="userId != null">
+        USER_ID = #{userId,jdbcType=DECIMAL},
+      </if>
+      <if test="dealTime != null">
+        DEAL_TIME = #{dealTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="dealFlag != null">
+        DEAL_FLAG = #{dealFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="dtlStep != null">
+        DTL_STEP = #{dtlStep,jdbcType=DECIMAL},
+      </if>
+      <if test="notion != null">
+        NOTION = #{notion,jdbcType=VARCHAR},
+      </if>
+      <if test="seq != null">
+        SEQ = #{seq,jdbcType=DECIMAL},
+      </if>
+      <if test="flag != null">
+        FLAG = #{flag,jdbcType=VARCHAR},
+      </if>
+      <if test="isGd != null">
+        IS_GD = #{isGd,jdbcType=VARCHAR},
+      </if>
+      <if test="gdIntId != null">
+        GD_INT_ID = #{gdIntId,jdbcType=DECIMAL},
+      </if>
+      <if test="grantUserId != null">
+        GRANT_USER_ID = #{grantUserId,jdbcType=DECIMAL},
+      </if>
+      <if test="isRead != null">
+        IS_READ = #{isRead,jdbcType=VARCHAR},
+      </if>
+      <if test="dtlDesc != null">
+        DTL_DESC = #{dtlDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="isEnd != null">
+        IS_END = #{isEnd,jdbcType=VARCHAR},
+      </if>
+      <if test="postTime != null">
+        POST_TIME = #{postTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="spUserId != null">
+        SP_USER_ID = #{spUserId,jdbcType=DECIMAL},
+      </if>
+      <if test="baked != null">
+        BAKED = #{baked,jdbcType=VARCHAR},
+      </if>
+      <if test="fmSeqId != null">
+        FM_SEQ_ID = #{fmSeqId,jdbcType=DECIMAL},
+      </if>
+      <if test="dealWay != null">
+        DEAL_WAY = #{dealWay,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where INT_ID = #{intId,jdbcType=DECIMAL}
+  </update>
+</mapper>

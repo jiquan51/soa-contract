@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sumec.contract.dao.ITrOcuDivideDao">
+  <resultMap id="BaseResultMap" type="com.sumec.contract.entity.TTrOcuDivide">
+    <id column="DIV_ID" jdbcType="VARCHAR" property="divId" />
+    <result column="DIV_TYPE" jdbcType="VARCHAR" property="divType" />
+    <result column="TOB_TYPE" jdbcType="VARCHAR" property="tobType" />
+    <result column="TOB_ID" jdbcType="DECIMAL" property="tobId" />
+    <result column="OCU_ID" jdbcType="DECIMAL" property="ocuId" />
+    <result column="DIV_RATE" jdbcType="DECIMAL" property="divRate" />
+    <result column="REMARK" jdbcType="VARCHAR" property="remark" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    DIV_ID, DIV_TYPE, TOB_TYPE, TOB_ID, OCU_ID, DIV_RATE, REMARK
+  </sql>
+  <insert id="insertSelective" parameterType="com.sumec.contract.entity.TTrOcuDivide">
+    insert into T_TR_OCU_DIVIDE
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="divId != null">
+        DIV_ID,
+      </if>
+      <if test="divType != null">
+        DIV_TYPE,
+      </if>
+      <if test="tobType != null">
+        TOB_TYPE,
+      </if>
+      <if test="tobId != null">
+        TOB_ID,
+      </if>
+      <if test="ocuId != null">
+        OCU_ID,
+      </if>
+      <if test="divRate != null">
+        DIV_RATE,
+      </if>
+      <if test="remark != null">
+        REMARK,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="divId != null">
+        #{divId,jdbcType=VARCHAR},
+      </if>
+      <if test="divType != null">
+        #{divType,jdbcType=VARCHAR},
+      </if>
+      <if test="tobType != null">
+        #{tobType,jdbcType=VARCHAR},
+      </if>
+      <if test="tobId != null">
+        #{tobId,jdbcType=DECIMAL},
+      </if>
+      <if test="ocuId != null">
+        #{ocuId,jdbcType=DECIMAL},
+      </if>
+      <if test="divRate != null">
+        #{divRate,jdbcType=DECIMAL},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sumec.contract.entity.TTrOcuDivide">
+    update T_TR_OCU_DIVIDE
+    <set>
+      <if test="divType != null">
+        DIV_TYPE = #{divType,jdbcType=VARCHAR},
+      </if>
+      <if test="tobType != null">
+        TOB_TYPE = #{tobType,jdbcType=VARCHAR},
+      </if>
+      <if test="tobId != null">
+        TOB_ID = #{tobId,jdbcType=DECIMAL},
+      </if>
+      <if test="ocuId != null">
+        OCU_ID = #{ocuId,jdbcType=DECIMAL},
+      </if>
+      <if test="divRate != null">
+        DIV_RATE = #{divRate,jdbcType=DECIMAL},
+      </if>
+      <if test="remark != null">
+        REMARK = #{remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where DIV_ID = #{divId,jdbcType=VARCHAR}
+  </update>
+</mapper>

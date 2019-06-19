@@ -1,0 +1,30 @@
+spring:
+    cloud:
+        config:
+            fail-fast: true
+            uri: http://admin:aiyun123!@10.4.95.32:8761/config
+            name: soa-contract
+            profile: test
+            label: master
+    application:
+        name: soa-contract
+server:
+  port: 7889
+im: 
+  approvalUrl:  http://10.4.95.32:7777/1.0/app/approval/message
+  channelUrl:  http://10.4.95.32:7777/1.0/app/channel
+  approval2ChatroomUrl: http://10.4.95.32:7777/1.0/app/chatroom/message
+  chatRoomUrl:  http://10.4.95.32:7777/1.0/app/chatroom/generate
+  addUserUrl:  http://10.4.95.32:7777/1.0/app/user/addUser
+  modifyChatRoomUrl:  http://10.4.95.32:7777/1.0/app/chatroom
+  modifyChanmemberUrl: http://10.4.95.32:7777/1.0/app/chanmember/modifyChanmember
+# test.albl.sumec.com
+  accessToken: http://10.4.95.32:7777/access_token
+  apiKey: ae366c9cb640bb8a4385c87dd6def551
+eureka:
+  instance:
+    ip-address: 127.0.0.1
+#microservice:
+#    registry:
+#        password: aiyun123!
+#        url: 10.4.95.32:8761

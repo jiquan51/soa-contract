@@ -1,0 +1,757 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sumec.contract.dao.IExpScCmdDao">
+  <resultMap id="BaseResultMap" type="com.sumec.contract.entity.TExpScCmd">
+    <id column="P_ID" jdbcType="DECIMAL" property="pId" />
+    <result column="C_NO" jdbcType="VARCHAR" property="cNo" />
+    <result column="P_NO" jdbcType="VARCHAR" property="pNo" />
+    <result column="P_ORDER" jdbcType="DECIMAL" property="pOrder" />
+    <result column="P_NAME" jdbcType="VARCHAR" property="pName" />
+    <result column="TECH_NO" jdbcType="VARCHAR" property="techNo" />
+    <result column="P_DESC" jdbcType="VARCHAR" property="pDesc" />
+    <result column="P_UNIT" jdbcType="VARCHAR" property="pUnit" />
+    <result column="P_QUANT" jdbcType="DECIMAL" property="pQuant" />
+    <result column="TAX_PRICE" jdbcType="DECIMAL" property="taxPrice" />
+    <result column="P_UNIT2" jdbcType="VARCHAR" property="pUnit2" />
+    <result column="P_QUANT2" jdbcType="DECIMAL" property="pQuant2" />
+    <result column="TAX_PRICE2" jdbcType="DECIMAL" property="taxPrice2" />
+    <result column="OUTLOOK" jdbcType="VARCHAR" property="outlook" />
+    <result column="N_W" jdbcType="DECIMAL" property="nW" />
+    <result column="G_W" jdbcType="DECIMAL" property="gW" />
+    <result column="STAT_COD" jdbcType="VARCHAR" property="statCod" />
+    <result column="SHIP_D" jdbcType="TIMESTAMP" property="shipD" />
+    <result column="PACKING" jdbcType="DECIMAL" property="packing" />
+    <result column="PACKMODE" jdbcType="VARCHAR" property="packmode" />
+    <result column="SC_ID" jdbcType="DECIMAL" property="scId" />
+    <result column="BRAND" jdbcType="VARCHAR" property="brand" />
+    <result column="TAX_RATE" jdbcType="DECIMAL" property="taxRate" />
+    <result column="QUOTE_NO" jdbcType="VARCHAR" property="quoteNo" />
+    <result column="CUSTOMER_NO" jdbcType="VARCHAR" property="customerNo" />
+    <result column="IS_2UNIT" jdbcType="VARCHAR" property="is2unit" />
+    <result column="SUB_ID" jdbcType="DECIMAL" property="subId" />
+    <result column="ORDER_NO" jdbcType="VARCHAR" property="orderNo" />
+    <result column="DELIVERY_D" jdbcType="TIMESTAMP" property="deliveryD" />
+    <result column="ERP_NO" jdbcType="VARCHAR" property="erpNo" />
+    <result column="COST_PRICE" jdbcType="DECIMAL" property="costPrice" />
+    <result column="DISCOUNT_RATE" jdbcType="DECIMAL" property="discountRate" />
+    <result column="RTN_QUANT" jdbcType="DECIMAL" property="rtnQuant" />
+    <result column="DEVELOP_YN" jdbcType="VARCHAR" property="developYn" />
+    <result column="P_RATE" jdbcType="DECIMAL" property="pRate" />
+    <result column="COMM_ID" jdbcType="DECIMAL" property="commId" />
+    <result column="PRO_CMD_ID" jdbcType="DECIMAL" property="proCmdId" />
+    <result column="CMD_TYPE" jdbcType="VARCHAR" property="cmdType" />
+    <result column="ET" jdbcType="DECIMAL" property="et" />
+    <result column="PCD" jdbcType="VARCHAR" property="pcd" />
+    <result column="CB" jdbcType="DECIMAL" property="cb" />
+    <result column="COLOR" jdbcType="VARCHAR" property="color" />
+    <result column="BC_P_ID" jdbcType="DECIMAL" property="bcPId" />
+    <result column="OUT_QUANT" jdbcType="DECIMAL" property="outQuant" />
+    <result column="OUT_QUANT2" jdbcType="DECIMAL" property="outQuant2" />
+    <result column="P_AMT" jdbcType="DECIMAL" property="pAmt" />
+    <result column="REMARK" jdbcType="VARCHAR" property="remark" />
+    <result column="PROTOCOL_DATE" jdbcType="TIMESTAMP" property="protocolDate" />
+    <result column="PROTOCOL_NO" jdbcType="VARCHAR" property="protocolNo" />
+    <result column="WHEEL_SIZE" jdbcType="DECIMAL" property="wheelSize" />
+    <result column="SUMEC_CODE" jdbcType="VARCHAR" property="sumecCode" />
+    <result column="QUOTATION_ID" jdbcType="DECIMAL" property="quotationId" />
+    <result column="COMM_UNIT" jdbcType="DECIMAL" property="commUnit" />
+    <result column="COMM_UNIT_PACK" jdbcType="DECIMAL" property="commUnitPack" />
+    <result column="COMM_UNIT_STAT" jdbcType="DECIMAL" property="commUnitStat" />
+    <result column="COMM_QUANT_STAT" jdbcType="DECIMAL" property="commQuantStat" />
+    <result column="PACK_RATE" jdbcType="DECIMAL" property="packRate" />
+    <result column="STAT_RATE" jdbcType="DECIMAL" property="statRate" />
+    <result column="P_PRICE" jdbcType="DECIMAL" property="pPrice" />
+    <result column="OBJ_PRICE" jdbcType="DECIMAL" property="objPrice" />
+    <result column="RTN_RATE" jdbcType="DECIMAL" property="rtnRate" />
+    <result column="TARIFF_RATE" jdbcType="DECIMAL" property="tariffRate" />
+    <result column="IS_SUB_PUR" jdbcType="VARCHAR" property="isSubPur" />
+    <result column="COMM_QUANT_PACK" jdbcType="DECIMAL" property="commQuantPack" />
+    <result column="LACK_LOAD_RATE" jdbcType="DECIMAL" property="lackLoadRate" />
+    <result column="OVER_LOAD_RATE" jdbcType="DECIMAL" property="overLoadRate" />
+    <result column="COMM_UNIT_AUX" jdbcType="DECIMAL" property="commUnitAux" />
+    <result column="AUX_RATE" jdbcType="DECIMAL" property="auxRate" />
+    <result column="COMM_QUANT_AUX" jdbcType="DECIMAL" property="commQuantAux" />
+    <result column="IS_SH_EQUIP" jdbcType="VARCHAR" property="isShEquip" />
+    <result column="TEXTURE" jdbcType="VARCHAR" property="texture" />
+    <result column="REF_TYPE" jdbcType="VARCHAR" property="refType" />
+    <result column="REF_ID" jdbcType="VARCHAR" property="refId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    P_ID, C_NO, P_NO, P_ORDER, P_NAME, TECH_NO, P_DESC, P_UNIT, P_QUANT, TAX_PRICE, P_UNIT2, 
+    P_QUANT2, TAX_PRICE2, OUTLOOK, N_W, G_W, STAT_COD, SHIP_D, PACKING, PACKMODE, SC_ID, 
+    BRAND, TAX_RATE, QUOTE_NO, CUSTOMER_NO, IS_2UNIT, SUB_ID, ORDER_NO, DELIVERY_D, ERP_NO, 
+    COST_PRICE, DISCOUNT_RATE, RTN_QUANT, DEVELOP_YN, P_RATE, COMM_ID, PRO_CMD_ID, CMD_TYPE, 
+    ET, PCD, CB, COLOR, BC_P_ID, OUT_QUANT, OUT_QUANT2, P_AMT, REMARK, PROTOCOL_DATE, 
+    PROTOCOL_NO, WHEEL_SIZE, SUMEC_CODE, QUOTATION_ID, COMM_UNIT, COMM_UNIT_PACK, COMM_UNIT_STAT, 
+    COMM_QUANT_STAT, PACK_RATE, STAT_RATE, P_PRICE, OBJ_PRICE, RTN_RATE, TARIFF_RATE, 
+    IS_SUB_PUR, COMM_QUANT_PACK, LACK_LOAD_RATE, OVER_LOAD_RATE, COMM_UNIT_AUX, AUX_RATE, 
+    COMM_QUANT_AUX, IS_SH_EQUIP, TEXTURE, REF_TYPE, REF_ID
+  </sql>
+  <insert id="insertSelective" parameterType="com.sumec.contract.entity.TExpScCmd">
+    insert into T_EXP_SC_CMD
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="pId != null">
+        P_ID,
+      </if>
+      <if test="cNo != null">
+        C_NO,
+      </if>
+      <if test="pNo != null">
+        P_NO,
+      </if>
+      <if test="pOrder != null">
+        P_ORDER,
+      </if>
+      <if test="pName != null">
+        P_NAME,
+      </if>
+      <if test="techNo != null">
+        TECH_NO,
+      </if>
+      <if test="pDesc != null">
+        P_DESC,
+      </if>
+      <if test="pUnit != null">
+        P_UNIT,
+      </if>
+      <if test="pQuant != null">
+        P_QUANT,
+      </if>
+      <if test="taxPrice != null">
+        TAX_PRICE,
+      </if>
+      <if test="pUnit2 != null">
+        P_UNIT2,
+      </if>
+      <if test="pQuant2 != null">
+        P_QUANT2,
+      </if>
+      <if test="taxPrice2 != null">
+        TAX_PRICE2,
+      </if>
+      <if test="outlook != null">
+        OUTLOOK,
+      </if>
+      <if test="nW != null">
+        N_W,
+      </if>
+      <if test="gW != null">
+        G_W,
+      </if>
+      <if test="statCod != null">
+        STAT_COD,
+      </if>
+      <if test="shipD != null">
+        SHIP_D,
+      </if>
+      <if test="packing != null">
+        PACKING,
+      </if>
+      <if test="packmode != null">
+        PACKMODE,
+      </if>
+      <if test="scId != null">
+        SC_ID,
+      </if>
+      <if test="brand != null">
+        BRAND,
+      </if>
+      <if test="taxRate != null">
+        TAX_RATE,
+      </if>
+      <if test="quoteNo != null">
+        QUOTE_NO,
+      </if>
+      <if test="customerNo != null">
+        CUSTOMER_NO,
+      </if>
+      <if test="is2unit != null">
+        IS_2UNIT,
+      </if>
+      <if test="subId != null">
+        SUB_ID,
+      </if>
+      <if test="orderNo != null">
+        ORDER_NO,
+      </if>
+      <if test="deliveryD != null">
+        DELIVERY_D,
+      </if>
+      <if test="erpNo != null">
+        ERP_NO,
+      </if>
+      <if test="costPrice != null">
+        COST_PRICE,
+      </if>
+      <if test="discountRate != null">
+        DISCOUNT_RATE,
+      </if>
+      <if test="rtnQuant != null">
+        RTN_QUANT,
+      </if>
+      <if test="developYn != null">
+        DEVELOP_YN,
+      </if>
+      <if test="pRate != null">
+        P_RATE,
+      </if>
+      <if test="commId != null">
+        COMM_ID,
+      </if>
+      <if test="proCmdId != null">
+        PRO_CMD_ID,
+      </if>
+      <if test="cmdType != null">
+        CMD_TYPE,
+      </if>
+      <if test="et != null">
+        ET,
+      </if>
+      <if test="pcd != null">
+        PCD,
+      </if>
+      <if test="cb != null">
+        CB,
+      </if>
+      <if test="color != null">
+        COLOR,
+      </if>
+      <if test="bcPId != null">
+        BC_P_ID,
+      </if>
+      <if test="outQuant != null">
+        OUT_QUANT,
+      </if>
+      <if test="outQuant2 != null">
+        OUT_QUANT2,
+      </if>
+      <if test="pAmt != null">
+        P_AMT,
+      </if>
+      <if test="remark != null">
+        REMARK,
+      </if>
+      <if test="protocolDate != null">
+        PROTOCOL_DATE,
+      </if>
+      <if test="protocolNo != null">
+        PROTOCOL_NO,
+      </if>
+      <if test="wheelSize != null">
+        WHEEL_SIZE,
+      </if>
+      <if test="sumecCode != null">
+        SUMEC_CODE,
+      </if>
+      <if test="quotationId != null">
+        QUOTATION_ID,
+      </if>
+      <if test="commUnit != null">
+        COMM_UNIT,
+      </if>
+      <if test="commUnitPack != null">
+        COMM_UNIT_PACK,
+      </if>
+      <if test="commUnitStat != null">
+        COMM_UNIT_STAT,
+      </if>
+      <if test="commQuantStat != null">
+        COMM_QUANT_STAT,
+      </if>
+      <if test="packRate != null">
+        PACK_RATE,
+      </if>
+      <if test="statRate != null">
+        STAT_RATE,
+      </if>
+      <if test="pPrice != null">
+        P_PRICE,
+      </if>
+      <if test="objPrice != null">
+        OBJ_PRICE,
+      </if>
+      <if test="rtnRate != null">
+        RTN_RATE,
+      </if>
+      <if test="tariffRate != null">
+        TARIFF_RATE,
+      </if>
+      <if test="isSubPur != null">
+        IS_SUB_PUR,
+      </if>
+      <if test="commQuantPack != null">
+        COMM_QUANT_PACK,
+      </if>
+      <if test="lackLoadRate != null">
+        LACK_LOAD_RATE,
+      </if>
+      <if test="overLoadRate != null">
+        OVER_LOAD_RATE,
+      </if>
+      <if test="commUnitAux != null">
+        COMM_UNIT_AUX,
+      </if>
+      <if test="auxRate != null">
+        AUX_RATE,
+      </if>
+      <if test="commQuantAux != null">
+        COMM_QUANT_AUX,
+      </if>
+      <if test="isShEquip != null">
+        IS_SH_EQUIP,
+      </if>
+      <if test="texture != null">
+        TEXTURE,
+      </if>
+      <if test="refType != null">
+        REF_TYPE,
+      </if>
+      <if test="refId != null">
+        REF_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="pId != null">
+        #{pId,jdbcType=DECIMAL},
+      </if>
+      <if test="cNo != null">
+        #{cNo,jdbcType=VARCHAR},
+      </if>
+      <if test="pNo != null">
+        #{pNo,jdbcType=VARCHAR},
+      </if>
+      <if test="pOrder != null">
+        #{pOrder,jdbcType=DECIMAL},
+      </if>
+      <if test="pName != null">
+        #{pName,jdbcType=VARCHAR},
+      </if>
+      <if test="techNo != null">
+        #{techNo,jdbcType=VARCHAR},
+      </if>
+      <if test="pDesc != null">
+        #{pDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="pUnit != null">
+        #{pUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="pQuant != null">
+        #{pQuant,jdbcType=DECIMAL},
+      </if>
+      <if test="taxPrice != null">
+        #{taxPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="pUnit2 != null">
+        #{pUnit2,jdbcType=VARCHAR},
+      </if>
+      <if test="pQuant2 != null">
+        #{pQuant2,jdbcType=DECIMAL},
+      </if>
+      <if test="taxPrice2 != null">
+        #{taxPrice2,jdbcType=DECIMAL},
+      </if>
+      <if test="outlook != null">
+        #{outlook,jdbcType=VARCHAR},
+      </if>
+      <if test="nW != null">
+        #{nW,jdbcType=DECIMAL},
+      </if>
+      <if test="gW != null">
+        #{gW,jdbcType=DECIMAL},
+      </if>
+      <if test="statCod != null">
+        #{statCod,jdbcType=VARCHAR},
+      </if>
+      <if test="shipD != null">
+        #{shipD,jdbcType=TIMESTAMP},
+      </if>
+      <if test="packing != null">
+        #{packing,jdbcType=DECIMAL},
+      </if>
+      <if test="packmode != null">
+        #{packmode,jdbcType=VARCHAR},
+      </if>
+      <if test="scId != null">
+        #{scId,jdbcType=DECIMAL},
+      </if>
+      <if test="brand != null">
+        #{brand,jdbcType=VARCHAR},
+      </if>
+      <if test="taxRate != null">
+        #{taxRate,jdbcType=DECIMAL},
+      </if>
+      <if test="quoteNo != null">
+        #{quoteNo,jdbcType=VARCHAR},
+      </if>
+      <if test="customerNo != null">
+        #{customerNo,jdbcType=VARCHAR},
+      </if>
+      <if test="is2unit != null">
+        #{is2unit,jdbcType=VARCHAR},
+      </if>
+      <if test="subId != null">
+        #{subId,jdbcType=DECIMAL},
+      </if>
+      <if test="orderNo != null">
+        #{orderNo,jdbcType=VARCHAR},
+      </if>
+      <if test="deliveryD != null">
+        #{deliveryD,jdbcType=TIMESTAMP},
+      </if>
+      <if test="erpNo != null">
+        #{erpNo,jdbcType=VARCHAR},
+      </if>
+      <if test="costPrice != null">
+        #{costPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="discountRate != null">
+        #{discountRate,jdbcType=DECIMAL},
+      </if>
+      <if test="rtnQuant != null">
+        #{rtnQuant,jdbcType=DECIMAL},
+      </if>
+      <if test="developYn != null">
+        #{developYn,jdbcType=VARCHAR},
+      </if>
+      <if test="pRate != null">
+        #{pRate,jdbcType=DECIMAL},
+      </if>
+      <if test="commId != null">
+        #{commId,jdbcType=DECIMAL},
+      </if>
+      <if test="proCmdId != null">
+        #{proCmdId,jdbcType=DECIMAL},
+      </if>
+      <if test="cmdType != null">
+        #{cmdType,jdbcType=VARCHAR},
+      </if>
+      <if test="et != null">
+        #{et,jdbcType=DECIMAL},
+      </if>
+      <if test="pcd != null">
+        #{pcd,jdbcType=VARCHAR},
+      </if>
+      <if test="cb != null">
+        #{cb,jdbcType=DECIMAL},
+      </if>
+      <if test="color != null">
+        #{color,jdbcType=VARCHAR},
+      </if>
+      <if test="bcPId != null">
+        #{bcPId,jdbcType=DECIMAL},
+      </if>
+      <if test="outQuant != null">
+        #{outQuant,jdbcType=DECIMAL},
+      </if>
+      <if test="outQuant2 != null">
+        #{outQuant2,jdbcType=DECIMAL},
+      </if>
+      <if test="pAmt != null">
+        #{pAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="protocolDate != null">
+        #{protocolDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="protocolNo != null">
+        #{protocolNo,jdbcType=VARCHAR},
+      </if>
+      <if test="wheelSize != null">
+        #{wheelSize,jdbcType=DECIMAL},
+      </if>
+      <if test="sumecCode != null">
+        #{sumecCode,jdbcType=VARCHAR},
+      </if>
+      <if test="quotationId != null">
+        #{quotationId,jdbcType=DECIMAL},
+      </if>
+      <if test="commUnit != null">
+        #{commUnit,jdbcType=DECIMAL},
+      </if>
+      <if test="commUnitPack != null">
+        #{commUnitPack,jdbcType=DECIMAL},
+      </if>
+      <if test="commUnitStat != null">
+        #{commUnitStat,jdbcType=DECIMAL},
+      </if>
+      <if test="commQuantStat != null">
+        #{commQuantStat,jdbcType=DECIMAL},
+      </if>
+      <if test="packRate != null">
+        #{packRate,jdbcType=DECIMAL},
+      </if>
+      <if test="statRate != null">
+        #{statRate,jdbcType=DECIMAL},
+      </if>
+      <if test="pPrice != null">
+        #{pPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="objPrice != null">
+        #{objPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="rtnRate != null">
+        #{rtnRate,jdbcType=DECIMAL},
+      </if>
+      <if test="tariffRate != null">
+        #{tariffRate,jdbcType=DECIMAL},
+      </if>
+      <if test="isSubPur != null">
+        #{isSubPur,jdbcType=VARCHAR},
+      </if>
+      <if test="commQuantPack != null">
+        #{commQuantPack,jdbcType=DECIMAL},
+      </if>
+      <if test="lackLoadRate != null">
+        #{lackLoadRate,jdbcType=DECIMAL},
+      </if>
+      <if test="overLoadRate != null">
+        #{overLoadRate,jdbcType=DECIMAL},
+      </if>
+      <if test="commUnitAux != null">
+        #{commUnitAux,jdbcType=DECIMAL},
+      </if>
+      <if test="auxRate != null">
+        #{auxRate,jdbcType=DECIMAL},
+      </if>
+      <if test="commQuantAux != null">
+        #{commQuantAux,jdbcType=DECIMAL},
+      </if>
+      <if test="isShEquip != null">
+        #{isShEquip,jdbcType=VARCHAR},
+      </if>
+      <if test="texture != null">
+        #{texture,jdbcType=VARCHAR},
+      </if>
+      <if test="refType != null">
+        #{refType,jdbcType=VARCHAR},
+      </if>
+      <if test="refId != null">
+        #{refId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sumec.contract.entity.TExpScCmd">
+    update T_EXP_SC_CMD
+    <set>
+      <if test="cNo != null">
+        C_NO = #{cNo,jdbcType=VARCHAR},
+      </if>
+      <if test="pNo != null">
+        P_NO = #{pNo,jdbcType=VARCHAR},
+      </if>
+      <if test="pOrder != null">
+        P_ORDER = #{pOrder,jdbcType=DECIMAL},
+      </if>
+      <if test="pName != null">
+        P_NAME = #{pName,jdbcType=VARCHAR},
+      </if>
+      <if test="techNo != null">
+        TECH_NO = #{techNo,jdbcType=VARCHAR},
+      </if>
+      <if test="pDesc != null">
+        P_DESC = #{pDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="pUnit != null">
+        P_UNIT = #{pUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="pQuant != null">
+        P_QUANT = #{pQuant,jdbcType=DECIMAL},
+      </if>
+      <if test="taxPrice != null">
+        TAX_PRICE = #{taxPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="pUnit2 != null">
+        P_UNIT2 = #{pUnit2,jdbcType=VARCHAR},
+      </if>
+      <if test="pQuant2 != null">
+        P_QUANT2 = #{pQuant2,jdbcType=DECIMAL},
+      </if>
+      <if test="taxPrice2 != null">
+        TAX_PRICE2 = #{taxPrice2,jdbcType=DECIMAL},
+      </if>
+      <if test="outlook != null">
+        OUTLOOK = #{outlook,jdbcType=VARCHAR},
+      </if>
+      <if test="nW != null">
+        N_W = #{nW,jdbcType=DECIMAL},
+      </if>
+      <if test="gW != null">
+        G_W = #{gW,jdbcType=DECIMAL},
+      </if>
+      <if test="statCod != null">
+        STAT_COD = #{statCod,jdbcType=VARCHAR},
+      </if>
+      <if test="shipD != null">
+        SHIP_D = #{shipD,jdbcType=TIMESTAMP},
+      </if>
+      <if test="packing != null">
+        PACKING = #{packing,jdbcType=DECIMAL},
+      </if>
+      <if test="packmode != null">
+        PACKMODE = #{packmode,jdbcType=VARCHAR},
+      </if>
+      <if test="scId != null">
+        SC_ID = #{scId,jdbcType=DECIMAL},
+      </if>
+      <if test="brand != null">
+        BRAND = #{brand,jdbcType=VARCHAR},
+      </if>
+      <if test="taxRate != null">
+        TAX_RATE = #{taxRate,jdbcType=DECIMAL},
+      </if>
+      <if test="quoteNo != null">
+        QUOTE_NO = #{quoteNo,jdbcType=VARCHAR},
+      </if>
+      <if test="customerNo != null">
+        CUSTOMER_NO = #{customerNo,jdbcType=VARCHAR},
+      </if>
+      <if test="is2unit != null">
+        IS_2UNIT = #{is2unit,jdbcType=VARCHAR},
+      </if>
+      <if test="subId != null">
+        SUB_ID = #{subId,jdbcType=DECIMAL},
+      </if>
+      <if test="orderNo != null">
+        ORDER_NO = #{orderNo,jdbcType=VARCHAR},
+      </if>
+      <if test="deliveryD != null">
+        DELIVERY_D = #{deliveryD,jdbcType=TIMESTAMP},
+      </if>
+      <if test="erpNo != null">
+        ERP_NO = #{erpNo,jdbcType=VARCHAR},
+      </if>
+      <if test="costPrice != null">
+        COST_PRICE = #{costPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="discountRate != null">
+        DISCOUNT_RATE = #{discountRate,jdbcType=DECIMAL},
+      </if>
+      <if test="rtnQuant != null">
+        RTN_QUANT = #{rtnQuant,jdbcType=DECIMAL},
+      </if>
+      <if test="developYn != null">
+        DEVELOP_YN = #{developYn,jdbcType=VARCHAR},
+      </if>
+      <if test="pRate != null">
+        P_RATE = #{pRate,jdbcType=DECIMAL},
+      </if>
+      <if test="commId != null">
+        COMM_ID = #{commId,jdbcType=DECIMAL},
+      </if>
+      <if test="proCmdId != null">
+        PRO_CMD_ID = #{proCmdId,jdbcType=DECIMAL},
+      </if>
+      <if test="cmdType != null">
+        CMD_TYPE = #{cmdType,jdbcType=VARCHAR},
+      </if>
+      <if test="et != null">
+        ET = #{et,jdbcType=DECIMAL},
+      </if>
+      <if test="pcd != null">
+        PCD = #{pcd,jdbcType=VARCHAR},
+      </if>
+      <if test="cb != null">
+        CB = #{cb,jdbcType=DECIMAL},
+      </if>
+      <if test="color != null">
+        COLOR = #{color,jdbcType=VARCHAR},
+      </if>
+      <if test="bcPId != null">
+        BC_P_ID = #{bcPId,jdbcType=DECIMAL},
+      </if>
+      <if test="outQuant != null">
+        OUT_QUANT = #{outQuant,jdbcType=DECIMAL},
+      </if>
+      <if test="outQuant2 != null">
+        OUT_QUANT2 = #{outQuant2,jdbcType=DECIMAL},
+      </if>
+      <if test="pAmt != null">
+        P_AMT = #{pAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="remark != null">
+        REMARK = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="protocolDate != null">
+        PROTOCOL_DATE = #{protocolDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="protocolNo != null">
+        PROTOCOL_NO = #{protocolNo,jdbcType=VARCHAR},
+      </if>
+      <if test="wheelSize != null">
+        WHEEL_SIZE = #{wheelSize,jdbcType=DECIMAL},
+      </if>
+      <if test="sumecCode != null">
+        SUMEC_CODE = #{sumecCode,jdbcType=VARCHAR},
+      </if>
+      <if test="quotationId != null">
+        QUOTATION_ID = #{quotationId,jdbcType=DECIMAL},
+      </if>
+      <if test="commUnit != null">
+        COMM_UNIT = #{commUnit,jdbcType=DECIMAL},
+      </if>
+      <if test="commUnitPack != null">
+        COMM_UNIT_PACK = #{commUnitPack,jdbcType=DECIMAL},
+      </if>
+      <if test="commUnitStat != null">
+        COMM_UNIT_STAT = #{commUnitStat,jdbcType=DECIMAL},
+      </if>
+      <if test="commQuantStat != null">
+        COMM_QUANT_STAT = #{commQuantStat,jdbcType=DECIMAL},
+      </if>
+      <if test="packRate != null">
+        PACK_RATE = #{packRate,jdbcType=DECIMAL},
+      </if>
+      <if test="statRate != null">
+        STAT_RATE = #{statRate,jdbcType=DECIMAL},
+      </if>
+      <if test="pPrice != null">
+        P_PRICE = #{pPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="objPrice != null">
+        OBJ_PRICE = #{objPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="rtnRate != null">
+        RTN_RATE = #{rtnRate,jdbcType=DECIMAL},
+      </if>
+      <if test="tariffRate != null">
+        TARIFF_RATE = #{tariffRate,jdbcType=DECIMAL},
+      </if>
+      <if test="isSubPur != null">
+        IS_SUB_PUR = #{isSubPur,jdbcType=VARCHAR},
+      </if>
+      <if test="commQuantPack != null">
+        COMM_QUANT_PACK = #{commQuantPack,jdbcType=DECIMAL},
+      </if>
+      <if test="lackLoadRate != null">
+        LACK_LOAD_RATE = #{lackLoadRate,jdbcType=DECIMAL},
+      </if>
+      <if test="overLoadRate != null">
+        OVER_LOAD_RATE = #{overLoadRate,jdbcType=DECIMAL},
+      </if>
+      <if test="commUnitAux != null">
+        COMM_UNIT_AUX = #{commUnitAux,jdbcType=DECIMAL},
+      </if>
+      <if test="auxRate != null">
+        AUX_RATE = #{auxRate,jdbcType=DECIMAL},
+      </if>
+      <if test="commQuantAux != null">
+        COMM_QUANT_AUX = #{commQuantAux,jdbcType=DECIMAL},
+      </if>
+      <if test="isShEquip != null">
+        IS_SH_EQUIP = #{isShEquip,jdbcType=VARCHAR},
+      </if>
+      <if test="texture != null">
+        TEXTURE = #{texture,jdbcType=VARCHAR},
+      </if>
+      <if test="refType != null">
+        REF_TYPE = #{refType,jdbcType=VARCHAR},
+      </if>
+      <if test="refId != null">
+        REF_ID = #{refId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where P_ID = #{pId,jdbcType=DECIMAL}
+  </update>
+</mapper>

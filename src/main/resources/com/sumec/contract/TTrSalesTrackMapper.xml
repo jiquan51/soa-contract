@@ -1,0 +1,618 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sumec.contract.dao.TTrSalesTrackMapper">
+  <resultMap id="BaseResultMap" type="com.sumec.contract.entity.TTrSalesTrack">
+    <id column="TRK_GUID" jdbcType="VARCHAR" property="trkGuid" />
+    <result column="SRC_SC_TYPE" jdbcType="VARCHAR" property="srcScType" />
+    <result column="SRC_SC_ID" jdbcType="VARCHAR" property="srcScId" />
+    <result column="SC_AMT_ACC" jdbcType="DECIMAL" property="scAmtAcc" />
+    <result column="SC_AMT_USD" jdbcType="DECIMAL" property="scAmtUsd" />
+    <result column="SC_AMT_CNY" jdbcType="DECIMAL" property="scAmtCny" />
+    <result column="SEND_QUANT" jdbcType="DECIMAL" property="sendQuant" />
+    <result column="SEND_AMT" jdbcType="DECIMAL" property="sendAmt" />
+    <result column="UN_SEND_QUANT" jdbcType="DECIMAL" property="unSendQuant" />
+    <result column="UN_SEND_AMT" jdbcType="DECIMAL" property="unSendAmt" />
+    <result column="OVERDUE_UN_SEND_QUANT" jdbcType="DECIMAL" property="overdueUnSendQuant" />
+    <result column="OVERDUE_UN_SEND_AMT" jdbcType="DECIMAL" property="overdueUnSendAmt" />
+    <result column="HAS_SEND_OVER" jdbcType="VARCHAR" property="hasSendOver" />
+    <result column="CST_SIGN_QUANT" jdbcType="DECIMAL" property="cstSignQuant" />
+    <result column="CST_SIGN_AMT" jdbcType="DECIMAL" property="cstSignAmt" />
+    <result column="HAS_SIGN_OVER" jdbcType="VARCHAR" property="hasSignOver" />
+    <result column="PUR_QUANT" jdbcType="DECIMAL" property="purQuant" />
+    <result column="PUR_AMT" jdbcType="DECIMAL" property="purAmt" />
+    <result column="HAS_PUR_OVER" jdbcType="VARCHAR" property="hasPurOver" />
+    <result column="COLL_AMT" jdbcType="DECIMAL" property="collAmt" />
+    <result column="COLL_AMT_BAIL" jdbcType="DECIMAL" property="collAmtBail" />
+    <result column="COLL_AMT_HK" jdbcType="DECIMAL" property="collAmtHk" />
+    <result column="COLL_AMT_FEE" jdbcType="DECIMAL" property="collAmtFee" />
+    <result column="COLL_AMT_OTHER" jdbcType="DECIMAL" property="collAmtOther" />
+    <result column="PRE_COLL_AMT" jdbcType="DECIMAL" property="preCollAmt" />
+    <result column="CST_LEFT_AMT" jdbcType="DECIMAL" property="cstLeftAmt" />
+    <result column="RECEIVABLE_AMT" jdbcType="DECIMAL" property="receivableAmt" />
+    <result column="OVERDUE_RECEIVABLE_AMT" jdbcType="DECIMAL" property="overdueReceivableAmt" />
+    <result column="HAS_COLL_OVER" jdbcType="VARCHAR" property="hasCollOver" />
+    <result column="KP_QUANT" jdbcType="DECIMAL" property="kpQuant" />
+    <result column="KP_AMT" jdbcType="DECIMAL" property="kpAmt" />
+    <result column="HAS_KP_OVER" jdbcType="VARCHAR" property="hasKpOver" />
+    <result column="SETTLE_QUANT" jdbcType="DECIMAL" property="settleQuant" />
+    <result column="SETTLE_AMT" jdbcType="DECIMAL" property="settleAmt" />
+    <result column="HAS_SETTLE_OVER" jdbcType="VARCHAR" property="hasSettleOver" />
+    <result column="CLOSE_STATUS" jdbcType="VARCHAR" property="closeStatus" />
+    <result column="BIZ_SELL_IN_AMT" jdbcType="DECIMAL" property="bizSellInAmt" />
+    <result column="BIZ_COST_AMT" jdbcType="DECIMAL" property="bizCostAmt" />
+    <result column="BIZ_FEE_AMT" jdbcType="DECIMAL" property="bizFeeAmt" />
+    <result column="BIZ_PROFIT_AMT" jdbcType="DECIMAL" property="bizProfitAmt" />
+    <result column="ACC_SELL_IN_AMT" jdbcType="DECIMAL" property="accSellInAmt" />
+    <result column="ACC_COST_AMT" jdbcType="DECIMAL" property="accCostAmt" />
+    <result column="ACC_FEE_AMT" jdbcType="DECIMAL" property="accFeeAmt" />
+    <result column="ACC_PROFIT_AMT" jdbcType="DECIMAL" property="accProfitAmt" />
+    <result column="SYNC_TIME" jdbcType="TIMESTAMP" property="syncTime" />
+    <result column="SC_EXEC_QUANT" jdbcType="DECIMAL" property="scExecQuant" />
+    <result column="SC_EXEC_AMT" jdbcType="DECIMAL" property="scExecAmt" />
+    <result column="SC_EXEC_AMT_ACC" jdbcType="DECIMAL" property="scExecAmtAcc" />
+    <result column="SC_EXEC_AMT_USD" jdbcType="DECIMAL" property="scExecAmtUsd" />
+    <result column="SC_EXEC_AMT_CNY" jdbcType="DECIMAL" property="scExecAmtCny" />
+    <result column="PUR_PRICE" jdbcType="DECIMAL" property="purPrice" />
+    <result column="PUR_INV_PRICE" jdbcType="DECIMAL" property="purInvPrice" />
+    <result column="FIRST_PAY_DATE" jdbcType="TIMESTAMP" property="firstPayDate" />
+    <result column="LAST_PAY_DATE" jdbcType="TIMESTAMP" property="lastPayDate" />
+    <result column="CALC_PR_FEE" jdbcType="DECIMAL" property="calcPrFee" />
+    <result column="PUR_SEND_QUANT" jdbcType="DECIMAL" property="purSendQuant" />
+    <result column="PUR_SEND_AMT" jdbcType="DECIMAL" property="purSendAmt" />
+    <result column="ST_QUANT" jdbcType="DECIMAL" property="stQuant" />
+    <result column="ST_AMT" jdbcType="DECIMAL" property="stAmt" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    TRK_GUID, SRC_SC_TYPE, SRC_SC_ID, SC_AMT_ACC, SC_AMT_USD, SC_AMT_CNY, SEND_QUANT, 
+    SEND_AMT, UN_SEND_QUANT, UN_SEND_AMT, OVERDUE_UN_SEND_QUANT, OVERDUE_UN_SEND_AMT, 
+    HAS_SEND_OVER, CST_SIGN_QUANT, CST_SIGN_AMT, HAS_SIGN_OVER, PUR_QUANT, PUR_AMT, HAS_PUR_OVER, 
+    COLL_AMT, COLL_AMT_BAIL, COLL_AMT_HK, COLL_AMT_FEE, COLL_AMT_OTHER, PRE_COLL_AMT, 
+    CST_LEFT_AMT, RECEIVABLE_AMT, OVERDUE_RECEIVABLE_AMT, HAS_COLL_OVER, KP_QUANT, KP_AMT, 
+    HAS_KP_OVER, SETTLE_QUANT, SETTLE_AMT, HAS_SETTLE_OVER, CLOSE_STATUS, BIZ_SELL_IN_AMT, 
+    BIZ_COST_AMT, BIZ_FEE_AMT, BIZ_PROFIT_AMT, ACC_SELL_IN_AMT, ACC_COST_AMT, ACC_FEE_AMT, 
+    ACC_PROFIT_AMT, SYNC_TIME, SC_EXEC_QUANT, SC_EXEC_AMT, SC_EXEC_AMT_ACC, SC_EXEC_AMT_USD, 
+    SC_EXEC_AMT_CNY, PUR_PRICE, PUR_INV_PRICE, FIRST_PAY_DATE, LAST_PAY_DATE, CALC_PR_FEE, 
+    PUR_SEND_QUANT, PUR_SEND_AMT, ST_QUANT, ST_AMT
+  </sql>
+  <insert id="insertSelective" parameterType="com.sumec.contract.entity.TTrSalesTrack">
+    insert into T_TR_SALES_TRACK
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="trkGuid != null">
+        TRK_GUID,
+      </if>
+      <if test="srcScType != null">
+        SRC_SC_TYPE,
+      </if>
+      <if test="srcScId != null">
+        SRC_SC_ID,
+      </if>
+      <if test="scAmtAcc != null">
+        SC_AMT_ACC,
+      </if>
+      <if test="scAmtUsd != null">
+        SC_AMT_USD,
+      </if>
+      <if test="scAmtCny != null">
+        SC_AMT_CNY,
+      </if>
+      <if test="sendQuant != null">
+        SEND_QUANT,
+      </if>
+      <if test="sendAmt != null">
+        SEND_AMT,
+      </if>
+      <if test="unSendQuant != null">
+        UN_SEND_QUANT,
+      </if>
+      <if test="unSendAmt != null">
+        UN_SEND_AMT,
+      </if>
+      <if test="overdueUnSendQuant != null">
+        OVERDUE_UN_SEND_QUANT,
+      </if>
+      <if test="overdueUnSendAmt != null">
+        OVERDUE_UN_SEND_AMT,
+      </if>
+      <if test="hasSendOver != null">
+        HAS_SEND_OVER,
+      </if>
+      <if test="cstSignQuant != null">
+        CST_SIGN_QUANT,
+      </if>
+      <if test="cstSignAmt != null">
+        CST_SIGN_AMT,
+      </if>
+      <if test="hasSignOver != null">
+        HAS_SIGN_OVER,
+      </if>
+      <if test="purQuant != null">
+        PUR_QUANT,
+      </if>
+      <if test="purAmt != null">
+        PUR_AMT,
+      </if>
+      <if test="hasPurOver != null">
+        HAS_PUR_OVER,
+      </if>
+      <if test="collAmt != null">
+        COLL_AMT,
+      </if>
+      <if test="collAmtBail != null">
+        COLL_AMT_BAIL,
+      </if>
+      <if test="collAmtHk != null">
+        COLL_AMT_HK,
+      </if>
+      <if test="collAmtFee != null">
+        COLL_AMT_FEE,
+      </if>
+      <if test="collAmtOther != null">
+        COLL_AMT_OTHER,
+      </if>
+      <if test="preCollAmt != null">
+        PRE_COLL_AMT,
+      </if>
+      <if test="cstLeftAmt != null">
+        CST_LEFT_AMT,
+      </if>
+      <if test="receivableAmt != null">
+        RECEIVABLE_AMT,
+      </if>
+      <if test="overdueReceivableAmt != null">
+        OVERDUE_RECEIVABLE_AMT,
+      </if>
+      <if test="hasCollOver != null">
+        HAS_COLL_OVER,
+      </if>
+      <if test="kpQuant != null">
+        KP_QUANT,
+      </if>
+      <if test="kpAmt != null">
+        KP_AMT,
+      </if>
+      <if test="hasKpOver != null">
+        HAS_KP_OVER,
+      </if>
+      <if test="settleQuant != null">
+        SETTLE_QUANT,
+      </if>
+      <if test="settleAmt != null">
+        SETTLE_AMT,
+      </if>
+      <if test="hasSettleOver != null">
+        HAS_SETTLE_OVER,
+      </if>
+      <if test="closeStatus != null">
+        CLOSE_STATUS,
+      </if>
+      <if test="bizSellInAmt != null">
+        BIZ_SELL_IN_AMT,
+      </if>
+      <if test="bizCostAmt != null">
+        BIZ_COST_AMT,
+      </if>
+      <if test="bizFeeAmt != null">
+        BIZ_FEE_AMT,
+      </if>
+      <if test="bizProfitAmt != null">
+        BIZ_PROFIT_AMT,
+      </if>
+      <if test="accSellInAmt != null">
+        ACC_SELL_IN_AMT,
+      </if>
+      <if test="accCostAmt != null">
+        ACC_COST_AMT,
+      </if>
+      <if test="accFeeAmt != null">
+        ACC_FEE_AMT,
+      </if>
+      <if test="accProfitAmt != null">
+        ACC_PROFIT_AMT,
+      </if>
+      <if test="syncTime != null">
+        SYNC_TIME,
+      </if>
+      <if test="scExecQuant != null">
+        SC_EXEC_QUANT,
+      </if>
+      <if test="scExecAmt != null">
+        SC_EXEC_AMT,
+      </if>
+      <if test="scExecAmtAcc != null">
+        SC_EXEC_AMT_ACC,
+      </if>
+      <if test="scExecAmtUsd != null">
+        SC_EXEC_AMT_USD,
+      </if>
+      <if test="scExecAmtCny != null">
+        SC_EXEC_AMT_CNY,
+      </if>
+      <if test="purPrice != null">
+        PUR_PRICE,
+      </if>
+      <if test="purInvPrice != null">
+        PUR_INV_PRICE,
+      </if>
+      <if test="firstPayDate != null">
+        FIRST_PAY_DATE,
+      </if>
+      <if test="lastPayDate != null">
+        LAST_PAY_DATE,
+      </if>
+      <if test="calcPrFee != null">
+        CALC_PR_FEE,
+      </if>
+      <if test="purSendQuant != null">
+        PUR_SEND_QUANT,
+      </if>
+      <if test="purSendAmt != null">
+        PUR_SEND_AMT,
+      </if>
+      <if test="stQuant != null">
+        ST_QUANT,
+      </if>
+      <if test="stAmt != null">
+        ST_AMT,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="trkGuid != null">
+        #{trkGuid,jdbcType=VARCHAR},
+      </if>
+      <if test="srcScType != null">
+        #{srcScType,jdbcType=VARCHAR},
+      </if>
+      <if test="srcScId != null">
+        #{srcScId,jdbcType=VARCHAR},
+      </if>
+      <if test="scAmtAcc != null">
+        #{scAmtAcc,jdbcType=DECIMAL},
+      </if>
+      <if test="scAmtUsd != null">
+        #{scAmtUsd,jdbcType=DECIMAL},
+      </if>
+      <if test="scAmtCny != null">
+        #{scAmtCny,jdbcType=DECIMAL},
+      </if>
+      <if test="sendQuant != null">
+        #{sendQuant,jdbcType=DECIMAL},
+      </if>
+      <if test="sendAmt != null">
+        #{sendAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="unSendQuant != null">
+        #{unSendQuant,jdbcType=DECIMAL},
+      </if>
+      <if test="unSendAmt != null">
+        #{unSendAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="overdueUnSendQuant != null">
+        #{overdueUnSendQuant,jdbcType=DECIMAL},
+      </if>
+      <if test="overdueUnSendAmt != null">
+        #{overdueUnSendAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="hasSendOver != null">
+        #{hasSendOver,jdbcType=VARCHAR},
+      </if>
+      <if test="cstSignQuant != null">
+        #{cstSignQuant,jdbcType=DECIMAL},
+      </if>
+      <if test="cstSignAmt != null">
+        #{cstSignAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="hasSignOver != null">
+        #{hasSignOver,jdbcType=VARCHAR},
+      </if>
+      <if test="purQuant != null">
+        #{purQuant,jdbcType=DECIMAL},
+      </if>
+      <if test="purAmt != null">
+        #{purAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="hasPurOver != null">
+        #{hasPurOver,jdbcType=VARCHAR},
+      </if>
+      <if test="collAmt != null">
+        #{collAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="collAmtBail != null">
+        #{collAmtBail,jdbcType=DECIMAL},
+      </if>
+      <if test="collAmtHk != null">
+        #{collAmtHk,jdbcType=DECIMAL},
+      </if>
+      <if test="collAmtFee != null">
+        #{collAmtFee,jdbcType=DECIMAL},
+      </if>
+      <if test="collAmtOther != null">
+        #{collAmtOther,jdbcType=DECIMAL},
+      </if>
+      <if test="preCollAmt != null">
+        #{preCollAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="cstLeftAmt != null">
+        #{cstLeftAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="receivableAmt != null">
+        #{receivableAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="overdueReceivableAmt != null">
+        #{overdueReceivableAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="hasCollOver != null">
+        #{hasCollOver,jdbcType=VARCHAR},
+      </if>
+      <if test="kpQuant != null">
+        #{kpQuant,jdbcType=DECIMAL},
+      </if>
+      <if test="kpAmt != null">
+        #{kpAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="hasKpOver != null">
+        #{hasKpOver,jdbcType=VARCHAR},
+      </if>
+      <if test="settleQuant != null">
+        #{settleQuant,jdbcType=DECIMAL},
+      </if>
+      <if test="settleAmt != null">
+        #{settleAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="hasSettleOver != null">
+        #{hasSettleOver,jdbcType=VARCHAR},
+      </if>
+      <if test="closeStatus != null">
+        #{closeStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="bizSellInAmt != null">
+        #{bizSellInAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="bizCostAmt != null">
+        #{bizCostAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="bizFeeAmt != null">
+        #{bizFeeAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="bizProfitAmt != null">
+        #{bizProfitAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="accSellInAmt != null">
+        #{accSellInAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="accCostAmt != null">
+        #{accCostAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="accFeeAmt != null">
+        #{accFeeAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="accProfitAmt != null">
+        #{accProfitAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="syncTime != null">
+        #{syncTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="scExecQuant != null">
+        #{scExecQuant,jdbcType=DECIMAL},
+      </if>
+      <if test="scExecAmt != null">
+        #{scExecAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="scExecAmtAcc != null">
+        #{scExecAmtAcc,jdbcType=DECIMAL},
+      </if>
+      <if test="scExecAmtUsd != null">
+        #{scExecAmtUsd,jdbcType=DECIMAL},
+      </if>
+      <if test="scExecAmtCny != null">
+        #{scExecAmtCny,jdbcType=DECIMAL},
+      </if>
+      <if test="purPrice != null">
+        #{purPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="purInvPrice != null">
+        #{purInvPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="firstPayDate != null">
+        #{firstPayDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastPayDate != null">
+        #{lastPayDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="calcPrFee != null">
+        #{calcPrFee,jdbcType=DECIMAL},
+      </if>
+      <if test="purSendQuant != null">
+        #{purSendQuant,jdbcType=DECIMAL},
+      </if>
+      <if test="purSendAmt != null">
+        #{purSendAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="stQuant != null">
+        #{stQuant,jdbcType=DECIMAL},
+      </if>
+      <if test="stAmt != null">
+        #{stAmt,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sumec.contract.entity.TTrSalesTrack">
+    update T_TR_SALES_TRACK
+    <set>
+      <if test="srcScType != null">
+        SRC_SC_TYPE = #{srcScType,jdbcType=VARCHAR},
+      </if>
+      <if test="srcScId != null">
+        SRC_SC_ID = #{srcScId,jdbcType=VARCHAR},
+      </if>
+      <if test="scAmtAcc != null">
+        SC_AMT_ACC = #{scAmtAcc,jdbcType=DECIMAL},
+      </if>
+      <if test="scAmtUsd != null">
+        SC_AMT_USD = #{scAmtUsd,jdbcType=DECIMAL},
+      </if>
+      <if test="scAmtCny != null">
+        SC_AMT_CNY = #{scAmtCny,jdbcType=DECIMAL},
+      </if>
+      <if test="sendQuant != null">
+        SEND_QUANT = #{sendQuant,jdbcType=DECIMAL},
+      </if>
+      <if test="sendAmt != null">
+        SEND_AMT = #{sendAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="unSendQuant != null">
+        UN_SEND_QUANT = #{unSendQuant,jdbcType=DECIMAL},
+      </if>
+      <if test="unSendAmt != null">
+        UN_SEND_AMT = #{unSendAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="overdueUnSendQuant != null">
+        OVERDUE_UN_SEND_QUANT = #{overdueUnSendQuant,jdbcType=DECIMAL},
+      </if>
+      <if test="overdueUnSendAmt != null">
+        OVERDUE_UN_SEND_AMT = #{overdueUnSendAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="hasSendOver != null">
+        HAS_SEND_OVER = #{hasSendOver,jdbcType=VARCHAR},
+      </if>
+      <if test="cstSignQuant != null">
+        CST_SIGN_QUANT = #{cstSignQuant,jdbcType=DECIMAL},
+      </if>
+      <if test="cstSignAmt != null">
+        CST_SIGN_AMT = #{cstSignAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="hasSignOver != null">
+        HAS_SIGN_OVER = #{hasSignOver,jdbcType=VARCHAR},
+      </if>
+      <if test="purQuant != null">
+        PUR_QUANT = #{purQuant,jdbcType=DECIMAL},
+      </if>
+      <if test="purAmt != null">
+        PUR_AMT = #{purAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="hasPurOver != null">
+        HAS_PUR_OVER = #{hasPurOver,jdbcType=VARCHAR},
+      </if>
+      <if test="collAmt != null">
+        COLL_AMT = #{collAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="collAmtBail != null">
+        COLL_AMT_BAIL = #{collAmtBail,jdbcType=DECIMAL},
+      </if>
+      <if test="collAmtHk != null">
+        COLL_AMT_HK = #{collAmtHk,jdbcType=DECIMAL},
+      </if>
+      <if test="collAmtFee != null">
+        COLL_AMT_FEE = #{collAmtFee,jdbcType=DECIMAL},
+      </if>
+      <if test="collAmtOther != null">
+        COLL_AMT_OTHER = #{collAmtOther,jdbcType=DECIMAL},
+      </if>
+      <if test="preCollAmt != null">
+        PRE_COLL_AMT = #{preCollAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="cstLeftAmt != null">
+        CST_LEFT_AMT = #{cstLeftAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="receivableAmt != null">
+        RECEIVABLE_AMT = #{receivableAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="overdueReceivableAmt != null">
+        OVERDUE_RECEIVABLE_AMT = #{overdueReceivableAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="hasCollOver != null">
+        HAS_COLL_OVER = #{hasCollOver,jdbcType=VARCHAR},
+      </if>
+      <if test="kpQuant != null">
+        KP_QUANT = #{kpQuant,jdbcType=DECIMAL},
+      </if>
+      <if test="kpAmt != null">
+        KP_AMT = #{kpAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="hasKpOver != null">
+        HAS_KP_OVER = #{hasKpOver,jdbcType=VARCHAR},
+      </if>
+      <if test="settleQuant != null">
+        SETTLE_QUANT = #{settleQuant,jdbcType=DECIMAL},
+      </if>
+      <if test="settleAmt != null">
+        SETTLE_AMT = #{settleAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="hasSettleOver != null">
+        HAS_SETTLE_OVER = #{hasSettleOver,jdbcType=VARCHAR},
+      </if>
+      <if test="closeStatus != null">
+        CLOSE_STATUS = #{closeStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="bizSellInAmt != null">
+        BIZ_SELL_IN_AMT = #{bizSellInAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="bizCostAmt != null">
+        BIZ_COST_AMT = #{bizCostAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="bizFeeAmt != null">
+        BIZ_FEE_AMT = #{bizFeeAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="bizProfitAmt != null">
+        BIZ_PROFIT_AMT = #{bizProfitAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="accSellInAmt != null">
+        ACC_SELL_IN_AMT = #{accSellInAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="accCostAmt != null">
+        ACC_COST_AMT = #{accCostAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="accFeeAmt != null">
+        ACC_FEE_AMT = #{accFeeAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="accProfitAmt != null">
+        ACC_PROFIT_AMT = #{accProfitAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="syncTime != null">
+        SYNC_TIME = #{syncTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="scExecQuant != null">
+        SC_EXEC_QUANT = #{scExecQuant,jdbcType=DECIMAL},
+      </if>
+      <if test="scExecAmt != null">
+        SC_EXEC_AMT = #{scExecAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="scExecAmtAcc != null">
+        SC_EXEC_AMT_ACC = #{scExecAmtAcc,jdbcType=DECIMAL},
+      </if>
+      <if test="scExecAmtUsd != null">
+        SC_EXEC_AMT_USD = #{scExecAmtUsd,jdbcType=DECIMAL},
+      </if>
+      <if test="scExecAmtCny != null">
+        SC_EXEC_AMT_CNY = #{scExecAmtCny,jdbcType=DECIMAL},
+      </if>
+      <if test="purPrice != null">
+        PUR_PRICE = #{purPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="purInvPrice != null">
+        PUR_INV_PRICE = #{purInvPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="firstPayDate != null">
+        FIRST_PAY_DATE = #{firstPayDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastPayDate != null">
+        LAST_PAY_DATE = #{lastPayDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="calcPrFee != null">
+        CALC_PR_FEE = #{calcPrFee,jdbcType=DECIMAL},
+      </if>
+      <if test="purSendQuant != null">
+        PUR_SEND_QUANT = #{purSendQuant,jdbcType=DECIMAL},
+      </if>
+      <if test="purSendAmt != null">
+        PUR_SEND_AMT = #{purSendAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="stQuant != null">
+        ST_QUANT = #{stQuant,jdbcType=DECIMAL},
+      </if>
+      <if test="stAmt != null">
+        ST_AMT = #{stAmt,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where TRK_GUID = #{trkGuid,jdbcType=VARCHAR}
+  </update>
+</mapper>

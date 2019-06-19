@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sumec.project.dao.IProjCeecBudRegDao">
+  <resultMap id="BaseResultMap" type="com.sumec.project.entity.TProjCeecBudReg">
+    <id column="INT_ID" jdbcType="VARCHAR" property="intId" />
+    <result column="PRE_INT_ID" jdbcType="VARCHAR" property="preIntId" />
+    <result column="REG_ORDER" jdbcType="DECIMAL" property="regOrder" />
+    <result column="PROJ_TYPE" jdbcType="VARCHAR" property="projType" />
+    <result column="PROJ_ID" jdbcType="VARCHAR" property="projId" />
+    <result column="PROJ_NO" jdbcType="VARCHAR" property="projNo" />
+    <result column="PROJ_NAME" jdbcType="VARCHAR" property="projName" />
+    <result column="PROJ_INCOME_RMB" jdbcType="DECIMAL" property="projIncomeRmb" />
+    <result column="PROJ_COST_RMB" jdbcType="DECIMAL" property="projCostRmb" />
+    <result column="PROJ_PROFIT_RMB" jdbcType="DECIMAL" property="projProfitRmb" />
+    <result column="IS_VALID" jdbcType="VARCHAR" property="isValid" />
+    <result column="M_DATE" jdbcType="TIMESTAMP" property="mDate" />
+    <result column="M_USER_ID" jdbcType="DECIMAL" property="mUserId" />
+    <result column="U_USER_ID" jdbcType="DECIMAL" property="uUserId" />
+    <result column="U_DATE" jdbcType="TIMESTAMP" property="uDate" />
+    <result column="REMARK" jdbcType="VARCHAR" property="remark" />
+    <result column="PRE_PROJ_INCOME_RMB" jdbcType="DECIMAL" property="preProjIncomeRmb" />
+    <result column="PRE_PROJ_COST_RMB" jdbcType="DECIMAL" property="preProjCostRmb" />
+    <result column="PRE_PROJ_PROFIT_RMB" jdbcType="DECIMAL" property="preProjProfitRmb" />
+    <result column="CONFIRM" jdbcType="VARCHAR" property="confirm" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    INT_ID, PRE_INT_ID, REG_ORDER, PROJ_TYPE, PROJ_ID, PROJ_NO, PROJ_NAME, PROJ_INCOME_RMB, 
+    PROJ_COST_RMB, PROJ_PROFIT_RMB, IS_VALID, M_DATE, M_USER_ID, U_USER_ID, U_DATE, REMARK, 
+    PRE_PROJ_INCOME_RMB, PRE_PROJ_COST_RMB, PRE_PROJ_PROFIT_RMB, CONFIRM
+  </sql>
+  <insert id="insertSelective" parameterType="com.sumec.project.entity.TProjCeecBudReg">
+    insert into T_PROJ_CEEC_BUD_REG
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="intId != null">
+        INT_ID,
+      </if>
+      <if test="preIntId != null">
+        PRE_INT_ID,
+      </if>
+      <if test="regOrder != null">
+        REG_ORDER,
+      </if>
+      <if test="projType != null">
+        PROJ_TYPE,
+      </if>
+      <if test="projId != null">
+        PROJ_ID,
+      </if>
+      <if test="projNo != null">
+        PROJ_NO,
+      </if>
+      <if test="projName != null">
+        PROJ_NAME,
+      </if>
+      <if test="projIncomeRmb != null">
+        PROJ_INCOME_RMB,
+      </if>
+      <if test="projCostRmb != null">
+        PROJ_COST_RMB,
+      </if>
+      <if test="projProfitRmb != null">
+        PROJ_PROFIT_RMB,
+      </if>
+      <if test="isValid != null">
+        IS_VALID,
+      </if>
+      <if test="mDate != null">
+        M_DATE,
+      </if>
+      <if test="mUserId != null">
+        M_USER_ID,
+      </if>
+      <if test="uUserId != null">
+        U_USER_ID,
+      </if>
+      <if test="uDate != null">
+        U_DATE,
+      </if>
+      <if test="remark != null">
+        REMARK,
+      </if>
+      <if test="preProjIncomeRmb != null">
+        PRE_PROJ_INCOME_RMB,
+      </if>
+      <if test="preProjCostRmb != null">
+        PRE_PROJ_COST_RMB,
+      </if>
+      <if test="preProjProfitRmb != null">
+        PRE_PROJ_PROFIT_RMB,
+      </if>
+      <if test="confirm != null">
+        CONFIRM,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="intId != null">
+        #{intId,jdbcType=VARCHAR},
+      </if>
+      <if test="preIntId != null">
+        #{preIntId,jdbcType=VARCHAR},
+      </if>
+      <if test="regOrder != null">
+        #{regOrder,jdbcType=DECIMAL},
+      </if>
+      <if test="projType != null">
+        #{projType,jdbcType=VARCHAR},
+      </if>
+      <if test="projId != null">
+        #{projId,jdbcType=VARCHAR},
+      </if>
+      <if test="projNo != null">
+        #{projNo,jdbcType=VARCHAR},
+      </if>
+      <if test="projName != null">
+        #{projName,jdbcType=VARCHAR},
+      </if>
+      <if test="projIncomeRmb != null">
+        #{projIncomeRmb,jdbcType=DECIMAL},
+      </if>
+      <if test="projCostRmb != null">
+        #{projCostRmb,jdbcType=DECIMAL},
+      </if>
+      <if test="projProfitRmb != null">
+        #{projProfitRmb,jdbcType=DECIMAL},
+      </if>
+      <if test="isValid != null">
+        #{isValid,jdbcType=VARCHAR},
+      </if>
+      <if test="mDate != null">
+        #{mDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mUserId != null">
+        #{mUserId,jdbcType=DECIMAL},
+      </if>
+      <if test="uUserId != null">
+        #{uUserId,jdbcType=DECIMAL},
+      </if>
+      <if test="uDate != null">
+        #{uDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="preProjIncomeRmb != null">
+        #{preProjIncomeRmb,jdbcType=DECIMAL},
+      </if>
+      <if test="preProjCostRmb != null">
+        #{preProjCostRmb,jdbcType=DECIMAL},
+      </if>
+      <if test="preProjProfitRmb != null">
+        #{preProjProfitRmb,jdbcType=DECIMAL},
+      </if>
+      <if test="confirm != null">
+        #{confirm,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sumec.project.entity.TProjCeecBudReg">
+    update T_PROJ_CEEC_BUD_REG
+    <set>
+      <if test="preIntId != null">
+        PRE_INT_ID = #{preIntId,jdbcType=VARCHAR},
+      </if>
+      <if test="regOrder != null">
+        REG_ORDER = #{regOrder,jdbcType=DECIMAL},
+      </if>
+      <if test="projType != null">
+        PROJ_TYPE = #{projType,jdbcType=VARCHAR},
+      </if>
+      <if test="projId != null">
+        PROJ_ID = #{projId,jdbcType=VARCHAR},
+      </if>
+      <if test="projNo != null">
+        PROJ_NO = #{projNo,jdbcType=VARCHAR},
+      </if>
+      <if test="projName != null">
+        PROJ_NAME = #{projName,jdbcType=VARCHAR},
+      </if>
+      <if test="projIncomeRmb != null">
+        PROJ_INCOME_RMB = #{projIncomeRmb,jdbcType=DECIMAL},
+      </if>
+      <if test="projCostRmb != null">
+        PROJ_COST_RMB = #{projCostRmb,jdbcType=DECIMAL},
+      </if>
+      <if test="projProfitRmb != null">
+        PROJ_PROFIT_RMB = #{projProfitRmb,jdbcType=DECIMAL},
+      </if>
+      <if test="isValid != null">
+        IS_VALID = #{isValid,jdbcType=VARCHAR},
+      </if>
+      <if test="mDate != null">
+        M_DATE = #{mDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mUserId != null">
+        M_USER_ID = #{mUserId,jdbcType=DECIMAL},
+      </if>
+      <if test="uUserId != null">
+        U_USER_ID = #{uUserId,jdbcType=DECIMAL},
+      </if>
+      <if test="uDate != null">
+        U_DATE = #{uDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remark != null">
+        REMARK = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="preProjIncomeRmb != null">
+        PRE_PROJ_INCOME_RMB = #{preProjIncomeRmb,jdbcType=DECIMAL},
+      </if>
+      <if test="preProjCostRmb != null">
+        PRE_PROJ_COST_RMB = #{preProjCostRmb,jdbcType=DECIMAL},
+      </if>
+      <if test="preProjProfitRmb != null">
+        PRE_PROJ_PROFIT_RMB = #{preProjProfitRmb,jdbcType=DECIMAL},
+      </if>
+      <if test="confirm != null">
+        CONFIRM = #{confirm,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where INT_ID = #{intId,jdbcType=VARCHAR}
+  </update>
+</mapper>

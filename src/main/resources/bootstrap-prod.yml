@@ -1,0 +1,35 @@
+spring:
+    cloud:
+        config:
+            fail-fast: true
+            uri: http://admin:aiyun123!@10.4.100.193:8761/config
+            name: soa-contract
+            profile: prod
+            label: master
+    application:
+        name: soa-contract2
+server:
+  port: 7889
+im: 
+  approvalUrl:  http://msrv.albl.sumec.com:7777/1.0/app/approval/message
+  channelUrl:  http://msrv.albl.sumec.com:7777/1.0/app/channel
+  approval2ChatroomUrl: http://msrv.albl.sumec.com:7777/1.0/app/chatroom/message
+  chatRoomUrl:  http://msrv.albl.sumec.com:7777/1.0/app/chatroom/generate
+  addUserUrl:  http://msrv.albl.sumec.com:7777/1.0/app/user/addUser
+  modifyChatRoomUrl:  http://msrv.albl.sumec.com:7777/1.0/app/chatroom
+  modifyChanmemberUrl: http://msrv.albl.sumec.com:7777/1.0/app/chanmember/modifyChanmember
+# msrv.albl.sumec.com
+  accessToken: http://msrv.albl.sumec.com:7777/access_token
+  apiKey: ae366c9cb640bb8a4385c87dd6def551
+eureka:
+  instance:
+    prefer-ip-address: true
+    ip-address: 10.4.23.166 #127.0.0.1
+  client:
+    enabled: true
+    healthcheck:
+      enabled: true
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://admin:aiyun123!@10.4.100.193:8761/eureka/

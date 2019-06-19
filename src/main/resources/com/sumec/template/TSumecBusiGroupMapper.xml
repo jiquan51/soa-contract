@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sumec.template.dao.ISumecBusiGroupDao">
+  <resultMap id="BaseResultMap" type="com.sumec.template.entity.TSumecBusiGroup">
+    <id column="ID" jdbcType="VARCHAR" property="id" />
+    <result column="CHAT_ID" jdbcType="VARCHAR" property="chatId" />
+    <result column="GROUP_ID" jdbcType="VARCHAR" property="groupId" />
+    <result column="GROUP_TYPE" jdbcType="VARCHAR" property="groupType" />
+    <result column="CREATE_AT" jdbcType="TIMESTAMP" property="createAt" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    ID, CHAT_ID, GROUP_ID, GROUP_TYPE, CREATE_AT
+  </sql>
+  <insert id="insertSelective" parameterType="com.sumec.template.entity.TSumecBusiGroup">
+    insert into T_SUMEC_BUSI_GROUP
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        ID,
+      </if>
+      <if test="chatId != null">
+        CHAT_ID,
+      </if>
+      <if test="groupId != null">
+        GROUP_ID,
+      </if>
+      <if test="groupType != null">
+        GROUP_TYPE,
+      </if>
+      <if test="createAt != null">
+        CREATE_AT,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="chatId != null">
+        #{chatId,jdbcType=VARCHAR},
+      </if>
+      <if test="groupId != null">
+        #{groupId,jdbcType=VARCHAR},
+      </if>
+      <if test="groupType != null">
+        #{groupType,jdbcType=VARCHAR},
+      </if>
+      <if test="createAt != null">
+        #{createAt,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sumec.template.entity.TSumecBusiGroup">
+    update T_SUMEC_BUSI_GROUP
+    <set>
+      <if test="chatId != null">
+        CHAT_ID = #{chatId,jdbcType=VARCHAR},
+      </if>
+      <if test="groupId != null">
+        GROUP_ID = #{groupId,jdbcType=VARCHAR},
+      </if>
+      <if test="groupType != null">
+        GROUP_TYPE = #{groupType,jdbcType=VARCHAR},
+      </if>
+      <if test="createAt != null">
+        CREATE_AT = #{createAt,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

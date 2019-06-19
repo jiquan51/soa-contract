@@ -1,0 +1,1926 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sumec.contract.dao.IExpBcDao">
+  <resultMap id="BaseResultMap" type="com.sumec.contract.entity.TExpBc">
+    <id column="BC_ID" jdbcType="DECIMAL" property="bcId" />
+    <result column="C_NO" jdbcType="VARCHAR" property="cNo" />
+    <result column="M_DATE" jdbcType="TIMESTAMP" property="mDate" />
+    <result column="C_TYPE" jdbcType="VARCHAR" property="cType" />
+    <result column="FCT_NO" jdbcType="VARCHAR" property="fctNo" />
+    <result column="FIRST_PARTY" jdbcType="VARCHAR" property="firstParty" />
+    <result column="PACK_TRM" jdbcType="VARCHAR" property="packTrm" />
+    <result column="QUALITY" jdbcType="VARCHAR" property="quality" />
+    <result column="QUALITY_TIME" jdbcType="VARCHAR" property="qualityTime" />
+    <result column="DEPATURE" jdbcType="VARCHAR" property="depature" />
+    <result column="NOTE" jdbcType="VARCHAR" property="note" />
+    <result column="DELI_D" jdbcType="TIMESTAMP" property="deliD" />
+    <result column="MARKET" jdbcType="VARCHAR" property="market" />
+    <result column="P_QUANT" jdbcType="DECIMAL" property="pQuant" />
+    <result column="P_AMT" jdbcType="DECIMAL" property="pAmt" />
+    <result column="STATUS_PS" jdbcType="VARCHAR" property="statusPs" />
+    <result column="END_ID" jdbcType="VARCHAR" property="endId" />
+    <result column="ROHS_BZ" jdbcType="VARCHAR" property="rohsBz" />
+    <result column="YH" jdbcType="VARCHAR" property="yh" />
+    <result column="IS_VALID" jdbcType="VARCHAR" property="isValid" />
+    <result column="DEP_NO" jdbcType="VARCHAR" property="depNo" />
+    <result column="GROUP_NO" jdbcType="VARCHAR" property="groupNo" />
+    <result column="EMP_NO" jdbcType="VARCHAR" property="empNo" />
+    <result column="EMP_NAME" jdbcType="VARCHAR" property="empName" />
+    <result column="MAKER_NO" jdbcType="VARCHAR" property="makerNo" />
+    <result column="MAKER_NAME" jdbcType="VARCHAR" property="makerName" />
+    <result column="MODIFY_NO" jdbcType="VARCHAR" property="modifyNo" />
+    <result column="MODIFY_NAME" jdbcType="VARCHAR" property="modifyName" />
+    <result column="MODIFY_DATE" jdbcType="TIMESTAMP" property="modifyDate" />
+    <result column="CHECK_NO" jdbcType="VARCHAR" property="checkNo" />
+    <result column="CHECK_NAME" jdbcType="VARCHAR" property="checkName" />
+    <result column="CHECK_DATE" jdbcType="TIMESTAMP" property="checkDate" />
+    <result column="FROM_ID" jdbcType="DECIMAL" property="fromId" />
+    <result column="SERV_TAG" jdbcType="VARCHAR" property="servTag" />
+    <result column="GOODS_SAMPLE" jdbcType="VARCHAR" property="goodsSample" />
+    <result column="SAMPLE_GET" jdbcType="VARCHAR" property="sampleGet" />
+    <result column="DOCS" jdbcType="VARCHAR" property="docs" />
+    <result column="CONFIRM" jdbcType="VARCHAR" property="confirm" />
+    <result column="REASON" jdbcType="VARCHAR" property="reason" />
+    <result column="FP_AMT" jdbcType="DECIMAL" property="fpAmt" />
+    <result column="PAY_AMT" jdbcType="DECIMAL" property="payAmt" />
+    <result column="WH_NO" jdbcType="VARCHAR" property="whNo" />
+    <result column="N_NO" jdbcType="VARCHAR" property="nNo" />
+    <result column="REAL_NO" jdbcType="VARCHAR" property="realNo" />
+    <result column="MANUAL_NO" jdbcType="VARCHAR" property="manualNo" />
+    <result column="PAY_TERM" jdbcType="VARCHAR" property="payTerm" />
+    <result column="OC_ID" jdbcType="DECIMAL" property="ocId" />
+    <result column="IS_INSTALL" jdbcType="VARCHAR" property="isInstall" />
+    <result column="TAG" jdbcType="VARCHAR" property="tag" />
+    <result column="GJ_TERM" jdbcType="VARCHAR" property="gjTerm" />
+    <result column="NEED_CALC" jdbcType="VARCHAR" property="needCalc" />
+    <result column="ACC_NO" jdbcType="VARCHAR" property="accNo" />
+    <result column="ORG_ID" jdbcType="DECIMAL" property="orgId" />
+    <result column="USER_ID" jdbcType="DECIMAL" property="userId" />
+    <result column="CELL_ID" jdbcType="DECIMAL" property="cellId" />
+    <result column="FCT_ID" jdbcType="DECIMAL" property="fctId" />
+    <result column="KC_TYPE" jdbcType="VARCHAR" property="kcType" />
+    <result column="VIEW_SCOPE" jdbcType="VARCHAR" property="viewScope" />
+    <result column="PROMPT" jdbcType="VARCHAR" property="prompt" />
+    <result column="IS_NEED_SAMPLE" jdbcType="VARCHAR" property="isNeedSample" />
+    <result column="IS_GET_SAMPLE" jdbcType="VARCHAR" property="isGetSample" />
+    <result column="TRADEMODE" jdbcType="VARCHAR" property="trademode" />
+    <result column="CURR_TYPE" jdbcType="VARCHAR" property="currType" />
+    <result column="PRO_ID" jdbcType="DECIMAL" property="proId" />
+    <result column="PRO_TYPE" jdbcType="VARCHAR" property="proType" />
+    <result column="SEND_OVER_TAG" jdbcType="VARCHAR" property="sendOverTag" />
+    <result column="SEND_OVER_DATE" jdbcType="TIMESTAMP" property="sendOverDate" />
+    <result column="FCT_ORDER_NO" jdbcType="VARCHAR" property="fctOrderNo" />
+    <result column="IS_JS_REAL" jdbcType="VARCHAR" property="isJsReal" />
+    <result column="CHECK_USER_ID" jdbcType="DECIMAL" property="checkUserId" />
+    <result column="MODIFY_USER_ID" jdbcType="DECIMAL" property="modifyUserId" />
+    <result column="COPY_PARTY_NO" jdbcType="VARCHAR" property="copyPartyNo" />
+    <result column="COPY_PARTY_ID" jdbcType="DECIMAL" property="copyPartyId" />
+    <result column="COPY_MOVE_NO" jdbcType="VARCHAR" property="copyMoveNo" />
+    <result column="COPY_MOVE_ID" jdbcType="DECIMAL" property="copyMoveId" />
+    <result column="IS_JQ_OVER" jdbcType="VARCHAR" property="isJqOver" />
+    <result column="UNDO" jdbcType="VARCHAR" property="undo" />
+    <result column="IS_ZY_OVER" jdbcType="VARCHAR" property="isZyOver" />
+    <result column="PRODUCER_ID" jdbcType="DECIMAL" property="producerId" />
+    <result column="PRODUCER_NO" jdbcType="VARCHAR" property="producerNo" />
+    <result column="PRODUCER_NAME" jdbcType="VARCHAR" property="producerName" />
+    <result column="GD_TAG" jdbcType="VARCHAR" property="gdTag" />
+    <result column="GD_USER_ID" jdbcType="DECIMAL" property="gdUserId" />
+    <result column="GD_DATE" jdbcType="TIMESTAMP" property="gdDate" />
+    <result column="GJ_FCT_NO" jdbcType="VARCHAR" property="gjFctNo" />
+    <result column="GJ_FCT_ID" jdbcType="DECIMAL" property="gjFctId" />
+    <result column="OCU_ORG_ID" jdbcType="DECIMAL" property="ocuOrgId" />
+    <result column="SEND_TERM" jdbcType="VARCHAR" property="sendTerm" />
+    <result column="SEND_DAY" jdbcType="DECIMAL" property="sendDay" />
+    <result column="SENDOVER_DAY" jdbcType="DECIMAL" property="sendoverDay" />
+    <result column="SEND_DATE" jdbcType="TIMESTAMP" property="sendDate" />
+    <result column="SENDOVER_DATE" jdbcType="TIMESTAMP" property="sendoverDate" />
+    <result column="WH_ID" jdbcType="DECIMAL" property="whId" />
+    <result column="WH_NAME" jdbcType="VARCHAR" property="whName" />
+    <result column="BC_TYPE" jdbcType="VARCHAR" property="bcType" />
+    <result column="TRANS_WAY" jdbcType="VARCHAR" property="transWay" />
+    <result column="SIGN_DATE" jdbcType="TIMESTAMP" property="signDate" />
+    <result column="C_TERM" jdbcType="VARCHAR" property="cTerm" />
+    <result column="CST_SHORT_NAME" jdbcType="VARCHAR" property="cstShortName" />
+    <result column="TRANS_CORP_ID" jdbcType="DECIMAL" property="transCorpId" />
+    <result column="TRANS_CORP_NAME" jdbcType="VARCHAR" property="transCorpName" />
+    <result column="OTHER_REQ" jdbcType="VARCHAR" property="otherReq" />
+    <result column="IS_U8_PURCHARSE_REQ" jdbcType="VARCHAR" property="isU8PurcharseReq" />
+    <result column="IS_MOVE" jdbcType="VARCHAR" property="isMove" />
+    <result column="IS_CLOSE" jdbcType="VARCHAR" property="isClose" />
+    <result column="CLOSE_USER_ID" jdbcType="DECIMAL" property="closeUserId" />
+    <result column="CLOSE_DATE" jdbcType="TIMESTAMP" property="closeDate" />
+    <result column="IU_OCU_ID" jdbcType="DECIMAL" property="iuOcuId" />
+    <result column="INLAND_OR_OVERSEAS" jdbcType="VARCHAR" property="inlandOrOverseas" />
+    <result column="TYPE_OF_CON" jdbcType="VARCHAR" property="typeOfCon" />
+    <result column="CLOSE_CONFIRM" jdbcType="VARCHAR" property="closeConfirm" />
+    <result column="DEP_ORG_ID" jdbcType="DECIMAL" property="depOrgId" />
+    <result column="PURCHASER_ID" jdbcType="DECIMAL" property="purchaserId" />
+    <result column="CATA_OF_CON" jdbcType="VARCHAR" property="cataOfCon" />
+    <result column="PROP_OF_CON" jdbcType="VARCHAR" property="propOfCon" />
+    <result column="BIZ_MODE" jdbcType="VARCHAR" property="bizMode" />
+    <result column="REL_BC_ID" jdbcType="DECIMAL" property="relBcId" />
+    <result column="CON_NAME" jdbcType="VARCHAR" property="conName" />
+    <result column="VALID_DATE" jdbcType="TIMESTAMP" property="validDate" />
+    <result column="SIGN_PLACE" jdbcType="VARCHAR" property="signPlace" />
+    <result column="CON_CONTENT" jdbcType="VARCHAR" property="conContent" />
+    <result column="SELLER_NATION_ID" jdbcType="DECIMAL" property="sellerNationId" />
+    <result column="SELLER_PROP" jdbcType="VARCHAR" property="sellerProp" />
+    <result column="SENDER_ID" jdbcType="DECIMAL" property="senderId" />
+    <result column="LAND_NATION_ID" jdbcType="DECIMAL" property="landNationId" />
+    <result column="LAND_PORT_ID" jdbcType="DECIMAL" property="landPortId" />
+    <result column="LAND_LOCATION" jdbcType="VARCHAR" property="landLocation" />
+    <result column="RECER_ID" jdbcType="DECIMAL" property="recerId" />
+    <result column="DEST_NATION_ID" jdbcType="DECIMAL" property="destNationId" />
+    <result column="DEST_PORT_ID" jdbcType="DECIMAL" property="destPortId" />
+    <result column="DEST_LOCATION" jdbcType="VARCHAR" property="destLocation" />
+    <result column="IS_BATCHES" jdbcType="VARCHAR" property="isBatches" />
+    <result column="IS_TRANSFER" jdbcType="VARCHAR" property="isTransfer" />
+    <result column="TRANSFER_PORT_ID" jdbcType="DECIMAL" property="transferPortId" />
+    <result column="COMMISSION_ID" jdbcType="DECIMAL" property="commissionId" />
+    <result column="COMMISSION_RATE" jdbcType="DECIMAL" property="commissionRate" />
+    <result column="COMMISSION_CURR_TYPE" jdbcType="VARCHAR" property="commissionCurrType" />
+    <result column="COMMISSION_FEE" jdbcType="DECIMAL" property="commissionFee" />
+    <result column="SHIPMENT_WAY" jdbcType="VARCHAR" property="shipmentWay" />
+    <result column="BOX_DELIVERY_TYPE" jdbcType="VARCHAR" property="boxDeliveryType" />
+    <result column="DELIVERY_PLACE" jdbcType="VARCHAR" property="deliveryPlace" />
+    <result column="IS_PLAN_ST" jdbcType="VARCHAR" property="isPlanSt" />
+    <result column="PROXY_CORP_ID" jdbcType="DECIMAL" property="proxyCorpId" />
+    <result column="TRANS_RESP" jdbcType="VARCHAR" property="transResp" />
+    <result column="TRANS_FEE_RESP" jdbcType="VARCHAR" property="transFeeResp" />
+    <result column="TRANS_INSU_RESP" jdbcType="VARCHAR" property="transInsuResp" />
+    <result column="ARBITRATION_PLACE" jdbcType="VARCHAR" property="arbitrationPlace" />
+    <result column="SUE_PLACE" jdbcType="VARCHAR" property="suePlace" />
+    <result column="IS_NEED_SPEC_DOCU" jdbcType="VARCHAR" property="isNeedSpecDocu" />
+    <result column="PRICING_WAY" jdbcType="VARCHAR" property="pricingWay" />
+    <result column="PRICE_STANDARD" jdbcType="VARCHAR" property="priceStandard" />
+    <result column="EXAM_STANDARD" jdbcType="VARCHAR" property="examStandard" />
+    <result column="CON_PERIOD" jdbcType="DECIMAL" property="conPeriod" />
+    <result column="BAIL_RATE" jdbcType="DECIMAL" property="bailRate" />
+    <result column="PROFIT_SCHEME" jdbcType="VARCHAR" property="profitScheme" />
+    <result column="COMM_QUANT_PACK" jdbcType="DECIMAL" property="commQuantPack" />
+    <result column="COMM_QUANT_STAT" jdbcType="DECIMAL" property="commQuantStat" />
+    <result column="C_STATUS" jdbcType="VARCHAR" property="cStatus" />
+    <result column="CMD_CATA_ID" jdbcType="DECIMAL" property="cmdCataId" />
+    <result column="PRICE_TERM" jdbcType="VARCHAR" property="priceTerm" />
+    <result column="FCT_NAME" jdbcType="VARCHAR" property="fctName" />
+    <result column="PURCHASER_NAME" jdbcType="VARCHAR" property="purchaserName" />
+    <result column="SENDER_NAME" jdbcType="VARCHAR" property="senderName" />
+    <result column="RECER_NAME" jdbcType="VARCHAR" property="recerName" />
+    <result column="COMMISSION_NAME" jdbcType="VARCHAR" property="commissionName" />
+    <result column="PROXY_CORP_NAME" jdbcType="VARCHAR" property="proxyCorpName" />
+    <result column="AFFECT_INCOME" jdbcType="VARCHAR" property="affectIncome" />
+    <result column="AFFECT_INCOME_RATE" jdbcType="DECIMAL" property="affectIncomeRate" />
+    <result column="MANUFAC_ID" jdbcType="DECIMAL" property="manufacId" />
+    <result column="MANUFAC_NAME" jdbcType="VARCHAR" property="manufacName" />
+    <result column="U8_OP_ID" jdbcType="DECIMAL" property="u8OpId" />
+    <result column="CNY_RATE" jdbcType="DECIMAL" property="cnyRate" />
+    <result column="USD_RATE" jdbcType="DECIMAL" property="usdRate" />
+    <result column="CURR_RATE" jdbcType="DECIMAL" property="currRate" />
+    <result column="SHORT_OR_OVER" jdbcType="DECIMAL" property="shortOrOver" />
+    <result column="CON_PERIOD_S_TYPE" jdbcType="VARCHAR" property="conPeriodSType" />
+    <result column="COMM_UNIT" jdbcType="DECIMAL" property="commUnit" />
+    <result column="TRADE_OR_SRV" jdbcType="VARCHAR" property="tradeOrSrv" />
+    <result column="TR_SRV_OR_GOODS" jdbcType="VARCHAR" property="trSrvOrGoods" />
+    <result column="PROFIT_SCHEME_DESC" jdbcType="VARCHAR" property="profitSchemeDesc" />
+    <result column="COMPLEX_LEVEL" jdbcType="DECIMAL" property="complexLevel" />
+    <result column="COMM_NAME" jdbcType="VARCHAR" property="commName" />
+    <result column="COMM_ID" jdbcType="DECIMAL" property="commId" />
+    <result column="PLAN_SALES_INL_OR_OS" jdbcType="VARCHAR" property="planSalesInlOrOs" />
+    <result column="GJ_FCT_NAME" jdbcType="VARCHAR" property="gjFctName" />
+    <result column="HOLDER_ID" jdbcType="DECIMAL" property="holderId" />
+    <result column="HOLDER_NAME" jdbcType="VARCHAR" property="holderName" />
+    <result column="BIZ_TYPE" jdbcType="VARCHAR" property="bizType" />
+    <result column="REMARK_CLERK" jdbcType="VARCHAR" property="remarkClerk" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    BC_ID, C_NO, M_DATE, C_TYPE, FCT_NO, FIRST_PARTY, PACK_TRM, QUALITY, QUALITY_TIME, 
+    DEPATURE, NOTE, DELI_D, MARKET, P_QUANT, P_AMT, STATUS_PS, END_ID, ROHS_BZ, YH, IS_VALID, 
+    DEP_NO, GROUP_NO, EMP_NO, EMP_NAME, MAKER_NO, MAKER_NAME, MODIFY_NO, MODIFY_NAME, 
+    MODIFY_DATE, CHECK_NO, CHECK_NAME, CHECK_DATE, FROM_ID, SERV_TAG, GOODS_SAMPLE, SAMPLE_GET, 
+    DOCS, CONFIRM, REASON, FP_AMT, PAY_AMT, WH_NO, N_NO, REAL_NO, MANUAL_NO, PAY_TERM, 
+    OC_ID, IS_INSTALL, TAG, GJ_TERM, NEED_CALC, ACC_NO, ORG_ID, USER_ID, CELL_ID, FCT_ID, 
+    KC_TYPE, VIEW_SCOPE, PROMPT, IS_NEED_SAMPLE, IS_GET_SAMPLE, TRADEMODE, CURR_TYPE, 
+    PRO_ID, PRO_TYPE, SEND_OVER_TAG, SEND_OVER_DATE, FCT_ORDER_NO, IS_JS_REAL, CHECK_USER_ID, 
+    MODIFY_USER_ID, COPY_PARTY_NO, COPY_PARTY_ID, COPY_MOVE_NO, COPY_MOVE_ID, IS_JQ_OVER, 
+    UNDO, IS_ZY_OVER, PRODUCER_ID, PRODUCER_NO, PRODUCER_NAME, GD_TAG, GD_USER_ID, GD_DATE, 
+    GJ_FCT_NO, GJ_FCT_ID, OCU_ORG_ID, SEND_TERM, SEND_DAY, SENDOVER_DAY, SEND_DATE, SENDOVER_DATE, 
+    WH_ID, WH_NAME, BC_TYPE, TRANS_WAY, SIGN_DATE, C_TERM, CST_SHORT_NAME, TRANS_CORP_ID, 
+    TRANS_CORP_NAME, OTHER_REQ, IS_U8_PURCHARSE_REQ, IS_MOVE, IS_CLOSE, CLOSE_USER_ID, 
+    CLOSE_DATE, IU_OCU_ID, INLAND_OR_OVERSEAS, TYPE_OF_CON, CLOSE_CONFIRM, DEP_ORG_ID, 
+    PURCHASER_ID, CATA_OF_CON, PROP_OF_CON, BIZ_MODE, REL_BC_ID, CON_NAME, VALID_DATE, 
+    SIGN_PLACE, CON_CONTENT, SELLER_NATION_ID, SELLER_PROP, SENDER_ID, LAND_NATION_ID, 
+    LAND_PORT_ID, LAND_LOCATION, RECER_ID, DEST_NATION_ID, DEST_PORT_ID, DEST_LOCATION, 
+    IS_BATCHES, IS_TRANSFER, TRANSFER_PORT_ID, COMMISSION_ID, COMMISSION_RATE, COMMISSION_CURR_TYPE, 
+    COMMISSION_FEE, SHIPMENT_WAY, BOX_DELIVERY_TYPE, DELIVERY_PLACE, IS_PLAN_ST, PROXY_CORP_ID, 
+    TRANS_RESP, TRANS_FEE_RESP, TRANS_INSU_RESP, ARBITRATION_PLACE, SUE_PLACE, IS_NEED_SPEC_DOCU, 
+    PRICING_WAY, PRICE_STANDARD, EXAM_STANDARD, CON_PERIOD, BAIL_RATE, PROFIT_SCHEME, 
+    COMM_QUANT_PACK, COMM_QUANT_STAT, C_STATUS, CMD_CATA_ID, PRICE_TERM, FCT_NAME, PURCHASER_NAME, 
+    SENDER_NAME, RECER_NAME, COMMISSION_NAME, PROXY_CORP_NAME, AFFECT_INCOME, AFFECT_INCOME_RATE, 
+    MANUFAC_ID, MANUFAC_NAME, U8_OP_ID, CNY_RATE, USD_RATE, CURR_RATE, SHORT_OR_OVER, 
+    CON_PERIOD_S_TYPE, COMM_UNIT, TRADE_OR_SRV, TR_SRV_OR_GOODS, PROFIT_SCHEME_DESC, 
+    COMPLEX_LEVEL, COMM_NAME, COMM_ID, PLAN_SALES_INL_OR_OS, GJ_FCT_NAME, HOLDER_ID, 
+    HOLDER_NAME, BIZ_TYPE, REMARK_CLERK
+  </sql>
+  <insert id="insertSelective" parameterType="com.sumec.contract.entity.TExpBc">
+    insert into T_EXP_BC
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="bcId != null">
+        BC_ID,
+      </if>
+      <if test="cNo != null">
+        C_NO,
+      </if>
+      <if test="mDate != null">
+        M_DATE,
+      </if>
+      <if test="cType != null">
+        C_TYPE,
+      </if>
+      <if test="fctNo != null">
+        FCT_NO,
+      </if>
+      <if test="firstParty != null">
+        FIRST_PARTY,
+      </if>
+      <if test="packTrm != null">
+        PACK_TRM,
+      </if>
+      <if test="quality != null">
+        QUALITY,
+      </if>
+      <if test="qualityTime != null">
+        QUALITY_TIME,
+      </if>
+      <if test="depature != null">
+        DEPATURE,
+      </if>
+      <if test="note != null">
+        NOTE,
+      </if>
+      <if test="deliD != null">
+        DELI_D,
+      </if>
+      <if test="market != null">
+        MARKET,
+      </if>
+      <if test="pQuant != null">
+        P_QUANT,
+      </if>
+      <if test="pAmt != null">
+        P_AMT,
+      </if>
+      <if test="statusPs != null">
+        STATUS_PS,
+      </if>
+      <if test="endId != null">
+        END_ID,
+      </if>
+      <if test="rohsBz != null">
+        ROHS_BZ,
+      </if>
+      <if test="yh != null">
+        YH,
+      </if>
+      <if test="isValid != null">
+        IS_VALID,
+      </if>
+      <if test="depNo != null">
+        DEP_NO,
+      </if>
+      <if test="groupNo != null">
+        GROUP_NO,
+      </if>
+      <if test="empNo != null">
+        EMP_NO,
+      </if>
+      <if test="empName != null">
+        EMP_NAME,
+      </if>
+      <if test="makerNo != null">
+        MAKER_NO,
+      </if>
+      <if test="makerName != null">
+        MAKER_NAME,
+      </if>
+      <if test="modifyNo != null">
+        MODIFY_NO,
+      </if>
+      <if test="modifyName != null">
+        MODIFY_NAME,
+      </if>
+      <if test="modifyDate != null">
+        MODIFY_DATE,
+      </if>
+      <if test="checkNo != null">
+        CHECK_NO,
+      </if>
+      <if test="checkName != null">
+        CHECK_NAME,
+      </if>
+      <if test="checkDate != null">
+        CHECK_DATE,
+      </if>
+      <if test="fromId != null">
+        FROM_ID,
+      </if>
+      <if test="servTag != null">
+        SERV_TAG,
+      </if>
+      <if test="goodsSample != null">
+        GOODS_SAMPLE,
+      </if>
+      <if test="sampleGet != null">
+        SAMPLE_GET,
+      </if>
+      <if test="docs != null">
+        DOCS,
+      </if>
+      <if test="confirm != null">
+        CONFIRM,
+      </if>
+      <if test="reason != null">
+        REASON,
+      </if>
+      <if test="fpAmt != null">
+        FP_AMT,
+      </if>
+      <if test="payAmt != null">
+        PAY_AMT,
+      </if>
+      <if test="whNo != null">
+        WH_NO,
+      </if>
+      <if test="nNo != null">
+        N_NO,
+      </if>
+      <if test="realNo != null">
+        REAL_NO,
+      </if>
+      <if test="manualNo != null">
+        MANUAL_NO,
+      </if>
+      <if test="payTerm != null">
+        PAY_TERM,
+      </if>
+      <if test="ocId != null">
+        OC_ID,
+      </if>
+      <if test="isInstall != null">
+        IS_INSTALL,
+      </if>
+      <if test="tag != null">
+        TAG,
+      </if>
+      <if test="gjTerm != null">
+        GJ_TERM,
+      </if>
+      <if test="needCalc != null">
+        NEED_CALC,
+      </if>
+      <if test="accNo != null">
+        ACC_NO,
+      </if>
+      <if test="orgId != null">
+        ORG_ID,
+      </if>
+      <if test="userId != null">
+        USER_ID,
+      </if>
+      <if test="cellId != null">
+        CELL_ID,
+      </if>
+      <if test="fctId != null">
+        FCT_ID,
+      </if>
+      <if test="kcType != null">
+        KC_TYPE,
+      </if>
+      <if test="viewScope != null">
+        VIEW_SCOPE,
+      </if>
+      <if test="prompt != null">
+        PROMPT,
+      </if>
+      <if test="isNeedSample != null">
+        IS_NEED_SAMPLE,
+      </if>
+      <if test="isGetSample != null">
+        IS_GET_SAMPLE,
+      </if>
+      <if test="trademode != null">
+        TRADEMODE,
+      </if>
+      <if test="currType != null">
+        CURR_TYPE,
+      </if>
+      <if test="proId != null">
+        PRO_ID,
+      </if>
+      <if test="proType != null">
+        PRO_TYPE,
+      </if>
+      <if test="sendOverTag != null">
+        SEND_OVER_TAG,
+      </if>
+      <if test="sendOverDate != null">
+        SEND_OVER_DATE,
+      </if>
+      <if test="fctOrderNo != null">
+        FCT_ORDER_NO,
+      </if>
+      <if test="isJsReal != null">
+        IS_JS_REAL,
+      </if>
+      <if test="checkUserId != null">
+        CHECK_USER_ID,
+      </if>
+      <if test="modifyUserId != null">
+        MODIFY_USER_ID,
+      </if>
+      <if test="copyPartyNo != null">
+        COPY_PARTY_NO,
+      </if>
+      <if test="copyPartyId != null">
+        COPY_PARTY_ID,
+      </if>
+      <if test="copyMoveNo != null">
+        COPY_MOVE_NO,
+      </if>
+      <if test="copyMoveId != null">
+        COPY_MOVE_ID,
+      </if>
+      <if test="isJqOver != null">
+        IS_JQ_OVER,
+      </if>
+      <if test="undo != null">
+        UNDO,
+      </if>
+      <if test="isZyOver != null">
+        IS_ZY_OVER,
+      </if>
+      <if test="producerId != null">
+        PRODUCER_ID,
+      </if>
+      <if test="producerNo != null">
+        PRODUCER_NO,
+      </if>
+      <if test="producerName != null">
+        PRODUCER_NAME,
+      </if>
+      <if test="gdTag != null">
+        GD_TAG,
+      </if>
+      <if test="gdUserId != null">
+        GD_USER_ID,
+      </if>
+      <if test="gdDate != null">
+        GD_DATE,
+      </if>
+      <if test="gjFctNo != null">
+        GJ_FCT_NO,
+      </if>
+      <if test="gjFctId != null">
+        GJ_FCT_ID,
+      </if>
+      <if test="ocuOrgId != null">
+        OCU_ORG_ID,
+      </if>
+      <if test="sendTerm != null">
+        SEND_TERM,
+      </if>
+      <if test="sendDay != null">
+        SEND_DAY,
+      </if>
+      <if test="sendoverDay != null">
+        SENDOVER_DAY,
+      </if>
+      <if test="sendDate != null">
+        SEND_DATE,
+      </if>
+      <if test="sendoverDate != null">
+        SENDOVER_DATE,
+      </if>
+      <if test="whId != null">
+        WH_ID,
+      </if>
+      <if test="whName != null">
+        WH_NAME,
+      </if>
+      <if test="bcType != null">
+        BC_TYPE,
+      </if>
+      <if test="transWay != null">
+        TRANS_WAY,
+      </if>
+      <if test="signDate != null">
+        SIGN_DATE,
+      </if>
+      <if test="cTerm != null">
+        C_TERM,
+      </if>
+      <if test="cstShortName != null">
+        CST_SHORT_NAME,
+      </if>
+      <if test="transCorpId != null">
+        TRANS_CORP_ID,
+      </if>
+      <if test="transCorpName != null">
+        TRANS_CORP_NAME,
+      </if>
+      <if test="otherReq != null">
+        OTHER_REQ,
+      </if>
+      <if test="isU8PurcharseReq != null">
+        IS_U8_PURCHARSE_REQ,
+      </if>
+      <if test="isMove != null">
+        IS_MOVE,
+      </if>
+      <if test="isClose != null">
+        IS_CLOSE,
+      </if>
+      <if test="closeUserId != null">
+        CLOSE_USER_ID,
+      </if>
+      <if test="closeDate != null">
+        CLOSE_DATE,
+      </if>
+      <if test="iuOcuId != null">
+        IU_OCU_ID,
+      </if>
+      <if test="inlandOrOverseas != null">
+        INLAND_OR_OVERSEAS,
+      </if>
+      <if test="typeOfCon != null">
+        TYPE_OF_CON,
+      </if>
+      <if test="closeConfirm != null">
+        CLOSE_CONFIRM,
+      </if>
+      <if test="depOrgId != null">
+        DEP_ORG_ID,
+      </if>
+      <if test="purchaserId != null">
+        PURCHASER_ID,
+      </if>
+      <if test="cataOfCon != null">
+        CATA_OF_CON,
+      </if>
+      <if test="propOfCon != null">
+        PROP_OF_CON,
+      </if>
+      <if test="bizMode != null">
+        BIZ_MODE,
+      </if>
+      <if test="relBcId != null">
+        REL_BC_ID,
+      </if>
+      <if test="conName != null">
+        CON_NAME,
+      </if>
+      <if test="validDate != null">
+        VALID_DATE,
+      </if>
+      <if test="signPlace != null">
+        SIGN_PLACE,
+      </if>
+      <if test="conContent != null">
+        CON_CONTENT,
+      </if>
+      <if test="sellerNationId != null">
+        SELLER_NATION_ID,
+      </if>
+      <if test="sellerProp != null">
+        SELLER_PROP,
+      </if>
+      <if test="senderId != null">
+        SENDER_ID,
+      </if>
+      <if test="landNationId != null">
+        LAND_NATION_ID,
+      </if>
+      <if test="landPortId != null">
+        LAND_PORT_ID,
+      </if>
+      <if test="landLocation != null">
+        LAND_LOCATION,
+      </if>
+      <if test="recerId != null">
+        RECER_ID,
+      </if>
+      <if test="destNationId != null">
+        DEST_NATION_ID,
+      </if>
+      <if test="destPortId != null">
+        DEST_PORT_ID,
+      </if>
+      <if test="destLocation != null">
+        DEST_LOCATION,
+      </if>
+      <if test="isBatches != null">
+        IS_BATCHES,
+      </if>
+      <if test="isTransfer != null">
+        IS_TRANSFER,
+      </if>
+      <if test="transferPortId != null">
+        TRANSFER_PORT_ID,
+      </if>
+      <if test="commissionId != null">
+        COMMISSION_ID,
+      </if>
+      <if test="commissionRate != null">
+        COMMISSION_RATE,
+      </if>
+      <if test="commissionCurrType != null">
+        COMMISSION_CURR_TYPE,
+      </if>
+      <if test="commissionFee != null">
+        COMMISSION_FEE,
+      </if>
+      <if test="shipmentWay != null">
+        SHIPMENT_WAY,
+      </if>
+      <if test="boxDeliveryType != null">
+        BOX_DELIVERY_TYPE,
+      </if>
+      <if test="deliveryPlace != null">
+        DELIVERY_PLACE,
+      </if>
+      <if test="isPlanSt != null">
+        IS_PLAN_ST,
+      </if>
+      <if test="proxyCorpId != null">
+        PROXY_CORP_ID,
+      </if>
+      <if test="transResp != null">
+        TRANS_RESP,
+      </if>
+      <if test="transFeeResp != null">
+        TRANS_FEE_RESP,
+      </if>
+      <if test="transInsuResp != null">
+        TRANS_INSU_RESP,
+      </if>
+      <if test="arbitrationPlace != null">
+        ARBITRATION_PLACE,
+      </if>
+      <if test="suePlace != null">
+        SUE_PLACE,
+      </if>
+      <if test="isNeedSpecDocu != null">
+        IS_NEED_SPEC_DOCU,
+      </if>
+      <if test="pricingWay != null">
+        PRICING_WAY,
+      </if>
+      <if test="priceStandard != null">
+        PRICE_STANDARD,
+      </if>
+      <if test="examStandard != null">
+        EXAM_STANDARD,
+      </if>
+      <if test="conPeriod != null">
+        CON_PERIOD,
+      </if>
+      <if test="bailRate != null">
+        BAIL_RATE,
+      </if>
+      <if test="profitScheme != null">
+        PROFIT_SCHEME,
+      </if>
+      <if test="commQuantPack != null">
+        COMM_QUANT_PACK,
+      </if>
+      <if test="commQuantStat != null">
+        COMM_QUANT_STAT,
+      </if>
+      <if test="cStatus != null">
+        C_STATUS,
+      </if>
+      <if test="cmdCataId != null">
+        CMD_CATA_ID,
+      </if>
+      <if test="priceTerm != null">
+        PRICE_TERM,
+      </if>
+      <if test="fctName != null">
+        FCT_NAME,
+      </if>
+      <if test="purchaserName != null">
+        PURCHASER_NAME,
+      </if>
+      <if test="senderName != null">
+        SENDER_NAME,
+      </if>
+      <if test="recerName != null">
+        RECER_NAME,
+      </if>
+      <if test="commissionName != null">
+        COMMISSION_NAME,
+      </if>
+      <if test="proxyCorpName != null">
+        PROXY_CORP_NAME,
+      </if>
+      <if test="affectIncome != null">
+        AFFECT_INCOME,
+      </if>
+      <if test="affectIncomeRate != null">
+        AFFECT_INCOME_RATE,
+      </if>
+      <if test="manufacId != null">
+        MANUFAC_ID,
+      </if>
+      <if test="manufacName != null">
+        MANUFAC_NAME,
+      </if>
+      <if test="u8OpId != null">
+        U8_OP_ID,
+      </if>
+      <if test="cnyRate != null">
+        CNY_RATE,
+      </if>
+      <if test="usdRate != null">
+        USD_RATE,
+      </if>
+      <if test="currRate != null">
+        CURR_RATE,
+      </if>
+      <if test="shortOrOver != null">
+        SHORT_OR_OVER,
+      </if>
+      <if test="conPeriodSType != null">
+        CON_PERIOD_S_TYPE,
+      </if>
+      <if test="commUnit != null">
+        COMM_UNIT,
+      </if>
+      <if test="tradeOrSrv != null">
+        TRADE_OR_SRV,
+      </if>
+      <if test="trSrvOrGoods != null">
+        TR_SRV_OR_GOODS,
+      </if>
+      <if test="profitSchemeDesc != null">
+        PROFIT_SCHEME_DESC,
+      </if>
+      <if test="complexLevel != null">
+        COMPLEX_LEVEL,
+      </if>
+      <if test="commName != null">
+        COMM_NAME,
+      </if>
+      <if test="commId != null">
+        COMM_ID,
+      </if>
+      <if test="planSalesInlOrOs != null">
+        PLAN_SALES_INL_OR_OS,
+      </if>
+      <if test="gjFctName != null">
+        GJ_FCT_NAME,
+      </if>
+      <if test="holderId != null">
+        HOLDER_ID,
+      </if>
+      <if test="holderName != null">
+        HOLDER_NAME,
+      </if>
+      <if test="bizType != null">
+        BIZ_TYPE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="bcId != null">
+        #{bcId,jdbcType=DECIMAL},
+      </if>
+      <if test="cNo != null">
+        #{cNo,jdbcType=VARCHAR},
+      </if>
+      <if test="mDate != null">
+        #{mDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cType != null">
+        #{cType,jdbcType=VARCHAR},
+      </if>
+      <if test="fctNo != null">
+        #{fctNo,jdbcType=VARCHAR},
+      </if>
+      <if test="firstParty != null">
+        #{firstParty,jdbcType=VARCHAR},
+      </if>
+      <if test="packTrm != null">
+        #{packTrm,jdbcType=VARCHAR},
+      </if>
+      <if test="quality != null">
+        #{quality,jdbcType=VARCHAR},
+      </if>
+      <if test="qualityTime != null">
+        #{qualityTime,jdbcType=VARCHAR},
+      </if>
+      <if test="depature != null">
+        #{depature,jdbcType=VARCHAR},
+      </if>
+      <if test="note != null">
+        #{note,jdbcType=VARCHAR},
+      </if>
+      <if test="deliD != null">
+        #{deliD,jdbcType=TIMESTAMP},
+      </if>
+      <if test="market != null">
+        #{market,jdbcType=VARCHAR},
+      </if>
+      <if test="pQuant != null">
+        #{pQuant,jdbcType=DECIMAL},
+      </if>
+      <if test="pAmt != null">
+        #{pAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="statusPs != null">
+        #{statusPs,jdbcType=VARCHAR},
+      </if>
+      <if test="endId != null">
+        #{endId,jdbcType=VARCHAR},
+      </if>
+      <if test="rohsBz != null">
+        #{rohsBz,jdbcType=VARCHAR},
+      </if>
+      <if test="yh != null">
+        #{yh,jdbcType=VARCHAR},
+      </if>
+      <if test="isValid != null">
+        #{isValid,jdbcType=VARCHAR},
+      </if>
+      <if test="depNo != null">
+        #{depNo,jdbcType=VARCHAR},
+      </if>
+      <if test="groupNo != null">
+        #{groupNo,jdbcType=VARCHAR},
+      </if>
+      <if test="empNo != null">
+        #{empNo,jdbcType=VARCHAR},
+      </if>
+      <if test="empName != null">
+        #{empName,jdbcType=VARCHAR},
+      </if>
+      <if test="makerNo != null">
+        #{makerNo,jdbcType=VARCHAR},
+      </if>
+      <if test="makerName != null">
+        #{makerName,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyNo != null">
+        #{modifyNo,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyName != null">
+        #{modifyName,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyDate != null">
+        #{modifyDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="checkNo != null">
+        #{checkNo,jdbcType=VARCHAR},
+      </if>
+      <if test="checkName != null">
+        #{checkName,jdbcType=VARCHAR},
+      </if>
+      <if test="checkDate != null">
+        #{checkDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fromId != null">
+        #{fromId,jdbcType=DECIMAL},
+      </if>
+      <if test="servTag != null">
+        #{servTag,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsSample != null">
+        #{goodsSample,jdbcType=VARCHAR},
+      </if>
+      <if test="sampleGet != null">
+        #{sampleGet,jdbcType=VARCHAR},
+      </if>
+      <if test="docs != null">
+        #{docs,jdbcType=VARCHAR},
+      </if>
+      <if test="confirm != null">
+        #{confirm,jdbcType=VARCHAR},
+      </if>
+      <if test="reason != null">
+        #{reason,jdbcType=VARCHAR},
+      </if>
+      <if test="fpAmt != null">
+        #{fpAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="payAmt != null">
+        #{payAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="whNo != null">
+        #{whNo,jdbcType=VARCHAR},
+      </if>
+      <if test="nNo != null">
+        #{nNo,jdbcType=VARCHAR},
+      </if>
+      <if test="realNo != null">
+        #{realNo,jdbcType=VARCHAR},
+      </if>
+      <if test="manualNo != null">
+        #{manualNo,jdbcType=VARCHAR},
+      </if>
+      <if test="payTerm != null">
+        #{payTerm,jdbcType=VARCHAR},
+      </if>
+      <if test="ocId != null">
+        #{ocId,jdbcType=DECIMAL},
+      </if>
+      <if test="isInstall != null">
+        #{isInstall,jdbcType=VARCHAR},
+      </if>
+      <if test="tag != null">
+        #{tag,jdbcType=VARCHAR},
+      </if>
+      <if test="gjTerm != null">
+        #{gjTerm,jdbcType=VARCHAR},
+      </if>
+      <if test="needCalc != null">
+        #{needCalc,jdbcType=VARCHAR},
+      </if>
+      <if test="accNo != null">
+        #{accNo,jdbcType=VARCHAR},
+      </if>
+      <if test="orgId != null">
+        #{orgId,jdbcType=DECIMAL},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=DECIMAL},
+      </if>
+      <if test="cellId != null">
+        #{cellId,jdbcType=DECIMAL},
+      </if>
+      <if test="fctId != null">
+        #{fctId,jdbcType=DECIMAL},
+      </if>
+      <if test="kcType != null">
+        #{kcType,jdbcType=VARCHAR},
+      </if>
+      <if test="viewScope != null">
+        #{viewScope,jdbcType=VARCHAR},
+      </if>
+      <if test="prompt != null">
+        #{prompt,jdbcType=VARCHAR},
+      </if>
+      <if test="isNeedSample != null">
+        #{isNeedSample,jdbcType=VARCHAR},
+      </if>
+      <if test="isGetSample != null">
+        #{isGetSample,jdbcType=VARCHAR},
+      </if>
+      <if test="trademode != null">
+        #{trademode,jdbcType=VARCHAR},
+      </if>
+      <if test="currType != null">
+        #{currType,jdbcType=VARCHAR},
+      </if>
+      <if test="proId != null">
+        #{proId,jdbcType=DECIMAL},
+      </if>
+      <if test="proType != null">
+        #{proType,jdbcType=VARCHAR},
+      </if>
+      <if test="sendOverTag != null">
+        #{sendOverTag,jdbcType=VARCHAR},
+      </if>
+      <if test="sendOverDate != null">
+        #{sendOverDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fctOrderNo != null">
+        #{fctOrderNo,jdbcType=VARCHAR},
+      </if>
+      <if test="isJsReal != null">
+        #{isJsReal,jdbcType=VARCHAR},
+      </if>
+      <if test="checkUserId != null">
+        #{checkUserId,jdbcType=DECIMAL},
+      </if>
+      <if test="modifyUserId != null">
+        #{modifyUserId,jdbcType=DECIMAL},
+      </if>
+      <if test="copyPartyNo != null">
+        #{copyPartyNo,jdbcType=VARCHAR},
+      </if>
+      <if test="copyPartyId != null">
+        #{copyPartyId,jdbcType=DECIMAL},
+      </if>
+      <if test="copyMoveNo != null">
+        #{copyMoveNo,jdbcType=VARCHAR},
+      </if>
+      <if test="copyMoveId != null">
+        #{copyMoveId,jdbcType=DECIMAL},
+      </if>
+      <if test="isJqOver != null">
+        #{isJqOver,jdbcType=VARCHAR},
+      </if>
+      <if test="undo != null">
+        #{undo,jdbcType=VARCHAR},
+      </if>
+      <if test="isZyOver != null">
+        #{isZyOver,jdbcType=VARCHAR},
+      </if>
+      <if test="producerId != null">
+        #{producerId,jdbcType=DECIMAL},
+      </if>
+      <if test="producerNo != null">
+        #{producerNo,jdbcType=VARCHAR},
+      </if>
+      <if test="producerName != null">
+        #{producerName,jdbcType=VARCHAR},
+      </if>
+      <if test="gdTag != null">
+        #{gdTag,jdbcType=VARCHAR},
+      </if>
+      <if test="gdUserId != null">
+        #{gdUserId,jdbcType=DECIMAL},
+      </if>
+      <if test="gdDate != null">
+        #{gdDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gjFctNo != null">
+        #{gjFctNo,jdbcType=VARCHAR},
+      </if>
+      <if test="gjFctId != null">
+        #{gjFctId,jdbcType=DECIMAL},
+      </if>
+      <if test="ocuOrgId != null">
+        #{ocuOrgId,jdbcType=DECIMAL},
+      </if>
+      <if test="sendTerm != null">
+        #{sendTerm,jdbcType=VARCHAR},
+      </if>
+      <if test="sendDay != null">
+        #{sendDay,jdbcType=DECIMAL},
+      </if>
+      <if test="sendoverDay != null">
+        #{sendoverDay,jdbcType=DECIMAL},
+      </if>
+      <if test="sendDate != null">
+        #{sendDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sendoverDate != null">
+        #{sendoverDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="whId != null">
+        #{whId,jdbcType=DECIMAL},
+      </if>
+      <if test="whName != null">
+        #{whName,jdbcType=VARCHAR},
+      </if>
+      <if test="bcType != null">
+        #{bcType,jdbcType=VARCHAR},
+      </if>
+      <if test="transWay != null">
+        #{transWay,jdbcType=VARCHAR},
+      </if>
+      <if test="signDate != null">
+        #{signDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cTerm != null">
+        #{cTerm,jdbcType=VARCHAR},
+      </if>
+      <if test="cstShortName != null">
+        #{cstShortName,jdbcType=VARCHAR},
+      </if>
+      <if test="transCorpId != null">
+        #{transCorpId,jdbcType=DECIMAL},
+      </if>
+      <if test="transCorpName != null">
+        #{transCorpName,jdbcType=VARCHAR},
+      </if>
+      <if test="otherReq != null">
+        #{otherReq,jdbcType=VARCHAR},
+      </if>
+      <if test="isU8PurcharseReq != null">
+        #{isU8PurcharseReq,jdbcType=VARCHAR},
+      </if>
+      <if test="isMove != null">
+        #{isMove,jdbcType=VARCHAR},
+      </if>
+      <if test="isClose != null">
+        #{isClose,jdbcType=VARCHAR},
+      </if>
+      <if test="closeUserId != null">
+        #{closeUserId,jdbcType=DECIMAL},
+      </if>
+      <if test="closeDate != null">
+        #{closeDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="iuOcuId != null">
+        #{iuOcuId,jdbcType=DECIMAL},
+      </if>
+      <if test="inlandOrOverseas != null">
+        #{inlandOrOverseas,jdbcType=VARCHAR},
+      </if>
+      <if test="typeOfCon != null">
+        #{typeOfCon,jdbcType=VARCHAR},
+      </if>
+      <if test="closeConfirm != null">
+        #{closeConfirm,jdbcType=VARCHAR},
+      </if>
+      <if test="depOrgId != null">
+        #{depOrgId,jdbcType=DECIMAL},
+      </if>
+      <if test="purchaserId != null">
+        #{purchaserId,jdbcType=DECIMAL},
+      </if>
+      <if test="cataOfCon != null">
+        #{cataOfCon,jdbcType=VARCHAR},
+      </if>
+      <if test="propOfCon != null">
+        #{propOfCon,jdbcType=VARCHAR},
+      </if>
+      <if test="bizMode != null">
+        #{bizMode,jdbcType=VARCHAR},
+      </if>
+      <if test="relBcId != null">
+        #{relBcId,jdbcType=DECIMAL},
+      </if>
+      <if test="conName != null">
+        #{conName,jdbcType=VARCHAR},
+      </if>
+      <if test="validDate != null">
+        #{validDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="signPlace != null">
+        #{signPlace,jdbcType=VARCHAR},
+      </if>
+      <if test="conContent != null">
+        #{conContent,jdbcType=VARCHAR},
+      </if>
+      <if test="sellerNationId != null">
+        #{sellerNationId,jdbcType=DECIMAL},
+      </if>
+      <if test="sellerProp != null">
+        #{sellerProp,jdbcType=VARCHAR},
+      </if>
+      <if test="senderId != null">
+        #{senderId,jdbcType=DECIMAL},
+      </if>
+      <if test="landNationId != null">
+        #{landNationId,jdbcType=DECIMAL},
+      </if>
+      <if test="landPortId != null">
+        #{landPortId,jdbcType=DECIMAL},
+      </if>
+      <if test="landLocation != null">
+        #{landLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="recerId != null">
+        #{recerId,jdbcType=DECIMAL},
+      </if>
+      <if test="destNationId != null">
+        #{destNationId,jdbcType=DECIMAL},
+      </if>
+      <if test="destPortId != null">
+        #{destPortId,jdbcType=DECIMAL},
+      </if>
+      <if test="destLocation != null">
+        #{destLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="isBatches != null">
+        #{isBatches,jdbcType=VARCHAR},
+      </if>
+      <if test="isTransfer != null">
+        #{isTransfer,jdbcType=VARCHAR},
+      </if>
+      <if test="transferPortId != null">
+        #{transferPortId,jdbcType=DECIMAL},
+      </if>
+      <if test="commissionId != null">
+        #{commissionId,jdbcType=DECIMAL},
+      </if>
+      <if test="commissionRate != null">
+        #{commissionRate,jdbcType=DECIMAL},
+      </if>
+      <if test="commissionCurrType != null">
+        #{commissionCurrType,jdbcType=VARCHAR},
+      </if>
+      <if test="commissionFee != null">
+        #{commissionFee,jdbcType=DECIMAL},
+      </if>
+      <if test="shipmentWay != null">
+        #{shipmentWay,jdbcType=VARCHAR},
+      </if>
+      <if test="boxDeliveryType != null">
+        #{boxDeliveryType,jdbcType=VARCHAR},
+      </if>
+      <if test="deliveryPlace != null">
+        #{deliveryPlace,jdbcType=VARCHAR},
+      </if>
+      <if test="isPlanSt != null">
+        #{isPlanSt,jdbcType=VARCHAR},
+      </if>
+      <if test="proxyCorpId != null">
+        #{proxyCorpId,jdbcType=DECIMAL},
+      </if>
+      <if test="transResp != null">
+        #{transResp,jdbcType=VARCHAR},
+      </if>
+      <if test="transFeeResp != null">
+        #{transFeeResp,jdbcType=VARCHAR},
+      </if>
+      <if test="transInsuResp != null">
+        #{transInsuResp,jdbcType=VARCHAR},
+      </if>
+      <if test="arbitrationPlace != null">
+        #{arbitrationPlace,jdbcType=VARCHAR},
+      </if>
+      <if test="suePlace != null">
+        #{suePlace,jdbcType=VARCHAR},
+      </if>
+      <if test="isNeedSpecDocu != null">
+        #{isNeedSpecDocu,jdbcType=VARCHAR},
+      </if>
+      <if test="pricingWay != null">
+        #{pricingWay,jdbcType=VARCHAR},
+      </if>
+      <if test="priceStandard != null">
+        #{priceStandard,jdbcType=VARCHAR},
+      </if>
+      <if test="examStandard != null">
+        #{examStandard,jdbcType=VARCHAR},
+      </if>
+      <if test="conPeriod != null">
+        #{conPeriod,jdbcType=DECIMAL},
+      </if>
+      <if test="bailRate != null">
+        #{bailRate,jdbcType=DECIMAL},
+      </if>
+      <if test="profitScheme != null">
+        #{profitScheme,jdbcType=VARCHAR},
+      </if>
+      <if test="commQuantPack != null">
+        #{commQuantPack,jdbcType=DECIMAL},
+      </if>
+      <if test="commQuantStat != null">
+        #{commQuantStat,jdbcType=DECIMAL},
+      </if>
+      <if test="cStatus != null">
+        #{cStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="cmdCataId != null">
+        #{cmdCataId,jdbcType=DECIMAL},
+      </if>
+      <if test="priceTerm != null">
+        #{priceTerm,jdbcType=VARCHAR},
+      </if>
+      <if test="fctName != null">
+        #{fctName,jdbcType=VARCHAR},
+      </if>
+      <if test="purchaserName != null">
+        #{purchaserName,jdbcType=VARCHAR},
+      </if>
+      <if test="senderName != null">
+        #{senderName,jdbcType=VARCHAR},
+      </if>
+      <if test="recerName != null">
+        #{recerName,jdbcType=VARCHAR},
+      </if>
+      <if test="commissionName != null">
+        #{commissionName,jdbcType=VARCHAR},
+      </if>
+      <if test="proxyCorpName != null">
+        #{proxyCorpName,jdbcType=VARCHAR},
+      </if>
+      <if test="affectIncome != null">
+        #{affectIncome,jdbcType=VARCHAR},
+      </if>
+      <if test="affectIncomeRate != null">
+        #{affectIncomeRate,jdbcType=DECIMAL},
+      </if>
+      <if test="manufacId != null">
+        #{manufacId,jdbcType=DECIMAL},
+      </if>
+      <if test="manufacName != null">
+        #{manufacName,jdbcType=VARCHAR},
+      </if>
+      <if test="u8OpId != null">
+        #{u8OpId,jdbcType=DECIMAL},
+      </if>
+      <if test="cnyRate != null">
+        #{cnyRate,jdbcType=DECIMAL},
+      </if>
+      <if test="usdRate != null">
+        #{usdRate,jdbcType=DECIMAL},
+      </if>
+      <if test="currRate != null">
+        #{currRate,jdbcType=DECIMAL},
+      </if>
+      <if test="shortOrOver != null">
+        #{shortOrOver,jdbcType=DECIMAL},
+      </if>
+      <if test="conPeriodSType != null">
+        #{conPeriodSType,jdbcType=VARCHAR},
+      </if>
+      <if test="commUnit != null">
+        #{commUnit,jdbcType=DECIMAL},
+      </if>
+      <if test="tradeOrSrv != null">
+        #{tradeOrSrv,jdbcType=VARCHAR},
+      </if>
+      <if test="trSrvOrGoods != null">
+        #{trSrvOrGoods,jdbcType=VARCHAR},
+      </if>
+      <if test="profitSchemeDesc != null">
+        #{profitSchemeDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="complexLevel != null">
+        #{complexLevel,jdbcType=DECIMAL},
+      </if>
+      <if test="commName != null">
+        #{commName,jdbcType=VARCHAR},
+      </if>
+      <if test="commId != null">
+        #{commId,jdbcType=DECIMAL},
+      </if>
+      <if test="planSalesInlOrOs != null">
+        #{planSalesInlOrOs,jdbcType=VARCHAR},
+      </if>
+      <if test="gjFctName != null">
+        #{gjFctName,jdbcType=VARCHAR},
+      </if>
+      <if test="holderId != null">
+        #{holderId,jdbcType=DECIMAL},
+      </if>
+      <if test="holderName != null">
+        #{holderName,jdbcType=VARCHAR},
+      </if>
+      <if test="bizType != null">
+        #{bizType,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sumec.contract.entity.TExpBc">
+    update T_EXP_BC
+    <set>
+      <if test="cNo != null">
+        C_NO = #{cNo,jdbcType=VARCHAR},
+      </if>
+      <if test="mDate != null">
+        M_DATE = #{mDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cType != null">
+        C_TYPE = #{cType,jdbcType=VARCHAR},
+      </if>
+      <if test="fctNo != null">
+        FCT_NO = #{fctNo,jdbcType=VARCHAR},
+      </if>
+      <if test="firstParty != null">
+        FIRST_PARTY = #{firstParty,jdbcType=VARCHAR},
+      </if>
+      <if test="packTrm != null">
+      PACK_TRM = #{packTrm,jdbcType=VARCHAR},
+    </if>
+      <if test="quality != null">
+        QUALITY = #{quality,jdbcType=VARCHAR},
+      </if>
+      <if test="qualityTime != null">
+        QUALITY_TIME = #{qualityTime,jdbcType=VARCHAR},
+      </if>
+      <if test="depature != null">
+        DEPATURE = #{depature,jdbcType=VARCHAR},
+      </if>
+      <if test="note != null">
+        NOTE = #{note,jdbcType=VARCHAR},
+      </if>
+      <if test="deliD != null">
+        DELI_D = #{deliD,jdbcType=TIMESTAMP},
+      </if>
+      <if test="market != null">
+        MARKET = #{market,jdbcType=VARCHAR},
+      </if>
+      <if test="pQuant != null and pQuant != ''">
+        P_QUANT = #{pQuant,jdbcType=DECIMAL},
+      </if>
+      <if test="pAmt != null">
+        P_AMT = #{pAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="statusPs != null">
+        STATUS_PS = #{statusPs,jdbcType=VARCHAR},
+      </if>
+      <if test="endId != null">
+        END_ID = #{endId,jdbcType=VARCHAR},
+      </if>
+      <if test="rohsBz != null">
+        ROHS_BZ = #{rohsBz,jdbcType=VARCHAR},
+      </if>
+      <if test="yh != null">
+        YH = #{yh,jdbcType=VARCHAR},
+      </if>
+      <if test="isValid != null">
+        IS_VALID = #{isValid,jdbcType=VARCHAR},
+      </if>
+      <if test="depNo != null">
+        DEP_NO = #{depNo,jdbcType=VARCHAR},
+      </if>
+      <if test="groupNo != null">
+        GROUP_NO = #{groupNo,jdbcType=VARCHAR},
+      </if>
+      <if test="empNo != null">
+        EMP_NO = #{empNo,jdbcType=VARCHAR},
+      </if>
+      <if test="empName != null">
+        EMP_NAME = #{empName,jdbcType=VARCHAR},
+      </if>
+      <if test="makerNo != null">
+        MAKER_NO = #{makerNo,jdbcType=VARCHAR},
+      </if>
+      <if test="makerName != null">
+        MAKER_NAME = #{makerName,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyNo != null">
+        MODIFY_NO = #{modifyNo,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyName != null">
+        MODIFY_NAME = #{modifyName,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyDate != null">
+        MODIFY_DATE = #{modifyDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="checkNo != null">
+        CHECK_NO = #{checkNo,jdbcType=VARCHAR},
+      </if>
+      <if test="checkName != null">
+        CHECK_NAME = #{checkName,jdbcType=VARCHAR},
+      </if>
+      <if test="checkDate != null">
+        CHECK_DATE = #{checkDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fromId != null">
+        FROM_ID = #{fromId,jdbcType=DECIMAL},
+      </if>
+      <if test="servTag != null">
+        SERV_TAG = #{servTag,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsSample != null">
+        GOODS_SAMPLE = #{goodsSample,jdbcType=VARCHAR},
+      </if>
+      <if test="sampleGet != null">
+        SAMPLE_GET = #{sampleGet,jdbcType=VARCHAR},
+      </if>
+      <if test="docs != null">
+        DOCS = #{docs,jdbcType=VARCHAR},
+      </if>
+      <if test="confirm != null and confirm != ''">
+        CONFIRM = #{confirm,jdbcType=VARCHAR},
+      </if>
+      <if test="reason != null">
+        REASON = #{reason,jdbcType=VARCHAR},
+      </if>
+      <if test="fpAmt != null">
+        FP_AMT = #{fpAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="payAmt != null">
+        PAY_AMT = #{payAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="whNo != null">
+        WH_NO = #{whNo,jdbcType=VARCHAR},
+      </if>
+      <if test="nNo != null">
+        N_NO = #{nNo,jdbcType=VARCHAR},
+      </if>
+      <if test="realNo != null">
+        REAL_NO = #{realNo,jdbcType=VARCHAR},
+      </if>
+      <if test="manualNo != null">
+        MANUAL_NO = #{manualNo,jdbcType=VARCHAR},
+      </if>
+      <if test="payTerm != null">
+        PAY_TERM = #{payTerm,jdbcType=VARCHAR},
+      </if>
+      <if test="ocId != null">
+        OC_ID = #{ocId,jdbcType=DECIMAL},
+      </if>
+      <if test="isInstall != null">
+        IS_INSTALL = #{isInstall,jdbcType=VARCHAR},
+      </if>
+      <if test="tag != null">
+        TAG = #{tag,jdbcType=VARCHAR},
+      </if>
+      <if test="gjTerm != null">
+        GJ_TERM = #{gjTerm,jdbcType=VARCHAR},
+      </if>
+      <if test="needCalc != null">
+        NEED_CALC = #{needCalc,jdbcType=VARCHAR},
+      </if>
+      <if test="accNo != null">
+        ACC_NO = #{accNo,jdbcType=VARCHAR},
+      </if>
+      <if test="orgId != null">
+        ORG_ID = #{orgId,jdbcType=DECIMAL},
+      </if>
+      <if test="userId != null">
+        USER_ID = #{userId,jdbcType=DECIMAL},
+      </if>
+      <if test="cellId != null">
+        CELL_ID = #{cellId,jdbcType=DECIMAL},
+      </if>
+      <if test="fctId != null">
+        FCT_ID = #{fctId,jdbcType=DECIMAL},
+      </if>
+      <if test="kcType != null">
+        KC_TYPE = #{kcType,jdbcType=VARCHAR},
+      </if>
+      <if test="viewScope != null">
+        VIEW_SCOPE = #{viewScope,jdbcType=VARCHAR},
+      </if>
+      <if test="prompt != null">
+        PROMPT = #{prompt,jdbcType=VARCHAR},
+      </if>
+      <if test="isNeedSample != null">
+        IS_NEED_SAMPLE = #{isNeedSample,jdbcType=VARCHAR},
+      </if>
+      <if test="isGetSample != null">
+        IS_GET_SAMPLE = #{isGetSample,jdbcType=VARCHAR},
+      </if>
+      <if test="trademode != null">
+        TRADEMODE = #{trademode,jdbcType=VARCHAR},
+      </if>
+      <if test="currType != null">
+        CURR_TYPE = #{currType,jdbcType=VARCHAR},
+      </if>
+      <if test="proId != null">
+        PRO_ID = #{proId,jdbcType=DECIMAL},
+      </if>
+      <if test="proType != null">
+        PRO_TYPE = #{proType,jdbcType=VARCHAR},
+      </if>
+      <if test="sendOverTag != null">
+        SEND_OVER_TAG = #{sendOverTag,jdbcType=VARCHAR},
+      </if>
+      <if test="sendOverDate != null">
+        SEND_OVER_DATE = #{sendOverDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fctOrderNo != null">
+        FCT_ORDER_NO = #{fctOrderNo,jdbcType=VARCHAR},
+      </if>
+      <if test="isJsReal != null">
+        IS_JS_REAL = #{isJsReal,jdbcType=VARCHAR},
+      </if>
+      <if test="checkUserId != null">
+        CHECK_USER_ID = #{checkUserId,jdbcType=DECIMAL},
+      </if>
+      <if test="modifyUserId != null">
+        MODIFY_USER_ID = #{modifyUserId,jdbcType=DECIMAL},
+      </if>
+      <if test="copyPartyNo != null">
+        COPY_PARTY_NO = #{copyPartyNo,jdbcType=VARCHAR},
+      </if>
+      <if test="copyPartyId != null">
+        COPY_PARTY_ID = #{copyPartyId,jdbcType=DECIMAL},
+      </if>
+      <if test="copyMoveNo != null">
+        COPY_MOVE_NO = #{copyMoveNo,jdbcType=VARCHAR},
+      </if>
+      <if test="copyMoveId != null">
+        COPY_MOVE_ID = #{copyMoveId,jdbcType=DECIMAL},
+      </if>
+      <if test="isJqOver != null">
+        IS_JQ_OVER = #{isJqOver,jdbcType=VARCHAR},
+      </if>
+      <if test="undo != null">
+        UNDO = #{undo,jdbcType=VARCHAR},
+      </if>
+      <if test="isZyOver != null">
+        IS_ZY_OVER = #{isZyOver,jdbcType=VARCHAR},
+      </if>
+      <if test="producerId != null">
+        PRODUCER_ID = #{producerId,jdbcType=DECIMAL},
+      </if>
+      <if test="producerNo != null">
+        PRODUCER_NO = #{producerNo,jdbcType=VARCHAR},
+      </if>
+      <if test="producerName != null">
+        PRODUCER_NAME = #{producerName,jdbcType=VARCHAR},
+      </if>
+      <if test="gdTag != null">
+        GD_TAG = #{gdTag,jdbcType=VARCHAR},
+      </if>
+      <if test="gdUserId != null">
+        GD_USER_ID = #{gdUserId,jdbcType=DECIMAL},
+      </if>
+      <if test="gdDate != null">
+        GD_DATE = #{gdDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gjFctNo != null">
+        GJ_FCT_NO = #{gjFctNo,jdbcType=VARCHAR},
+      </if>
+      <if test="gjFctId != null">
+        GJ_FCT_ID = #{gjFctId,jdbcType=DECIMAL},
+      </if>
+      <if test="ocuOrgId != null">
+        OCU_ORG_ID = #{ocuOrgId,jdbcType=DECIMAL},
+      </if>
+      <if test="sendTerm != null">
+        SEND_TERM = #{sendTerm,jdbcType=VARCHAR},
+      </if>
+      <if test="sendDay != null">
+        SEND_DAY = #{sendDay,jdbcType=DECIMAL},
+      </if>
+      <if test="sendoverDay != null">
+        SENDOVER_DAY = #{sendoverDay,jdbcType=DECIMAL},
+      </if>
+      <if test="sendDate != null">
+        SEND_DATE = #{sendDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sendoverDate != null">
+        SENDOVER_DATE = #{sendoverDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="whId != null">
+        WH_ID = #{whId,jdbcType=DECIMAL},
+      </if>
+      <if test="whName != null">
+        WH_NAME = #{whName,jdbcType=VARCHAR},
+      </if>
+      <if test="bcType != null">
+        BC_TYPE = #{bcType,jdbcType=VARCHAR},
+      </if>
+      <if test="transWay != null">
+        TRANS_WAY = #{transWay,jdbcType=VARCHAR},
+      </if>
+      <if test="signDate != null">
+        SIGN_DATE = #{signDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cTerm != null">
+        C_TERM = #{cTerm,jdbcType=VARCHAR},
+      </if>
+      <if test="cstShortName != null">
+        CST_SHORT_NAME = #{cstShortName,jdbcType=VARCHAR},
+      </if>
+      <if test="transCorpId != null">
+        TRANS_CORP_ID = #{transCorpId,jdbcType=DECIMAL},
+      </if>
+      <if test="transCorpName != null">
+        TRANS_CORP_NAME = #{transCorpName,jdbcType=VARCHAR},
+      </if>
+      <if test="otherReq != null">
+        OTHER_REQ = #{otherReq,jdbcType=VARCHAR},
+      </if>
+      <if test="isU8PurcharseReq != null">
+        IS_U8_PURCHARSE_REQ = #{isU8PurcharseReq,jdbcType=VARCHAR},
+      </if>
+      <if test="isMove != null">
+        IS_MOVE = #{isMove,jdbcType=VARCHAR},
+      </if>
+      <if test="isClose != null">
+        IS_CLOSE = #{isClose,jdbcType=VARCHAR},
+      </if>
+      <if test="closeUserId != null">
+        CLOSE_USER_ID = #{closeUserId,jdbcType=DECIMAL},
+      </if>
+      <if test="closeDate != null">
+        CLOSE_DATE = #{closeDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="iuOcuId != null">
+        IU_OCU_ID = #{iuOcuId,jdbcType=DECIMAL},
+      </if>
+      <if test="inlandOrOverseas != null">
+        INLAND_OR_OVERSEAS = #{inlandOrOverseas,jdbcType=VARCHAR},
+      </if>
+      <if test="typeOfCon != null">
+        TYPE_OF_CON = #{typeOfCon,jdbcType=VARCHAR},
+      </if>
+      <if test="closeConfirm != null">
+        CLOSE_CONFIRM = #{closeConfirm,jdbcType=VARCHAR},
+      </if>
+      <if test="depOrgId != null">
+        DEP_ORG_ID = #{depOrgId,jdbcType=DECIMAL},
+      </if>
+      <if test="purchaserId != null">
+        PURCHASER_ID = #{purchaserId,jdbcType=DECIMAL},
+      </if>
+      <if test="cataOfCon != null">
+        CATA_OF_CON = #{cataOfCon,jdbcType=VARCHAR},
+      </if>
+      <if test="propOfCon != null">
+        PROP_OF_CON = #{propOfCon,jdbcType=VARCHAR},
+      </if>
+      <if test="bizMode != null">
+        BIZ_MODE = #{bizMode,jdbcType=VARCHAR},
+      </if>
+      <if test="relBcId != null">
+        REL_BC_ID = #{relBcId,jdbcType=DECIMAL},
+      </if>
+      <if test="conName != null">
+        CON_NAME = #{conName,jdbcType=VARCHAR},
+      </if>
+      <if test="validDate != null">
+        VALID_DATE = #{validDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="signPlace != null">
+        SIGN_PLACE = #{signPlace,jdbcType=VARCHAR},
+      </if>
+      <if test="conContent != null">
+        CON_CONTENT = #{conContent,jdbcType=VARCHAR},
+      </if>
+      <if test="sellerNationId != null">
+        SELLER_NATION_ID = #{sellerNationId,jdbcType=DECIMAL},
+      </if>
+      <if test="sellerProp != null">
+        SELLER_PROP = #{sellerProp,jdbcType=VARCHAR},
+      </if>
+      <if test="senderId != null">
+        SENDER_ID = #{senderId,jdbcType=DECIMAL},
+      </if>
+      <if test="landNationId != null">
+        LAND_NATION_ID = #{landNationId,jdbcType=DECIMAL},
+      </if>
+      <if test="landPortId != null">
+        LAND_PORT_ID = #{landPortId,jdbcType=DECIMAL},
+      </if>
+      <if test="landLocation != null">
+        LAND_LOCATION = #{landLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="recerId != null">
+        RECER_ID = #{recerId,jdbcType=DECIMAL},
+      </if>
+      <if test="destNationId != null">
+        DEST_NATION_ID = #{destNationId,jdbcType=DECIMAL},
+      </if>
+      <if test="destPortId != null">
+        DEST_PORT_ID = #{destPortId,jdbcType=DECIMAL},
+      </if>
+      <if test="destLocation != null">
+        DEST_LOCATION = #{destLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="isBatches != null">
+        IS_BATCHES = #{isBatches,jdbcType=VARCHAR},
+      </if>
+      <if test="isTransfer != null">
+        IS_TRANSFER = #{isTransfer,jdbcType=VARCHAR},
+      </if>
+      <if test="transferPortId != null">
+        TRANSFER_PORT_ID = #{transferPortId,jdbcType=DECIMAL},
+      </if>
+      <if test="commissionId != null">
+        COMMISSION_ID = #{commissionId,jdbcType=DECIMAL},
+      </if>
+      <if test="commissionRate != null">
+        COMMISSION_RATE = #{commissionRate,jdbcType=DECIMAL},
+      </if>
+      <if test="commissionCurrType != null">
+        COMMISSION_CURR_TYPE = #{commissionCurrType,jdbcType=VARCHAR},
+      </if>
+      <if test="commissionFee != null">
+        COMMISSION_FEE = #{commissionFee,jdbcType=DECIMAL},
+      </if>
+      <if test="shipmentWay != null">
+        SHIPMENT_WAY = #{shipmentWay,jdbcType=VARCHAR},
+      </if>
+      <if test="boxDeliveryType != null">
+        BOX_DELIVERY_TYPE = #{boxDeliveryType,jdbcType=VARCHAR},
+      </if>
+      <if test="deliveryPlace != null">
+        DELIVERY_PLACE = #{deliveryPlace,jdbcType=VARCHAR},
+      </if>
+      <if test="isPlanSt != null">
+        IS_PLAN_ST = #{isPlanSt,jdbcType=VARCHAR},
+      </if>
+      <if test="proxyCorpId != null">
+        PROXY_CORP_ID = #{proxyCorpId,jdbcType=DECIMAL},
+      </if>
+      <if test="transResp != null">
+        TRANS_RESP = #{transResp,jdbcType=VARCHAR},
+      </if>
+      <if test="transFeeResp != null">
+        TRANS_FEE_RESP = #{transFeeResp,jdbcType=VARCHAR},
+      </if>
+      <if test="transInsuResp != null">
+        TRANS_INSU_RESP = #{transInsuResp,jdbcType=VARCHAR},
+      </if>
+      <if test="arbitrationPlace != null">
+        ARBITRATION_PLACE = #{arbitrationPlace,jdbcType=VARCHAR},
+      </if>
+      <if test="suePlace != null">
+        SUE_PLACE = #{suePlace,jdbcType=VARCHAR},
+      </if>
+      <if test="isNeedSpecDocu != null">
+        IS_NEED_SPEC_DOCU = #{isNeedSpecDocu,jdbcType=VARCHAR},
+      </if>
+      <if test="pricingWay != null">
+        PRICING_WAY = #{pricingWay,jdbcType=VARCHAR},
+      </if>
+      <if test="priceStandard != null">
+        PRICE_STANDARD = #{priceStandard,jdbcType=VARCHAR},
+      </if>
+      <if test="examStandard != null">
+        EXAM_STANDARD = #{examStandard,jdbcType=VARCHAR},
+      </if>
+      <if test="conPeriod != null">
+        CON_PERIOD = #{conPeriod,jdbcType=DECIMAL},
+      </if>
+      <if test="bailRate != null">
+        BAIL_RATE = #{bailRate,jdbcType=DECIMAL},
+      </if>
+      <if test="profitScheme != null">
+        PROFIT_SCHEME = #{profitScheme,jdbcType=VARCHAR},
+      </if>
+      <if test="commQuantPack != null">
+        COMM_QUANT_PACK = #{commQuantPack,jdbcType=DECIMAL},
+      </if>
+      <if test="commQuantStat != null">
+        COMM_QUANT_STAT = #{commQuantStat,jdbcType=DECIMAL},
+      </if>
+      <if test="cStatus != null">
+        C_STATUS = #{cStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="cmdCataId != null">
+        CMD_CATA_ID = #{cmdCataId,jdbcType=DECIMAL},
+      </if>
+      <if test="priceTerm != null">
+        PRICE_TERM = #{priceTerm,jdbcType=VARCHAR},
+      </if>
+      <if test="fctName != null">
+        FCT_NAME = #{fctName,jdbcType=VARCHAR},
+      </if>
+      <if test="purchaserName != null">
+        PURCHASER_NAME = #{purchaserName,jdbcType=VARCHAR},
+      </if>
+      <if test="senderName != null">
+        SENDER_NAME = #{senderName,jdbcType=VARCHAR},
+      </if>
+      <if test="recerName != null">
+        RECER_NAME = #{recerName,jdbcType=VARCHAR},
+      </if>
+      <if test="commissionName != null">
+        COMMISSION_NAME = #{commissionName,jdbcType=VARCHAR},
+      </if>
+      <if test="proxyCorpName != null">
+        PROXY_CORP_NAME = #{proxyCorpName,jdbcType=VARCHAR},
+      </if>
+      <if test="affectIncome != null">
+        AFFECT_INCOME = #{affectIncome,jdbcType=VARCHAR},
+      </if>
+      <if test="affectIncomeRate != null">
+        AFFECT_INCOME_RATE = #{affectIncomeRate,jdbcType=DECIMAL},
+      </if>
+      <if test="manufacId != null">
+        MANUFAC_ID = #{manufacId,jdbcType=DECIMAL},
+      </if>
+      <if test="manufacName != null">
+        MANUFAC_NAME = #{manufacName,jdbcType=VARCHAR},
+      </if>
+      <if test="u8OpId != null">
+        U8_OP_ID = #{u8OpId,jdbcType=DECIMAL},
+      </if>
+      <if test="cnyRate != null">
+        CNY_RATE = #{cnyRate,jdbcType=DECIMAL},
+      </if>
+      <if test="usdRate != null">
+        USD_RATE = #{usdRate,jdbcType=DECIMAL},
+      </if>
+      <if test="currRate != null">
+        CURR_RATE = #{currRate,jdbcType=DECIMAL},
+      </if>
+      <if test="shortOrOver != null">
+        SHORT_OR_OVER = #{shortOrOver,jdbcType=DECIMAL},
+      </if>
+      <if test="conPeriodSType != null">
+        CON_PERIOD_S_TYPE = #{conPeriodSType,jdbcType=VARCHAR},
+      </if>
+      <if test="commUnit != null">
+        COMM_UNIT = #{commUnit,jdbcType=DECIMAL},
+      </if>
+      <if test="tradeOrSrv != null">
+        TRADE_OR_SRV = #{tradeOrSrv,jdbcType=VARCHAR},
+      </if>
+      <if test="trSrvOrGoods != null">
+        TR_SRV_OR_GOODS = #{trSrvOrGoods,jdbcType=VARCHAR},
+      </if>
+      <if test="profitSchemeDesc != null">
+        PROFIT_SCHEME_DESC = #{profitSchemeDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="complexLevel != null">
+        COMPLEX_LEVEL = #{complexLevel,jdbcType=DECIMAL},
+      </if>
+      <if test="commName != null">
+        COMM_NAME = #{commName,jdbcType=VARCHAR},
+      </if>
+      <if test="commId != null">
+        COMM_ID = #{commId,jdbcType=DECIMAL},
+      </if>
+      <if test="planSalesInlOrOs != null">
+        PLAN_SALES_INL_OR_OS = #{planSalesInlOrOs,jdbcType=VARCHAR},
+      </if>
+      <if test="gjFctName != null">
+        GJ_FCT_NAME = #{gjFctName,jdbcType=VARCHAR},
+      </if>
+      <if test="holderId != null">
+        HOLDER_ID = #{holderId,jdbcType=DECIMAL},
+      </if>
+      <if test="holderName != null">
+        HOLDER_NAME = #{holderName,jdbcType=VARCHAR},
+      </if>
+      <if test="bizType != null">
+        BIZ_TYPE = #{bizType,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where BC_ID = #{bcId,jdbcType=DECIMAL}
+  </update>
+</mapper>

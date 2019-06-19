@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sumec.project.dao.IProjCeecBudUseReviewDao">
+  <resultMap id="BaseResultMap" type="com.sumec.project.entity.TProjCeecBudUseReview">
+    <result column="INT_ID" jdbcType="VARCHAR" property="intId" />
+    <result column="PROJ_ID" jdbcType="VARCHAR" property="projId" />
+    <result column="BASIC_USE_ID" jdbcType="VARCHAR" property="basicUseId" />
+    <result column="BASIC_BUD_ID" jdbcType="VARCHAR" property="basicBudId" />
+    <result column="TOB_TYPE" jdbcType="VARCHAR" property="tobType" />
+    <result column="TOB_ID" jdbcType="VARCHAR" property="tobId" />
+    <result column="CREATE_DATE" jdbcType="TIMESTAMP" property="createDate" />
+    <result column="USE_AMT" jdbcType="DECIMAL" property="useAmt" />
+    <result column="USE_CURR_TYPE" jdbcType="VARCHAR" property="useCurrType" />
+    <result column="USE_CURR_RATE" jdbcType="DECIMAL" property="useCurrRate" />
+    <result column="USE_AMT_RMB" jdbcType="DECIMAL" property="useAmtRmb" />
+    <result column="TAG_TYPE" jdbcType="VARCHAR" property="tagType" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    int_id,proj_id,basic_use_id,basic_bud_id,tob_typ,tob_id,create_date,use_amt,use_curr_type,use_curr_rate,use_amt_rmb,tag_type
+  </sql>
+  <insert id="insertSelective" parameterType="com.sumec.project.entity.TProjCeecBudUseReview">
+    insert into T_PROJ_CEEC_BUD_USE_REVIEW
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="intId != null">
+        INT_ID,
+      </if>
+      <if test="projId != null">
+        PROJ_ID,
+      </if>
+      <if test="basicUseId != null">
+        BASIC_USE_ID,
+      </if>
+      <if test="basicBudId != null">
+        BASIC_BUD_ID,
+      </if>
+      <if test="tobType != null">
+        TOB_TYPE,
+      </if>
+      <if test="tobId != null">
+        TOB_ID,
+      </if>
+      <if test="createDate != null">
+        CREATE_DATE,
+      </if>
+      <if test="useAmt != null">
+        USE_AMT,
+      </if>
+      <if test="useCurrType != null">
+        USE_CURR_TYPE,
+      </if>
+      <if test="useCurrRate != null">
+        USE_CURR_RATE,
+      </if>
+      <if test="useAmtRmb != null">
+        USE_AMT_RMB,
+      </if>
+      <if test="tagType != null">
+        TAG_TYPE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="intId != null">
+        #{intId,jdbcType=VARCHAR},
+      </if>
+      <if test="projId != null">
+        #{projId,jdbcType=VARCHAR},
+      </if>
+      <if test="basicUseId != null">
+        #{basicUseId,jdbcType=VARCHAR},
+      </if>
+      <if test="basicBudId != null">
+        #{basicBudId,jdbcType=VARCHAR},
+      </if>
+      <if test="tobType != null">
+        #{tobType,jdbcType=VARCHAR},
+      </if>
+      <if test="tobId != null">
+        #{tobId,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null">
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="useAmt != null">
+        #{useAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="useCurrType != null">
+        #{useCurrType,jdbcType=VARCHAR},
+      </if>
+      <if test="useCurrRate != null">
+        #{useCurrRate,jdbcType=DECIMAL},
+      </if>
+      <if test="useAmtRmb != null">
+        #{useAmtRmb,jdbcType=DECIMAL},
+      </if>
+      <if test="tagType != null">
+        #{tagType,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sumec.flow.dao.ISumecFlowModuleDao">
+  <resultMap id="BaseResultMap" type="com.sumec.flow.entity.TSumecFlowModule">
+    <id column="FM_ID" jdbcType="DECIMAL" property="fmId" />
+    <result column="FM_CODE" jdbcType="VARCHAR" property="fmCode" />
+    <result column="FM_NAME" jdbcType="VARCHAR" property="fmName" />
+    <result column="TABLE_NAME" jdbcType="VARCHAR" property="tableName" />
+    <result column="PK_COLUMN" jdbcType="VARCHAR" property="pkColumn" />
+    <result column="FM_VIEW_NAME" jdbcType="VARCHAR" property="fmViewName" />
+    <result column="DW_OBJECT" jdbcType="VARCHAR" property="dwObject" />
+    <result column="WINFORM_NAME" jdbcType="VARCHAR" property="winformName" />
+    <result column="CONFIRM_COLUMN" jdbcType="VARCHAR" property="confirmColumn" />
+    <result column="ALLOW_GENE" jdbcType="VARCHAR" property="allowGene" />
+    <result column="IS_DEL" jdbcType="VARCHAR" property="isDel" />
+    <result column="ORDER_ID" jdbcType="DECIMAL" property="orderId" />
+    <result column="MA_ID" jdbcType="DECIMAL" property="maId" />
+    <result column="GRANT_DIR" jdbcType="VARCHAR" property="grantDir" />
+    <result column="DISPLAY_COLUMN" jdbcType="VARCHAR" property="displayColumn" />
+    <result column="DISPLAY_DW" jdbcType="VARCHAR" property="displayDw" />
+    <result column="MOBILE_FM_ID" jdbcType="DECIMAL" property="mobileFmId" />
+    <result column="CALLBACKHANDLER" jdbcType="VARCHAR" property="callbackhandler" />
+    <result column="ASSIST_OBJECT" jdbcType="VARCHAR" property="assistObject" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    FM_ID, FM_CODE, FM_NAME, TABLE_NAME, PK_COLUMN, FM_VIEW_NAME, DW_OBJECT, WINFORM_NAME, 
+    CONFIRM_COLUMN, ALLOW_GENE, IS_DEL, ORDER_ID, MA_ID, GRANT_DIR, DISPLAY_COLUMN, DISPLAY_DW, 
+    MOBILE_FM_ID, CALLBACKHANDLER, ASSIST_OBJECT
+  </sql>
+  <insert id="insertSelective" parameterType="com.sumec.flow.entity.TSumecFlowModule">
+    insert into T_SUMEC_FLOW_MODULE
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="fmId != null">
+        FM_ID,
+      </if>
+      <if test="fmCode != null">
+        FM_CODE,
+      </if>
+      <if test="fmName != null">
+        FM_NAME,
+      </if>
+      <if test="tableName != null">
+        TABLE_NAME,
+      </if>
+      <if test="pkColumn != null">
+        PK_COLUMN,
+      </if>
+      <if test="fmViewName != null">
+        FM_VIEW_NAME,
+      </if>
+      <if test="dwObject != null">
+        DW_OBJECT,
+      </if>
+      <if test="winformName != null">
+        WINFORM_NAME,
+      </if>
+      <if test="confirmColumn != null">
+        CONFIRM_COLUMN,
+      </if>
+      <if test="allowGene != null">
+        ALLOW_GENE,
+      </if>
+      <if test="isDel != null">
+        IS_DEL,
+      </if>
+      <if test="orderId != null">
+        ORDER_ID,
+      </if>
+      <if test="maId != null">
+        MA_ID,
+      </if>
+      <if test="grantDir != null">
+        GRANT_DIR,
+      </if>
+      <if test="displayColumn != null">
+        DISPLAY_COLUMN,
+      </if>
+      <if test="displayDw != null">
+        DISPLAY_DW,
+      </if>
+      <if test="mobileFmId != null">
+        MOBILE_FM_ID,
+      </if>
+      <if test="callbackhandler != null">
+        CALLBACKHANDLER,
+      </if>
+      <if test="assistObject != null">
+        ASSIST_OBJECT,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="fmId != null">
+        #{fmId,jdbcType=DECIMAL},
+      </if>
+      <if test="fmCode != null">
+        #{fmCode,jdbcType=VARCHAR},
+      </if>
+      <if test="fmName != null">
+        #{fmName,jdbcType=VARCHAR},
+      </if>
+      <if test="tableName != null">
+        #{tableName,jdbcType=VARCHAR},
+      </if>
+      <if test="pkColumn != null">
+        #{pkColumn,jdbcType=VARCHAR},
+      </if>
+      <if test="fmViewName != null">
+        #{fmViewName,jdbcType=VARCHAR},
+      </if>
+      <if test="dwObject != null">
+        #{dwObject,jdbcType=VARCHAR},
+      </if>
+      <if test="winformName != null">
+        #{winformName,jdbcType=VARCHAR},
+      </if>
+      <if test="confirmColumn != null">
+        #{confirmColumn,jdbcType=VARCHAR},
+      </if>
+      <if test="allowGene != null">
+        #{allowGene,jdbcType=VARCHAR},
+      </if>
+      <if test="isDel != null">
+        #{isDel,jdbcType=VARCHAR},
+      </if>
+      <if test="orderId != null">
+        #{orderId,jdbcType=DECIMAL},
+      </if>
+      <if test="maId != null">
+        #{maId,jdbcType=DECIMAL},
+      </if>
+      <if test="grantDir != null">
+        #{grantDir,jdbcType=VARCHAR},
+      </if>
+      <if test="displayColumn != null">
+        #{displayColumn,jdbcType=VARCHAR},
+      </if>
+      <if test="displayDw != null">
+        #{displayDw,jdbcType=VARCHAR},
+      </if>
+      <if test="mobileFmId != null">
+        #{mobileFmId,jdbcType=DECIMAL},
+      </if>
+      <if test="callbackhandler != null">
+        #{callbackhandler,jdbcType=VARCHAR},
+      </if>
+      <if test="assistObject != null">
+        #{assistObject,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateBTableConfirm" parameterType="map" statementType="STATEMENT">
+    <![CDATA[
+    UPDATE ${tableName}
+    SET ${confirmColumn}=${confirmValue}
+    WHERE ${pkColumn} = ${pkColumnValue}]]>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sumec.flow.entity.TSumecFlowModule">
+    update T_SUMEC_FLOW_MODULE
+    <set>
+      <if test="fmCode != null">
+        FM_CODE = #{fmCode,jdbcType=VARCHAR},
+      </if>
+      <if test="fmName != null">
+        FM_NAME = #{fmName,jdbcType=VARCHAR},
+      </if>
+      <if test="tableName != null">
+        TABLE_NAME = #{tableName,jdbcType=VARCHAR},
+      </if>
+      <if test="pkColumn != null">
+        PK_COLUMN = #{pkColumn,jdbcType=VARCHAR},
+      </if>
+      <if test="fmViewName != null">
+        FM_VIEW_NAME = #{fmViewName,jdbcType=VARCHAR},
+      </if>
+      <if test="dwObject != null">
+        DW_OBJECT = #{dwObject,jdbcType=VARCHAR},
+      </if>
+      <if test="winformName != null">
+        WINFORM_NAME = #{winformName,jdbcType=VARCHAR},
+      </if>
+      <if test="confirmColumn != null">
+        CONFIRM_COLUMN = #{confirmColumn,jdbcType=VARCHAR},
+      </if>
+      <if test="allowGene != null">
+        ALLOW_GENE = #{allowGene,jdbcType=VARCHAR},
+      </if>
+      <if test="isDel != null">
+        IS_DEL = #{isDel,jdbcType=VARCHAR},
+      </if>
+      <if test="orderId != null">
+        ORDER_ID = #{orderId,jdbcType=DECIMAL},
+      </if>
+      <if test="maId != null">
+        MA_ID = #{maId,jdbcType=DECIMAL},
+      </if>
+      <if test="grantDir != null">
+        GRANT_DIR = #{grantDir,jdbcType=VARCHAR},
+      </if>
+      <if test="displayColumn != null">
+        DISPLAY_COLUMN = #{displayColumn,jdbcType=VARCHAR},
+      </if>
+      <if test="displayDw != null">
+        DISPLAY_DW = #{displayDw,jdbcType=VARCHAR},
+      </if>
+      <if test="mobileFmId != null">
+        MOBILE_FM_ID = #{mobileFmId,jdbcType=DECIMAL},
+      </if>
+      <if test="callbackhandler != null">
+        CALLBACKHANDLER = #{callbackhandler,jdbcType=VARCHAR},
+      </if>
+      <if test="assistObject != null">
+        ASSIST_OBJECT = #{assistObject,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where FM_ID = #{fmId,jdbcType=DECIMAL}
+  </update>
+</mapper>

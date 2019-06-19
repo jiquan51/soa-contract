@@ -1,0 +1,17 @@
+spring:
+    cloud:
+        config:
+            fail-fast: true
+            uri: http://admin:aiyun123!@10.4.95.32:8761/config
+            name: soa-contract
+            profile: dev
+            label: master
+    application:
+        name: soa-contract
+    profiles:
+      active: #spring.profiles.active#
+server:
+  port: 7889
+eureka:
+  instance:
+    ip-address: 10.4.4.96

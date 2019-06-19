@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sumec.contract.dao.ITrContractRelDao">
+  <resultMap id="BaseResultMap" type="com.sumec.contract.entity.TTrContractRel">
+    <id column="REL_ID" jdbcType="VARCHAR" property="relId" />
+    <result column="REL_TYPE" jdbcType="VARCHAR" property="relType" />
+    <result column="TOB_TYPE_A" jdbcType="VARCHAR" property="tobTypeA" />
+    <result column="TOB_ID_A" jdbcType="DECIMAL" property="tobIdA" />
+    <result column="TOB_TYPE_B" jdbcType="VARCHAR" property="tobTypeB" />
+    <result column="TOB_ID_B" jdbcType="DECIMAL" property="tobIdB" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    REL_ID, REL_TYPE, TOB_TYPE_A, TOB_ID_A, TOB_TYPE_B, TOB_ID_B
+  </sql>
+  <insert id="insertSelective" parameterType="com.sumec.contract.entity.TTrContractRel">
+    insert into T_TR_CONTRACT_REL
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="relId != null">
+        REL_ID,
+      </if>
+      <if test="relType != null">
+        REL_TYPE,
+      </if>
+      <if test="tobTypeA != null">
+        TOB_TYPE_A,
+      </if>
+      <if test="tobIdA != null">
+        TOB_ID_A,
+      </if>
+      <if test="tobTypeB != null">
+        TOB_TYPE_B,
+      </if>
+      <if test="tobIdB != null">
+        TOB_ID_B,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="relId != null">
+        #{relId,jdbcType=VARCHAR},
+      </if>
+      <if test="relType != null">
+        #{relType,jdbcType=VARCHAR},
+      </if>
+      <if test="tobTypeA != null">
+        #{tobTypeA,jdbcType=VARCHAR},
+      </if>
+      <if test="tobIdA != null">
+        #{tobIdA,jdbcType=DECIMAL},
+      </if>
+      <if test="tobTypeB != null">
+        #{tobTypeB,jdbcType=VARCHAR},
+      </if>
+      <if test="tobIdB != null">
+        #{tobIdB,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sumec.contract.entity.TTrContractRel">
+    update T_TR_CONTRACT_REL
+    <set>
+      <if test="relType != null">
+        REL_TYPE = #{relType,jdbcType=VARCHAR},
+      </if>
+      <if test="tobTypeA != null">
+        TOB_TYPE_A = #{tobTypeA,jdbcType=VARCHAR},
+      </if>
+      <if test="tobIdA != null">
+        TOB_ID_A = #{tobIdA,jdbcType=DECIMAL},
+      </if>
+      <if test="tobTypeB != null">
+        TOB_TYPE_B = #{tobTypeB,jdbcType=VARCHAR},
+      </if>
+      <if test="tobIdB != null">
+        TOB_ID_B = #{tobIdB,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where REL_ID = #{relId,jdbcType=VARCHAR}
+  </update>
+</mapper>

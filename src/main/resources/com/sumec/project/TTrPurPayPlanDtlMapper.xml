@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sumec.project.dao.ITrPurPayPlanDtlDao">
+  <resultMap id="BaseResultMap" type="com.sumec.project.entity.TTrPurPayPlanDtl">
+    <id column="PLAN_DTL_ID" jdbcType="VARCHAR" property="planDtlId" />
+    <result column="PLAN_ID" jdbcType="VARCHAR" property="planId" />
+    <result column="ORDER_ID" jdbcType="DECIMAL" property="orderId" />
+    <result column="PAY_PROP" jdbcType="VARCHAR" property="payProp" />
+    <result column="BEF_OR_AFT_GOODS" jdbcType="VARCHAR" property="befOrAftGoods" />
+    <result column="PW_ID" jdbcType="DECIMAL" property="pwId" />
+    <result column="DATE_TRM" jdbcType="VARCHAR" property="dateTrm" />
+    <result column="DAYS" jdbcType="DECIMAL" property="days" />
+    <result column="PLAN_PAY_DATE" jdbcType="TIMESTAMP" property="planPayDate" />
+    <result column="CURR_TYPE" jdbcType="VARCHAR" property="currType" />
+    <result column="IS_FIXED_CURR_RATE" jdbcType="VARCHAR" property="isFixedCurrRate" />
+    <result column="PAY_RATE" jdbcType="DECIMAL" property="payRate" />
+    <result column="AMT_REF_TYPE" jdbcType="VARCHAR" property="amtRefType" />
+    <result column="PAY_AMT" jdbcType="DECIMAL" property="payAmt" />
+    <result column="REMARK" jdbcType="VARCHAR" property="remark" />
+    <result column="PAY_DESC" jdbcType="VARCHAR" property="payDesc" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    PLAN_DTL_ID, PLAN_ID, ORDER_ID, PAY_PROP, BEF_OR_AFT_GOODS, PW_ID, DATE_TRM, DAYS, 
+    PLAN_PAY_DATE, CURR_TYPE, IS_FIXED_CURR_RATE, PAY_RATE, AMT_REF_TYPE, PAY_AMT, REMARK, 
+    PAY_DESC
+  </sql>
+  <insert id="insertSelective" parameterType="com.sumec.project.entity.TTrPurPayPlanDtl">
+    insert into T_TR_PUR_PAY_PLAN_DTL
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="planDtlId != null">
+        PLAN_DTL_ID,
+      </if>
+      <if test="planId != null">
+        PLAN_ID,
+      </if>
+      <if test="orderId != null">
+        ORDER_ID,
+      </if>
+      <if test="payProp != null">
+        PAY_PROP,
+      </if>
+      <if test="befOrAftGoods != null">
+        BEF_OR_AFT_GOODS,
+      </if>
+      <if test="pwId != null">
+        PW_ID,
+      </if>
+      <if test="dateTrm != null">
+        DATE_TRM,
+      </if>
+      <if test="days != null">
+        DAYS,
+      </if>
+      <if test="planPayDate != null">
+        PLAN_PAY_DATE,
+      </if>
+      <if test="currType != null">
+        CURR_TYPE,
+      </if>
+      <if test="isFixedCurrRate != null">
+        IS_FIXED_CURR_RATE,
+      </if>
+      <if test="payRate != null">
+        PAY_RATE,
+      </if>
+      <if test="amtRefType != null">
+        AMT_REF_TYPE,
+      </if>
+      <if test="payAmt != null">
+        PAY_AMT,
+      </if>
+      <if test="remark != null">
+        REMARK,
+      </if>
+      <if test="payDesc != null">
+        PAY_DESC,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="planDtlId != null">
+        #{planDtlId,jdbcType=VARCHAR},
+      </if>
+      <if test="planId != null">
+        #{planId,jdbcType=VARCHAR},
+      </if>
+      <if test="orderId != null">
+        #{orderId,jdbcType=DECIMAL},
+      </if>
+      <if test="payProp != null">
+        #{payProp,jdbcType=VARCHAR},
+      </if>
+      <if test="befOrAftGoods != null">
+        #{befOrAftGoods,jdbcType=VARCHAR},
+      </if>
+      <if test="pwId != null">
+        #{pwId,jdbcType=DECIMAL},
+      </if>
+      <if test="dateTrm != null">
+        #{dateTrm,jdbcType=VARCHAR},
+      </if>
+      <if test="days != null">
+        #{days,jdbcType=DECIMAL},
+      </if>
+      <if test="planPayDate != null">
+        #{planPayDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="currType != null">
+        #{currType,jdbcType=VARCHAR},
+      </if>
+      <if test="isFixedCurrRate != null">
+        #{isFixedCurrRate,jdbcType=VARCHAR},
+      </if>
+      <if test="payRate != null">
+        #{payRate,jdbcType=DECIMAL},
+      </if>
+      <if test="amtRefType != null">
+        #{amtRefType,jdbcType=VARCHAR},
+      </if>
+      <if test="payAmt != null">
+        #{payAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="payDesc != null">
+        #{payDesc,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sumec.project.entity.TTrPurPayPlanDtl">
+    update T_TR_PUR_PAY_PLAN_DTL
+    <set>
+      <if test="planId != null">
+        PLAN_ID = #{planId,jdbcType=VARCHAR},
+      </if>
+      <if test="orderId != null">
+        ORDER_ID = #{orderId,jdbcType=DECIMAL},
+      </if>
+      <if test="payProp != null">
+        PAY_PROP = #{payProp,jdbcType=VARCHAR},
+      </if>
+      <if test="befOrAftGoods != null">
+        BEF_OR_AFT_GOODS = #{befOrAftGoods,jdbcType=VARCHAR},
+      </if>
+      <if test="pwId != null">
+        PW_ID = #{pwId,jdbcType=DECIMAL},
+      </if>
+      <if test="dateTrm != null">
+        DATE_TRM = #{dateTrm,jdbcType=VARCHAR},
+      </if>
+      <if test="days != null">
+        DAYS = #{days,jdbcType=DECIMAL},
+      </if>
+      <if test="planPayDate != null">
+        PLAN_PAY_DATE = #{planPayDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="currType != null">
+        CURR_TYPE = #{currType,jdbcType=VARCHAR},
+      </if>
+      <if test="isFixedCurrRate != null">
+        IS_FIXED_CURR_RATE = #{isFixedCurrRate,jdbcType=VARCHAR},
+      </if>
+      <if test="payRate != null">
+        PAY_RATE = #{payRate,jdbcType=DECIMAL},
+      </if>
+      <if test="amtRefType != null">
+        AMT_REF_TYPE = #{amtRefType,jdbcType=VARCHAR},
+      </if>
+      <if test="payAmt != null">
+        PAY_AMT = #{payAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="remark != null">
+        REMARK = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="payDesc != null">
+        PAY_DESC = #{payDesc,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PLAN_DTL_ID = #{planDtlId,jdbcType=VARCHAR}
+  </update>
+</mapper>

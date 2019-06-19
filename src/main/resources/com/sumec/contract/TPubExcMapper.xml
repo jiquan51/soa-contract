@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sumec.contract.dao.TPubExcMapper">
+  <resultMap id="BaseResultMap" type="com.sumec.contract.entity.TPubExc">
+    <id column="EXC_ID" jdbcType="DECIMAL" property="excId" />
+    <result column="PRO_ID_FROM" jdbcType="DECIMAL" property="proIdFrom" />
+    <result column="PRO_ID_TO" jdbcType="DECIMAL" property="proIdTo" />
+    <result column="PRO_TYPE_FROM" jdbcType="VARCHAR" property="proTypeFrom" />
+    <result column="PRO_TYPE_TO" jdbcType="VARCHAR" property="proTypeTo" />
+    <result column="PRO_CODE_FROM" jdbcType="VARCHAR" property="proCodeFrom" />
+    <result column="PRO_CODE_TO" jdbcType="VARCHAR" property="proCodeTo" />
+    <result column="C_ID_FROM" jdbcType="DECIMAL" property="cIdFrom" />
+    <result column="C_ID_TO" jdbcType="DECIMAL" property="cIdTo" />
+    <result column="C_TYPE_FROM" jdbcType="VARCHAR" property="cTypeFrom" />
+    <result column="C_TYPE_TO" jdbcType="VARCHAR" property="cTypeTo" />
+    <result column="C_NO_FROM" jdbcType="VARCHAR" property="cNoFrom" />
+    <result column="C_NO_TO" jdbcType="VARCHAR" property="cNoTo" />
+    <result column="CST_ID_FROM" jdbcType="DECIMAL" property="cstIdFrom" />
+    <result column="CST_ID_TO" jdbcType="DECIMAL" property="cstIdTo" />
+    <result column="CST_NO_FROM" jdbcType="VARCHAR" property="cstNoFrom" />
+    <result column="CST_NO_TO" jdbcType="VARCHAR" property="cstNoTo" />
+    <result column="CST_NAME_FROM" jdbcType="VARCHAR" property="cstNameFrom" />
+    <result column="CST_NAME_TO" jdbcType="VARCHAR" property="cstNameTo" />
+    <result column="NOTES" jdbcType="VARCHAR" property="notes" />
+    <result column="CONFIRM" jdbcType="VARCHAR" property="confirm" />
+    <result column="M_DATE" jdbcType="TIMESTAMP" property="mDate" />
+    <result column="ORG_ID" jdbcType="DECIMAL" property="orgId" />
+    <result column="OCU_ID" jdbcType="DECIMAL" property="ocuId" />
+    <result column="USER_ID" jdbcType="DECIMAL" property="userId" />
+    <result column="MODIFY_USER_ID" jdbcType="DECIMAL" property="modifyUserId" />
+    <result column="MODIFY_DATE" jdbcType="TIMESTAMP" property="modifyDate" />
+    <result column="CHECK_USER_ID" jdbcType="DECIMAL" property="checkUserId" />
+    <result column="CHECK_DATE" jdbcType="TIMESTAMP" property="checkDate" />
+    <result column="EXC_TYPE" jdbcType="VARCHAR" property="excType" />
+    <result column="CURR_TYPE" jdbcType="VARCHAR" property="currType" />
+    <result column="CURR_RATE" jdbcType="DECIMAL" property="currRate" />
+    <result column="EXC_AMT" jdbcType="DECIMAL" property="excAmt" />
+    <result column="EXC_FROM_TYPE" jdbcType="VARCHAR" property="excFromType" />
+    <result column="EXC_TO_TYPE" jdbcType="VARCHAR" property="excToType" />
+    <result column="CALC_AGENT" jdbcType="VARCHAR" property="calcAgent" />
+    <result column="EXC_PAY_TRM" jdbcType="VARCHAR" property="excPayTrm" />
+    <result column="EXC_PAY_CD_OPEN_DATE" jdbcType="TIMESTAMP" property="excPayCdOpenDate" />
+    <result column="EXC_PAY_CD_END_DATE" jdbcType="TIMESTAMP" property="excPayCdEndDate" />
+    <result column="EXC_PAY_CD_PAY_TYPE" jdbcType="VARCHAR" property="excPayCdPayType" />
+    <result column="INV_STATUS" jdbcType="VARCHAR" property="invStatus" />
+    <result column="OVER_TAG" jdbcType="VARCHAR" property="overTag" />
+    <result column="DSF_TYPE" jdbcType="VARCHAR" property="dsfType" />
+    <result column="ORI_ID" jdbcType="DECIMAL" property="oriId" />
+    <result column="PZ_TAG" jdbcType="DECIMAL" property="pzTag" />
+    <result column="EXC_DATE" jdbcType="TIMESTAMP" property="excDate" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    EXC_ID, PRO_ID_FROM, PRO_ID_TO, PRO_TYPE_FROM, PRO_TYPE_TO, PRO_CODE_FROM, PRO_CODE_TO, 
+    C_ID_FROM, C_ID_TO, C_TYPE_FROM, C_TYPE_TO, C_NO_FROM, C_NO_TO, CST_ID_FROM, CST_ID_TO, 
+    CST_NO_FROM, CST_NO_TO, CST_NAME_FROM, CST_NAME_TO, NOTES, CONFIRM, M_DATE, ORG_ID, 
+    OCU_ID, USER_ID, MODIFY_USER_ID, MODIFY_DATE, CHECK_USER_ID, CHECK_DATE, EXC_TYPE, 
+    CURR_TYPE, CURR_RATE, EXC_AMT, EXC_FROM_TYPE, EXC_TO_TYPE, CALC_AGENT, EXC_PAY_TRM, 
+    EXC_PAY_CD_OPEN_DATE, EXC_PAY_CD_END_DATE, EXC_PAY_CD_PAY_TYPE, INV_STATUS, OVER_TAG, 
+    DSF_TYPE, ORI_ID, PZ_TAG, EXC_DATE
+  </sql>
+  <insert id="insertSelective" parameterType="com.sumec.contract.entity.TPubExc">
+    insert into T_PUB_EXC
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="excId != null">
+        EXC_ID,
+      </if>
+      <if test="proIdFrom != null">
+        PRO_ID_FROM,
+      </if>
+      <if test="proIdTo != null">
+        PRO_ID_TO,
+      </if>
+      <if test="proTypeFrom != null">
+        PRO_TYPE_FROM,
+      </if>
+      <if test="proTypeTo != null">
+        PRO_TYPE_TO,
+      </if>
+      <if test="proCodeFrom != null">
+        PRO_CODE_FROM,
+      </if>
+      <if test="proCodeTo != null">
+        PRO_CODE_TO,
+      </if>
+      <if test="cIdFrom != null">
+        C_ID_FROM,
+      </if>
+      <if test="cIdTo != null">
+        C_ID_TO,
+      </if>
+      <if test="cTypeFrom != null">
+        C_TYPE_FROM,
+      </if>
+      <if test="cTypeTo != null">
+        C_TYPE_TO,
+      </if>
+      <if test="cNoFrom != null">
+        C_NO_FROM,
+      </if>
+      <if test="cNoTo != null">
+        C_NO_TO,
+      </if>
+      <if test="cstIdFrom != null">
+        CST_ID_FROM,
+      </if>
+      <if test="cstIdTo != null">
+        CST_ID_TO,
+      </if>
+      <if test="cstNoFrom != null">
+        CST_NO_FROM,
+      </if>
+      <if test="cstNoTo != null">
+        CST_NO_TO,
+      </if>
+      <if test="cstNameFrom != null">
+        CST_NAME_FROM,
+      </if>
+      <if test="cstNameTo != null">
+        CST_NAME_TO,
+      </if>
+      <if test="notes != null">
+        NOTES,
+      </if>
+      <if test="confirm != null">
+        CONFIRM,
+      </if>
+      <if test="mDate != null">
+        M_DATE,
+      </if>
+      <if test="orgId != null">
+        ORG_ID,
+      </if>
+      <if test="ocuId != null">
+        OCU_ID,
+      </if>
+      <if test="userId != null">
+        USER_ID,
+      </if>
+      <if test="modifyUserId != null">
+        MODIFY_USER_ID,
+      </if>
+      <if test="modifyDate != null">
+        MODIFY_DATE,
+      </if>
+      <if test="checkUserId != null">
+        CHECK_USER_ID,
+      </if>
+      <if test="checkDate != null">
+        CHECK_DATE,
+      </if>
+      <if test="excType != null">
+        EXC_TYPE,
+      </if>
+      <if test="currType != null">
+        CURR_TYPE,
+      </if>
+      <if test="currRate != null">
+        CURR_RATE,
+      </if>
+      <if test="excAmt != null">
+        EXC_AMT,
+      </if>
+      <if test="excFromType != null">
+        EXC_FROM_TYPE,
+      </if>
+      <if test="excToType != null">
+        EXC_TO_TYPE,
+      </if>
+      <if test="calcAgent != null">
+        CALC_AGENT,
+      </if>
+      <if test="excPayTrm != null">
+        EXC_PAY_TRM,
+      </if>
+      <if test="excPayCdOpenDate != null">
+        EXC_PAY_CD_OPEN_DATE,
+      </if>
+      <if test="excPayCdEndDate != null">
+        EXC_PAY_CD_END_DATE,
+      </if>
+      <if test="excPayCdPayType != null">
+        EXC_PAY_CD_PAY_TYPE,
+      </if>
+      <if test="invStatus != null">
+        INV_STATUS,
+      </if>
+      <if test="overTag != null">
+        OVER_TAG,
+      </if>
+      <if test="dsfType != null">
+        DSF_TYPE,
+      </if>
+      <if test="oriId != null">
+        ORI_ID,
+      </if>
+      <if test="pzTag != null">
+        PZ_TAG,
+      </if>
+      <if test="excDate != null">
+        EXC_DATE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="excId != null">
+        #{excId,jdbcType=DECIMAL},
+      </if>
+      <if test="proIdFrom != null">
+        #{proIdFrom,jdbcType=DECIMAL},
+      </if>
+      <if test="proIdTo != null">
+        #{proIdTo,jdbcType=DECIMAL},
+      </if>
+      <if test="proTypeFrom != null">
+        #{proTypeFrom,jdbcType=VARCHAR},
+      </if>
+      <if test="proTypeTo != null">
+        #{proTypeTo,jdbcType=VARCHAR},
+      </if>
+      <if test="proCodeFrom != null">
+        #{proCodeFrom,jdbcType=VARCHAR},
+      </if>
+      <if test="proCodeTo != null">
+        #{proCodeTo,jdbcType=VARCHAR},
+      </if>
+      <if test="cIdFrom != null">
+        #{cIdFrom,jdbcType=DECIMAL},
+      </if>
+      <if test="cIdTo != null">
+        #{cIdTo,jdbcType=DECIMAL},
+      </if>
+      <if test="cTypeFrom != null">
+        #{cTypeFrom,jdbcType=VARCHAR},
+      </if>
+      <if test="cTypeTo != null">
+        #{cTypeTo,jdbcType=VARCHAR},
+      </if>
+      <if test="cNoFrom != null">
+        #{cNoFrom,jdbcType=VARCHAR},
+      </if>
+      <if test="cNoTo != null">
+        #{cNoTo,jdbcType=VARCHAR},
+      </if>
+      <if test="cstIdFrom != null">
+        #{cstIdFrom,jdbcType=DECIMAL},
+      </if>
+      <if test="cstIdTo != null">
+        #{cstIdTo,jdbcType=DECIMAL},
+      </if>
+      <if test="cstNoFrom != null">
+        #{cstNoFrom,jdbcType=VARCHAR},
+      </if>
+      <if test="cstNoTo != null">
+        #{cstNoTo,jdbcType=VARCHAR},
+      </if>
+      <if test="cstNameFrom != null">
+        #{cstNameFrom,jdbcType=VARCHAR},
+      </if>
+      <if test="cstNameTo != null">
+        #{cstNameTo,jdbcType=VARCHAR},
+      </if>
+      <if test="notes != null">
+        #{notes,jdbcType=VARCHAR},
+      </if>
+      <if test="confirm != null">
+        #{confirm,jdbcType=VARCHAR},
+      </if>
+      <if test="mDate != null">
+        #{mDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="orgId != null">
+        #{orgId,jdbcType=DECIMAL},
+      </if>
+      <if test="ocuId != null">
+        #{ocuId,jdbcType=DECIMAL},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=DECIMAL},
+      </if>
+      <if test="modifyUserId != null">
+        #{modifyUserId,jdbcType=DECIMAL},
+      </if>
+      <if test="modifyDate != null">
+        #{modifyDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="checkUserId != null">
+        #{checkUserId,jdbcType=DECIMAL},
+      </if>
+      <if test="checkDate != null">
+        #{checkDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="excType != null">
+        #{excType,jdbcType=VARCHAR},
+      </if>
+      <if test="currType != null">
+        #{currType,jdbcType=VARCHAR},
+      </if>
+      <if test="currRate != null">
+        #{currRate,jdbcType=DECIMAL},
+      </if>
+      <if test="excAmt != null">
+        #{excAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="excFromType != null">
+        #{excFromType,jdbcType=VARCHAR},
+      </if>
+      <if test="excToType != null">
+        #{excToType,jdbcType=VARCHAR},
+      </if>
+      <if test="calcAgent != null">
+        #{calcAgent,jdbcType=VARCHAR},
+      </if>
+      <if test="excPayTrm != null">
+        #{excPayTrm,jdbcType=VARCHAR},
+      </if>
+      <if test="excPayCdOpenDate != null">
+        #{excPayCdOpenDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="excPayCdEndDate != null">
+        #{excPayCdEndDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="excPayCdPayType != null">
+        #{excPayCdPayType,jdbcType=VARCHAR},
+      </if>
+      <if test="invStatus != null">
+        #{invStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="overTag != null">
+        #{overTag,jdbcType=VARCHAR},
+      </if>
+      <if test="dsfType != null">
+        #{dsfType,jdbcType=VARCHAR},
+      </if>
+      <if test="oriId != null">
+        #{oriId,jdbcType=DECIMAL},
+      </if>
+      <if test="pzTag != null">
+        #{pzTag,jdbcType=DECIMAL},
+      </if>
+      <if test="excDate != null">
+        #{excDate,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sumec.contract.entity.TPubExc">
+    update T_PUB_EXC
+    <set>
+      <if test="proIdFrom != null">
+        PRO_ID_FROM = #{proIdFrom,jdbcType=DECIMAL},
+      </if>
+      <if test="proIdTo != null">
+        PRO_ID_TO = #{proIdTo,jdbcType=DECIMAL},
+      </if>
+      <if test="proTypeFrom != null">
+        PRO_TYPE_FROM = #{proTypeFrom,jdbcType=VARCHAR},
+      </if>
+      <if test="proTypeTo != null">
+        PRO_TYPE_TO = #{proTypeTo,jdbcType=VARCHAR},
+      </if>
+      <if test="proCodeFrom != null">
+        PRO_CODE_FROM = #{proCodeFrom,jdbcType=VARCHAR},
+      </if>
+      <if test="proCodeTo != null">
+        PRO_CODE_TO = #{proCodeTo,jdbcType=VARCHAR},
+      </if>
+      <if test="cIdFrom != null">
+        C_ID_FROM = #{cIdFrom,jdbcType=DECIMAL},
+      </if>
+      <if test="cIdTo != null">
+        C_ID_TO = #{cIdTo,jdbcType=DECIMAL},
+      </if>
+      <if test="cTypeFrom != null">
+        C_TYPE_FROM = #{cTypeFrom,jdbcType=VARCHAR},
+      </if>
+      <if test="cTypeTo != null">
+        C_TYPE_TO = #{cTypeTo,jdbcType=VARCHAR},
+      </if>
+      <if test="cNoFrom != null">
+        C_NO_FROM = #{cNoFrom,jdbcType=VARCHAR},
+      </if>
+      <if test="cNoTo != null">
+        C_NO_TO = #{cNoTo,jdbcType=VARCHAR},
+      </if>
+      <if test="cstIdFrom != null">
+        CST_ID_FROM = #{cstIdFrom,jdbcType=DECIMAL},
+      </if>
+      <if test="cstIdTo != null">
+        CST_ID_TO = #{cstIdTo,jdbcType=DECIMAL},
+      </if>
+      <if test="cstNoFrom != null">
+        CST_NO_FROM = #{cstNoFrom,jdbcType=VARCHAR},
+      </if>
+      <if test="cstNoTo != null">
+        CST_NO_TO = #{cstNoTo,jdbcType=VARCHAR},
+      </if>
+      <if test="cstNameFrom != null">
+        CST_NAME_FROM = #{cstNameFrom,jdbcType=VARCHAR},
+      </if>
+      <if test="cstNameTo != null">
+        CST_NAME_TO = #{cstNameTo,jdbcType=VARCHAR},
+      </if>
+      <if test="notes != null">
+        NOTES = #{notes,jdbcType=VARCHAR},
+      </if>
+      <if test="confirm != null">
+        CONFIRM = #{confirm,jdbcType=VARCHAR},
+      </if>
+      <if test="mDate != null">
+        M_DATE = #{mDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="orgId != null">
+        ORG_ID = #{orgId,jdbcType=DECIMAL},
+      </if>
+      <if test="ocuId != null">
+        OCU_ID = #{ocuId,jdbcType=DECIMAL},
+      </if>
+      <if test="userId != null">
+        USER_ID = #{userId,jdbcType=DECIMAL},
+      </if>
+      <if test="modifyUserId != null">
+        MODIFY_USER_ID = #{modifyUserId,jdbcType=DECIMAL},
+      </if>
+      <if test="modifyDate != null">
+        MODIFY_DATE = #{modifyDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="checkUserId != null">
+        CHECK_USER_ID = #{checkUserId,jdbcType=DECIMAL},
+      </if>
+      <if test="checkDate != null">
+        CHECK_DATE = #{checkDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="excType != null">
+        EXC_TYPE = #{excType,jdbcType=VARCHAR},
+      </if>
+      <if test="currType != null">
+        CURR_TYPE = #{currType,jdbcType=VARCHAR},
+      </if>
+      <if test="currRate != null">
+        CURR_RATE = #{currRate,jdbcType=DECIMAL},
+      </if>
+      <if test="excAmt != null">
+        EXC_AMT = #{excAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="excFromType != null">
+        EXC_FROM_TYPE = #{excFromType,jdbcType=VARCHAR},
+      </if>
+      <if test="excToType != null">
+        EXC_TO_TYPE = #{excToType,jdbcType=VARCHAR},
+      </if>
+      <if test="calcAgent != null">
+        CALC_AGENT = #{calcAgent,jdbcType=VARCHAR},
+      </if>
+      <if test="excPayTrm != null">
+        EXC_PAY_TRM = #{excPayTrm,jdbcType=VARCHAR},
+      </if>
+      <if test="excPayCdOpenDate != null">
+        EXC_PAY_CD_OPEN_DATE = #{excPayCdOpenDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="excPayCdEndDate != null">
+        EXC_PAY_CD_END_DATE = #{excPayCdEndDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="excPayCdPayType != null">
+        EXC_PAY_CD_PAY_TYPE = #{excPayCdPayType,jdbcType=VARCHAR},
+      </if>
+      <if test="invStatus != null">
+        INV_STATUS = #{invStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="overTag != null">
+        OVER_TAG = #{overTag,jdbcType=VARCHAR},
+      </if>
+      <if test="dsfType != null">
+        DSF_TYPE = #{dsfType,jdbcType=VARCHAR},
+      </if>
+      <if test="oriId != null">
+        ORI_ID = #{oriId,jdbcType=DECIMAL},
+      </if>
+      <if test="pzTag != null">
+        PZ_TAG = #{pzTag,jdbcType=DECIMAL},
+      </if>
+      <if test="excDate != null">
+        EXC_DATE = #{excDate,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where EXC_ID = #{excId,jdbcType=DECIMAL}
+  </update>
+</mapper>

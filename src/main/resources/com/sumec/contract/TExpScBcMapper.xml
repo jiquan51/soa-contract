@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sumec.contract.dao.IExpScBcDao">
+  <resultMap id="BaseResultMap" type="com.sumec.contract.entity.TExpScBc">
+    <id column="SC_ID" jdbcType="DECIMAL" property="scId" />
+    <id column="BC_ID" jdbcType="DECIMAL" property="bcId" />
+    <id column="SC_P_ID" jdbcType="DECIMAL" property="scPId" />
+    <id column="BC_P_ID" jdbcType="DECIMAL" property="bcPId" />
+    <result column="SC_NO" jdbcType="VARCHAR" property="scNo" />
+    <result column="BC_NO" jdbcType="VARCHAR" property="bcNo" />
+    <result column="P_NO" jdbcType="VARCHAR" property="pNo" />
+    <result column="P_QUANT" jdbcType="DECIMAL" property="pQuant" />
+    <result column="P_UNIT" jdbcType="VARCHAR" property="pUnit" />
+    <result column="C_TYPE" jdbcType="VARCHAR" property="cType" />
+    <result column="COMM_ID" jdbcType="DECIMAL" property="commId" />
+    <result column="COMM_UNIT" jdbcType="DECIMAL" property="commUnit" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    SC_ID, BC_ID, SC_P_ID, BC_P_ID, SC_NO, BC_NO, P_NO, P_QUANT, P_UNIT, C_TYPE, COMM_ID, 
+    COMM_UNIT
+  </sql>
+  <insert id="insertSelective" parameterType="com.sumec.contract.entity.TExpScBc">
+    insert into T_EXP_SC_BC
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="scId != null">
+        SC_ID,
+      </if>
+      <if test="bcId != null">
+        BC_ID,
+      </if>
+      <if test="scPId != null">
+        SC_P_ID,
+      </if>
+      <if test="bcPId != null">
+        BC_P_ID,
+      </if>
+      <if test="scNo != null">
+        SC_NO,
+      </if>
+      <if test="bcNo != null">
+        BC_NO,
+      </if>
+      <if test="pNo != null">
+        P_NO,
+      </if>
+      <if test="pQuant != null">
+        P_QUANT,
+      </if>
+      <if test="pUnit != null">
+        P_UNIT,
+      </if>
+      <if test="cType != null">
+        C_TYPE,
+      </if>
+      <if test="commId != null">
+        COMM_ID,
+      </if>
+      <if test="commUnit != null">
+        COMM_UNIT,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="scId != null">
+        #{scId,jdbcType=DECIMAL},
+      </if>
+      <if test="bcId != null">
+        #{bcId,jdbcType=DECIMAL},
+      </if>
+      <if test="scPId != null">
+        #{scPId,jdbcType=DECIMAL},
+      </if>
+      <if test="bcPId != null">
+        #{bcPId,jdbcType=DECIMAL},
+      </if>
+      <if test="scNo != null">
+        #{scNo,jdbcType=VARCHAR},
+      </if>
+      <if test="bcNo != null">
+        #{bcNo,jdbcType=VARCHAR},
+      </if>
+      <if test="pNo != null">
+        #{pNo,jdbcType=VARCHAR},
+      </if>
+      <if test="pQuant != null">
+        #{pQuant,jdbcType=DECIMAL},
+      </if>
+      <if test="pUnit != null">
+        #{pUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="cType != null">
+        #{cType,jdbcType=VARCHAR},
+      </if>
+      <if test="commId != null">
+        #{commId,jdbcType=DECIMAL},
+      </if>
+      <if test="commUnit != null">
+        #{commUnit,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sumec.contract.entity.TExpScBc">
+    update T_EXP_SC_BC
+    <set>
+      <if test="scNo != null">
+        SC_NO = #{scNo,jdbcType=VARCHAR},
+      </if>
+      <if test="bcNo != null">
+        BC_NO = #{bcNo,jdbcType=VARCHAR},
+      </if>
+      <if test="pNo != null">
+        P_NO = #{pNo,jdbcType=VARCHAR},
+      </if>
+      <if test="pQuant != null">
+        P_QUANT = #{pQuant,jdbcType=DECIMAL},
+      </if>
+      <if test="pUnit != null">
+        P_UNIT = #{pUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="cType != null">
+        C_TYPE = #{cType,jdbcType=VARCHAR},
+      </if>
+      <if test="commId != null">
+        COMM_ID = #{commId,jdbcType=DECIMAL},
+      </if>
+      <if test="commUnit != null">
+        COMM_UNIT = #{commUnit,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where SC_ID = #{scId,jdbcType=DECIMAL}
+      and BC_ID = #{bcId,jdbcType=DECIMAL}
+      and SC_P_ID = #{scPId,jdbcType=DECIMAL}
+      and BC_P_ID = #{bcPId,jdbcType=DECIMAL}
+  </update>
+</mapper>

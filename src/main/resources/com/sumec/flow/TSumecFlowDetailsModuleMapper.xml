@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sumec.flow.dao.ISumecFlowDetailsModuleDao">
+    <select id="selectCheckedByUserId" resultType="com.sumec.flow.bean.TSumecFlowDetailsModule">
+        select d.INT_ID, d.FM_ID, d.REF_VALUE, d.FA_ID, d.FS_ID, d.USER_ID, d.DEAL_TIME, d.DEAL_FLAG, d.DTL_STEP,d.NOTION, d.SEQ, d.FLAG, d.IS_GD, d.GD_INT_ID, d.GRANT_USER_ID, d.IS_READ, d.DTL_DESC, d.IS_END,d.POST_TIME, d.SP_USER_ID,
+        d.BAKED, d.FM_SEQ_ID, d.DEAL_WAY,m.FM_CODE, m.FM_NAME, m.TABLE_NAME, m.PK_COLUMN, m.FM_VIEW_NAME,m.DW_OBJECT,m.WINFORM_NAME,m.CONFIRM_COLUMN, m.ALLOW_GENE, m.IS_DEL, m.ORDER_ID, m.MA_ID, m.GRANT_DIR, m.DISPLAY_COLUMN,m.DISPLAY_DW,
+        m.MOBILE_FM_ID, m.CALLBACKHANDLER,m.ASSIST_OBJECT from T_SUMEC_FLOW_DETAILS d left join T_SUMEC_FLOW_MODULE m on d.FM_ID=m.FM_ID
+        where d.DTL_STEP!=1 and d.FLAG='1'and d.DEAL_FLAG IN ('1','2') and d.USER_ID=#{userId} and m.table_name in('MICHAEL.T_IO_LC_OPEN','MICHAEL.T_PUB_PAY_APPLY','MICHAEL.T_TR_SOUT','MICHAEL.T_PUB_EXC','MICHAEL.T_EXP_BC','MICHAEL.T_EXP_SC') order by POST_TIME DESC
+    </select>
+    <select id="selectPostByUserId" resultType="com.sumec.flow.bean.TSumecFlowDetailsModule">
+        select d.INT_ID, d.FM_ID, d.REF_VALUE, d.FA_ID, d.FS_ID, d.USER_ID, d.DEAL_TIME, d.DEAL_FLAG, d.DTL_STEP,d.NOTION, d.SEQ, d.FLAG, d.IS_GD, d.GD_INT_ID, d.GRANT_USER_ID, d.IS_READ, d.DTL_DESC, d.IS_END,d.POST_TIME, d.SP_USER_ID,
+        d.BAKED, d.FM_SEQ_ID, d.DEAL_WAY,m.FM_CODE, m.FM_NAME, m.TABLE_NAME, m.PK_COLUMN, m.FM_VIEW_NAME,m.DW_OBJECT,m.WINFORM_NAME,m.CONFIRM_COLUMN, m.ALLOW_GENE, m.IS_DEL, m.ORDER_ID, m.MA_ID, m.GRANT_DIR, m.DISPLAY_COLUMN,m.DISPLAY_DW,
+        m.MOBILE_FM_ID, m.CALLBACKHANDLER,m.ASSIST_OBJECT from T_SUMEC_FLOW_DETAILS d left join T_SUMEC_FLOW_MODULE m on d.FM_ID=m.FM_ID
+        where d.DTL_STEP=1 and d.FLAG='1' and d.USER_ID=#{userId} and m.table_name in('MICHAEL.T_IO_LC_OPEN','MICHAEL.T_PUB_PAY_APPLY','MICHAEL.T_TR_SOUT','MICHAEL.T_PUB_EXC','MICHAEL.T_EXP_BC','MICHAEL.T_EXP_SC') order by POST_TIME DESC
+    </select>
+    <select id="selectPendingByUserId" resultType="com.sumec.flow.bean.TSumecFlowDetailsModule">
+        select d.INT_ID, d.FM_ID, d.REF_VALUE, d.FA_ID, d.FS_ID, d.USER_ID, d.DEAL_TIME, d.DEAL_FLAG, d.DTL_STEP,d.NOTION, d.SEQ, d.FLAG, d.IS_GD, d.GD_INT_ID, d.GRANT_USER_ID, d.IS_READ, d.DTL_DESC, d.IS_END,d.POST_TIME, d.SP_USER_ID,
+        d.BAKED, d.FM_SEQ_ID, d.DEAL_WAY,m.FM_CODE, m.FM_NAME, m.TABLE_NAME, m.PK_COLUMN, m.FM_VIEW_NAME,m.DW_OBJECT,m.WINFORM_NAME,m.CONFIRM_COLUMN, m.ALLOW_GENE, m.IS_DEL, m.ORDER_ID, m.MA_ID, m.GRANT_DIR, m.DISPLAY_COLUMN,m.DISPLAY_DW,
+        m.MOBILE_FM_ID, m.CALLBACKHANDLER,m.ASSIST_OBJECT from T_SUMEC_FLOW_DETAILS d left join T_SUMEC_FLOW_MODULE m on d.FM_ID=m.FM_ID
+        where d.DTL_STEP!=1 and d.FLAG='1'and d.DEAL_FLAG='0' and d.USER_ID=#{userId} and m.table_name in('MICHAEL.T_IO_LC_OPEN','MICHAEL.T_PUB_PAY_APPLY','MICHAEL.T_TR_SOUT','MICHAEL.T_PUB_EXC','MICHAEL.T_EXP_BC','MICHAEL.T_EXP_SC') order by POST_TIME DESC
+    </select>
+</mapper>

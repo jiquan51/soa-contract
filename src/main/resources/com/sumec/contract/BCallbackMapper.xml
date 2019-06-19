@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sumec.contract.dao.IBCallbackDao" >
+
+  <select id="callBackAfter" parameterType="com.sumec.contract.entity.BCallBackModel" statementType="CALLABLE">
+    <![CDATA[
+    {call pkg_workflow.proc_handle_after_over (#{strFmId,mode=IN,jdbcType=VARCHAR},#{strBusinessId,mode=IN,jdbcType=VARCHAR},#{strDealFlag,mode=IN,jdbcType=VARCHAR},#{intReturnValue,mode=OUT,jdbcType=VARCHAR})}
+    ]]>
+  </select>
+
+</mapper>

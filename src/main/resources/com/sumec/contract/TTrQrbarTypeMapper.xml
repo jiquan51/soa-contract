@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sumec.contract.dao.ITrQrbarTypeDao">
+  <resultMap id="BaseResultMap" type="com.sumec.contract.entity.TTrQrbarType">
+    <id column="T_ID" jdbcType="VARCHAR" property="tId" />
+    <result column="T_NAME" jdbcType="VARCHAR" property="tName" />
+    <result column="F_T_ID" jdbcType="VARCHAR" property="fTId" />
+    <result column="T_CODE" jdbcType="VARCHAR" property="tCode" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    T_ID, T_NAME, F_T_ID, T_CODE
+  </sql>
+  <insert id="insertSelective" parameterType="com.sumec.contract.entity.TTrQrbarType">
+    insert into T_TR_QRBAR_TYPE
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="tId != null">
+        T_ID,
+      </if>
+      <if test="tName != null">
+        T_NAME,
+      </if>
+      <if test="fTId != null">
+        F_T_ID,
+      </if>
+      <if test="tCode != null">
+        T_CODE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="tId != null">
+        #{tId,jdbcType=VARCHAR},
+      </if>
+      <if test="tName != null">
+        #{tName,jdbcType=VARCHAR},
+      </if>
+      <if test="fTId != null">
+        #{fTId,jdbcType=VARCHAR},
+      </if>
+      <if test="tCode != null">
+        #{tCode,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sumec.contract.entity.TTrQrbarType">
+    update T_TR_QRBAR_TYPE
+    <set>
+      <if test="tName != null">
+        T_NAME = #{tName,jdbcType=VARCHAR},
+      </if>
+      <if test="fTId != null">
+        F_T_ID = #{fTId,jdbcType=VARCHAR},
+      </if>
+      <if test="tCode != null">
+        T_CODE = #{tCode,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where T_ID = #{tId,jdbcType=VARCHAR}
+  </update>
+</mapper>

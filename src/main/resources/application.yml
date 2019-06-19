@@ -1,0 +1,23 @@
+spring:
+  profiles:
+    #下面这个配置必须保留，实现动态配置文件
+    active: #spring.profiles.active#
+
+#mybatis 配置文件:
+mybatis:
+  type-aliases-package: com.sumec.*.entity
+  mapper-locations: classpath:com/sumec/*/*.xml
+  configLocation: classpath:config/mybatis-spring.xml
+service-config:  
+  uaa:
+    client-id: sumec_its   #客户端ID
+    client-secret: sumec_its
+#  cache:
+#    instance: soa_app
+#    domain-package: com.sumec.*.entity.*
+  swagger:
+    description: 苏美达接口文档
+    title:  sumec service API
+#客户端密钥
+#    grant-type: client_credentials   #获取token方式，默认client_credentials
+#    token-url: http://test.sumec.com/uaa/oauth/token  #token授权地址，默认http://uaa.aiyuninfo.com/oauth/token

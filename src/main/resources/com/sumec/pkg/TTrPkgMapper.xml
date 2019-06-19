@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sumec.pkg.dao.ITrPkgDao">
+  <resultMap id="BaseResultMap" type="com.sumec.pkg.entity.TTrPkg">
+    <id column="PKG_ID" jdbcType="VARCHAR" property="pkgId" />
+    <result column="PKG_CODE" jdbcType="VARCHAR" property="pkgCode" />
+    <result column="PKG_NAME" jdbcType="VARCHAR" property="pkgName" />
+    <result column="M_DATE" jdbcType="TIMESTAMP" property="mDate" />
+    <result column="M_USER_ID" jdbcType="DECIMAL" property="mUserId" />
+    <result column="PKG_TYPE" jdbcType="VARCHAR" property="pkgType" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    PKG_ID, PKG_CODE, PKG_NAME, M_DATE, M_USER_ID, PKG_TYPE
+  </sql>
+  <insert id="insertSelective" parameterType="com.sumec.pkg.entity.TTrPkg">
+    insert into T_TR_PKG
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="pkgId != null">
+        PKG_ID,
+      </if>
+      <if test="pkgCode != null">
+        PKG_CODE,
+      </if>
+      <if test="pkgName != null">
+        PKG_NAME,
+      </if>
+      <if test="mDate != null">
+        M_DATE,
+      </if>
+      <if test="mUserId != null">
+        M_USER_ID,
+      </if>
+      <if test="pkgType != null">
+        PKG_TYPE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="pkgId != null">
+        #{pkgId,jdbcType=VARCHAR},
+      </if>
+      <if test="pkgCode != null">
+        #{pkgCode,jdbcType=VARCHAR},
+      </if>
+      <if test="pkgName != null">
+        #{pkgName,jdbcType=VARCHAR},
+      </if>
+      <if test="mDate != null">
+        #{mDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mUserId != null">
+        #{mUserId,jdbcType=DECIMAL},
+      </if>
+      <if test="pkgType != null">
+        #{pkgType,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sumec.pkg.entity.TTrPkg">
+    update T_TR_PKG
+    <set>
+      <if test="pkgCode != null">
+        PKG_CODE = #{pkgCode,jdbcType=VARCHAR},
+      </if>
+      <if test="pkgName != null">
+        PKG_NAME = #{pkgName,jdbcType=VARCHAR},
+      </if>
+      <if test="mDate != null">
+        M_DATE = #{mDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mUserId != null">
+        M_USER_ID = #{mUserId,jdbcType=DECIMAL},
+      </if>
+      <if test="pkgType != null">
+        PKG_TYPE = #{pkgType,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PKG_ID = #{pkgId,jdbcType=VARCHAR}
+  </update>
+</mapper>
